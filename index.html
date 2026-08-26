@@ -14,6 +14,7 @@
     <link rel="manifest" href="manifest.json">
     <meta name="apple-mobile-web-app-capable" content="yes">
     
+    <!-- Open Graph -->
     <meta property="og:title" content="R2 Nusantara — Distributor Rokok Grosir Premium Malang">
     <meta property="og:description" content="Gudang distributor resmi. Bayar setelah resi keluar. Gratis ongkir min 1 bal. 230+ merek ready stock (R2 & Resmi).">
     <meta property="og:image" content="https://gudangdistributormalang-r2nusantara.github.io/R2-Nusantara/assets/logo/logo-resmi.png">
@@ -23,6 +24,7 @@
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="R2 Nusantara">
 
+    <!-- Schema.org -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -51,12 +53,14 @@
     }
     </script>
 
+    <!-- Fonts & Icons (preconnect untuk performa) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.cdnfonts.com/css/plus-jakarta-sans" rel="stylesheet">
     <link href="https://fonts.cdnfonts.com/css/ibm-plex-mono" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
+    <!-- Tailwind CDN (utility classes) -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -67,33 +71,18 @@
                         mono: ['"IBM Plex Mono"', 'monospace']
                     },
                     colors: {
-                        brand: { 
-                            900: '#060d18', 
-                            800: '#0a1628', 
-                            700: '#162544', 
-                            600: '#1e3a5f', 
-                            500: '#2563eb', 
-                            400: '#3b82f6', 
-                            300: '#60a5fa', 
-                            200: '#93c5fd', 
-                            100: '#dbeafe', 
-                            50: '#eff6ff' 
-                        },
-                        silver: { 
-                            900: '#1a1d23', 
-                            700: '#3d4250', 
-                            500: '#6b7280', 
-                            300: '#c8cdd6', 
-                            200: '#e2e6ed', 
-                            100: '#f1f3f7', 
-                            50: '#f8f9fc' 
-                        }
+                        brand: { 900: '#060d18', 800: '#0a1628', 700: '#162544', 600: '#1e3a5f', 500: '#2563eb', 400: '#3b82f6', 300: '#60a5fa', 200: '#93c5fd', 100: '#dbeafe', 50: '#eff6ff' },
+                        silver: { 900: '#1a1d23', 700: '#3d4250', 500: '#6b7280', 300: '#c8cdd6', 200: '#e2e6ed', 100: '#f1f3f7', 50: '#f8f9fc' }
                     }
                 }
             }
         }
     </script>
 
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Preloader fallback (tetap inline agar cepat) -->
     <script>
         (function(){
             var ft = setTimeout(function(){
@@ -103,218 +92,10 @@
             window.__clearLoader = function(){ clearTimeout(ft); };
         })();
     </script>
-
-    <style>
-        /* Semua CSS dari style.css sudah dimasukkan di sini untuk kemudahan, 
-           tapi Anda tetap bisa menggunakan file style.css terpisah. 
-           Saya gabungkan untuk memastikan semua gaya terpakai. */
-        :root { --transition-smooth: cubic-bezier(0.16, 1, 0.3, 1); --shadow-premium: 0 20px 60px -15px rgba(10, 22, 40, 0.15); --shadow-glow: 0 0 40px rgba(59, 130, 246, 0.15); }
-        * { -webkit-tap-highlight-color: transparent; }
-        body { background-color: #f8f9fc; font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11'; overflow-x: hidden; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
-        button, a, select { touch-action: manipulation; }
-        ::-webkit-scrollbar { width: 8px; height: 8px; }
-        ::-webkit-scrollbar-track { background: transparent; }
-        ::-webkit-scrollbar-thumb { background: linear-gradient(180deg, #c8cdd6, #94a3b8); border-radius: 10px; border: 2px solid #f8f9fc; transition: background 0.3s; }
-        ::-webkit-scrollbar-thumb:hover { background: linear-gradient(180deg, #3b82f6, #2563eb); }
-        ::selection { background: rgba(37,99,235,0.2); color: #0a1628; }
-        .animate-blob, .card-premium, .hero-overlay, .modal-hardware { will-change: transform, opacity; transform: translateZ(0); backface-visibility: hidden; }
-        .glass-pill { background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(24px) saturate(200%); -webkit-backdrop-filter: blur(24px) saturate(200%); border: 1px solid rgba(255, 255, 255, 0.5); box-shadow: 0 4px 24px -4px rgba(10, 22, 40, 0.06), 0 2px 8px -2px rgba(10, 22, 40, 0.04), inset 0 0 0 1px rgba(255, 255, 255, 0.5); }
-        .glass-dark { background: rgba(10, 22, 40, 0.7); backdrop-filter: blur(24px) saturate(180%); border: 1px solid rgba(255, 255, 255, 0.1); }
-        .premium-text-gradient { background: linear-gradient(110deg, #0a1628 0%, #a0aec0 40%, #d4af37 60%, #0a1628 100%); background-size: 200% auto; color: transparent; -webkit-background-clip: text; background-clip: text; animation: textShimmer 4s linear infinite; text-shadow: 0 2px 10px rgba(212, 175, 55, 0.15); }
-        @keyframes textShimmer { to { background-position: 200% center; } }
-        .verified-badge { filter: drop-shadow(0 0 3px rgba(59,130,246,0.4)); animation: verifiedPulse 3s infinite ease-in-out; }
-        @keyframes verifiedPulse { 0%, 100% { filter: drop-shadow(0 0 2px rgba(59,130,246,0.3)) scale(1); } 50% { filter: drop-shadow(0 0 6px rgba(59,130,246,0.8)) scale(1.05); } }
-        .smoke-wrapper { position: absolute; inset: -50% -20%; pointer-events: none; overflow: hidden; z-index: -1; opacity: 0.3; transition: opacity 0.35s ease; -webkit-mask-image: radial-gradient(circle at center, black 20%, transparent 70%); mask-image: radial-gradient(circle at center, black 20%, transparent 70%); }
-        .group:hover .smoke-wrapper { opacity: 0.8; }
-        .smoke-particle { position: absolute; bottom: 10px; width: 12px; height: 12px; background: rgba(255,255,255,0.8); border-radius: 50%; filter: blur(8px); opacity: 0; animation: smokeRise var(--dur, 4s) infinite cubic-bezier(0.25, 0.46, 0.45, 0.94); will-change: transform, opacity; }
-        .sp-1 { left: 10%; --dur: 4.5s; animation-delay: 0s; }
-        .sp-2 { left: 40%; --dur: 3.8s; animation-delay: 1.2s; }
-        .sp-3 { left: 70%; --dur: 4.2s; animation-delay: 2.5s; }
-        .sp-4 { left: 85%; --dur: 5s; animation-delay: 0.8s; }
-        @keyframes smokeRise { 0% { transform: translateY(0) scale(1) translateX(0); opacity: 0; } 30% { opacity: 0.5; } 70% { opacity: 0.2; } 100% { transform: translateY(-35px) scale(3.5) translateX(15px); opacity: 0; } }
-        .brand-hover-transition { transition: all 0.35s ease; }
-        .hero-overlay { background: linear-gradient(180deg, rgba(6,13,24,0.92) 0%, rgba(10,22,40,0.6) 40%, rgba(10,22,40,0.9) 80%, #f8f9fc 100%), radial-gradient(circle at top right, rgba(37,99,235,0.15) 0%, transparent 50%), radial-gradient(circle at bottom left, rgba(37,99,235,0.15) 0%, transparent 50%); }
-        .grid-pattern { background-image: linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px); background-size: 64px 64px; }
-        .card-premium { transition: all 0.5s var(--transition-smooth); }
-        .card-premium:hover { transform: translateY(-8px) translateZ(0); box-shadow: 0 32px 64px -12px rgba(10,22,40,0.1), 0 16px 24px -8px rgba(10,22,40,0.06); }
-        .card-glow:hover::before { opacity: 1; }
-        .card-glow::before { content: ''; position: absolute; inset: 0; background: radial-gradient(800px circle at var(--mouse-x) var(--mouse-y), rgba(59, 130, 246, 0.08), transparent 40%); opacity: 0; transition: opacity 0.5s; pointer-events: none; z-index: 1; }
-        .ticker-wrap { width: 100%; overflow: hidden; background: linear-gradient(90deg, transparent, rgba(37, 99, 235, 0.05) 20%, rgba(37, 99, 235, 0.05) 80%, transparent); }
-        .ticker-mask { -webkit-mask-image: linear-gradient(90deg, transparent, black 10%, black 90%, transparent); mask-image: linear-gradient(90deg, transparent, black 10%, black 90%, transparent); }
-        .fade-on-scroll { opacity: 0; transform: translateY(40px) translateZ(0); transition: opacity 0.9s var(--transition-smooth), transform 0.9s var(--transition-smooth); }
-        .fade-on-scroll.is-visible { opacity: 1; transform: translateY(0) translateZ(0); }
-        .text-gradient { background: linear-gradient(135deg, #ffffff 0%, #93c5fd 50%, #ffffff 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .no-scrollbar::-webkit-scrollbar { display: none; }
-        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-        .btn-glow { position: relative; overflow: hidden; }
-        .btn-glow::before { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent); transform: translateX(-100%); transition: transform 0.6s; }
-        .btn-glow:hover::before { transform: translateX(100%); }
-        .btn-glow::after { content: ''; position: absolute; inset: -4px; background: linear-gradient(90deg, #3b82f6, #60a5fa, #3b82f6); filter: blur(12px); opacity: 0; transition: opacity 0.4s ease; z-index: -1; border-radius: inherit; }
-        .btn-glow:hover::after { opacity: 0.6; }
-        .ripple { position: relative; overflow: hidden; }
-        .ripple::after { content: ""; display: block; position: absolute; width: 100%; height: 100%; top: 0; left: 0; pointer-events: none; background-image: radial-gradient(circle, rgba(255,255,255,0.4) 10%, transparent 10.01%); background-repeat: no-repeat; background-position: 50%; transform: scale(10,10); opacity: 0; transition: transform .5s, opacity 1s; }
-        .ripple:active::after { transform: scale(0,0); opacity: .3; transition: 0s; }
-        .stepper-enter { animation: stepperPop 0.4s var(--transition-smooth); }
-        @keyframes stepperPop { 0% { transform: scale(0.85); opacity: 0; } 100% { transform: scale(1); opacity: 1; } }
-        .modal-enter { opacity: 1 !important; transform: translate(-50%, -50%) scale(1) !important; pointer-events: auto !important; }
-        .overlay-enter { opacity: 1 !important; pointer-events: auto !important; }
-        .form-field-error { border-color: #ef4444 !important; background-color: #fef2f2 !important; }
-        .form-field-error:focus { box-shadow: 0 0 0 4px rgba(239,68,68,0.1) !important; border-color: #ef4444 !important; }
-        .error-message { color: #ef4444; font-size: 11px; font-weight: 600; margin-top: 4px; display: none; align-items: center; gap: 4px; }
-        .error-message.show { display: flex; animation: stepperPop 0.3s ease; }
-        .field-valid { border-color: #10b981 !important; }
-        .field-valid:focus { box-shadow: 0 0 0 4px rgba(16,185,129,0.1) !important; border-color: #10b981 !important; }
-        .step-indicator.active { background-color: #0a1628; color: white; border-color: #0a1628; }
-        .step-indicator.completed { background-color: #10b981; color: white; border-color: #10b981; }
-        .step-line.active { background-color: #10b981; }
-        .checkout-btn-loading { position: relative; pointer-events: none; }
-        .checkout-btn-loading::before { content: ''; position: absolute; inset: 0; background: rgba(37,211,102,0.85); border-radius: inherit; z-index: 1; }
-        .checkout-btn-loading::after { content: ''; position: absolute; top: 50%; left: 50%; width: 20px; height: 20px; margin: -10px 0 0 -10px; border: 2.5px solid white; border-top-color: transparent; border-radius: 50%; animation: spin 0.6s linear infinite; z-index: 2; }
-        @keyframes spin { to { transform: rotate(360deg); } }
-        .checkout-success { background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important; color: white !important; }
-        button:disabled { opacity: 0.5; cursor: not-allowed; }
-        .avatar-initial { display: inline-flex; align-items: center; justify-content: center; width: 100%; height: 100%; color: white; font-weight: 800; letter-spacing: -0.02em; text-shadow: 0 2px 4px rgba(0,0,0,0.3); font-size: 1.5rem; border: 2px solid rgba(255,255,255,0.2); box-shadow: inset 0 2px 4px rgba(255,255,255,0.4), 0 8px 16px -4px rgba(10,22,40,0.15); }
-        .avatar-gradient-1 { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
-        .avatar-gradient-2 { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); }
-        .avatar-gradient-3 { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); }
-        .avatar-gradient-4 { background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); }
-        .avatar-gradient-5 { background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); }
-        .avatar-gradient-9 { background: linear-gradient(135deg, #2563eb 0%, #1e3a5f 100%); }
-        .faq-item { transition: all 0.3s var(--transition-smooth); }
-        .faq-item[open] .faq-icon { transform: rotate(45deg); }
-        .faq-item[open] .faq-content { max-height: 500px; padding-top: 1rem; }
-        .faq-icon { transition: transform 0.3s var(--transition-smooth); }
-        .faq-content { max-height: 0; overflow: hidden; transition: max-height 0.4s var(--transition-smooth), padding-top 0.3s; }
-        .back-to-top { position: fixed; bottom: 24px; right: 24px; width: 48px; height: 48px; background: white; border: 1px solid #e2e6ed; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #0a1628; box-shadow: 0 8px 24px rgba(10,22,40,0.08); cursor: pointer; z-index: 50; opacity: 0; transform: translateY(20px); transition: all 0.4s var(--transition-smooth); pointer-events: none; }
-        .back-to-top.visible { opacity: 1; transform: translateY(0); pointer-events: auto; }
-        .back-to-top:hover { background: #0a1628; color: white; transform: translateY(-4px); box-shadow: 0 12px 32px rgba(10,22,40,0.2); }
-        .catalog-tab-switcher { display: inline-flex; background: white; border: 1px solid #e2e6ed; border-radius: 1rem; padding: 4px; box-shadow: 0 2px 8px rgba(10,22,40,0.04); position: relative; }
-        .catalog-tab { position: relative; padding: 10px 20px; border-radius: 0.75rem; font-weight: 800; font-size: 13px; color: #64748b; cursor: pointer; transition: all 0.3s var(--transition-smooth); display: flex; align-items: center; gap: 8px; border: none; background: transparent; white-space: nowrap; }
-        .catalog-tab:hover { color: #0a1628; }
-        .catalog-tab.active { background: #0a1628; color: white; box-shadow: 0 4px 12px rgba(10,22,40,0.15); }
-        .catalog-tab.active[data-tab="resmi"] { background: linear-gradient(135deg, #b45309 0%, #78350f 100%); box-shadow: 0 4px 12px rgba(180,83,9,0.3); }
-        .catalog-tab .tab-count { font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 999px; background: rgba(100,116,139,0.15); color: inherit; font-family: 'IBM Plex Mono', monospace; }
-        .catalog-tab.active .tab-count { background: rgba(255,255,255,0.2); }
-        .segment-badge { display: inline-flex; align-items: center; gap: 4px; padding: 3px 8px; border-radius: 6px; font-size: 9px; font-weight: 800; letter-spacing: 0.05em; border: 1px solid; }
-        .segment-A { background: linear-gradient(135deg, #fef3c7, #fde68a); color: #92400e; border-color: #fcd34d; }
-        .segment-B { background: linear-gradient(135deg, #dbeafe, #bfdbfe); color: #1e40af; border-color: #93c5fd; }
-        .segment-C { background: linear-gradient(135deg, #d1fae5, #a7f3d0); color: #065f46; border-color: #6ee7b7; }
-        .segment-D { background: linear-gradient(135deg, #fce7f3, #fbcfe8); color: #9d174d; border-color: #f9a8d4; }
-        .segment-E { background: linear-gradient(135deg, #e0e7ff, #c7d2fe); color: #3730a3; border-color: #a5b4fc; }
-        .tier-hemat { background: #ecfdf5; color: #059669; border-color: #a7f3d0; }
-        .tier-populer { background: #eff6ff; color: #2563eb; border-color: #bfdbfe; }
-        .tier-premium { background: #f5f3ff; color: #7c3aed; border-color: #ddd6fe; }
-        .catalog-info-banner { background: linear-gradient(135deg, #f8f9fc 0%, #ffffff 100%); border: 1px solid #e2e6ed; border-radius: 1.5rem; padding: 1.25rem 1.5rem; display: flex; align-items: center; gap: 1rem; transition: all 0.4s var(--transition-smooth); }
-        .catalog-info-banner.resmi { background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%); border-color: #fcd34d; }
-        .product-card-resmi { background: linear-gradient(135deg, #ffffff 0%, #fffbeb 100%); border-color: #fde68a; }
-        .product-card-resmi:hover { box-shadow: 0 32px 64px -12px rgba(180,83,9,0.15), 0 16px 24px -8px rgba(180,83,9,0.08); }
-        .filter-chip-resmi.segment-active { background: linear-gradient(135deg, #b45309 0%, #78350f 100%) !important; color: white !important; border-color: transparent !important; box-shadow: 0 4px 12px rgba(180,83,9,0.25); }
-        .card-enter { animation: cardPop 0.5s var(--transition-smooth) backwards; }
-        @keyframes cardPop { 0% { opacity: 0; transform: translateY(20px) scale(0.95); } 100% { opacity: 1; transform: translateY(0) scale(1); } }
-        .testimonial-slider-container { display: flex; gap: 1.5rem; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; padding-bottom: 2rem; -ms-overflow-style: none; scrollbar-width: none; cursor: grab; }
-        .testimonial-slider-container:active { cursor: grabbing; }
-        .testimonial-slider-container::-webkit-scrollbar { display: none; }
-        .testimonial-card-slide { flex: 0 0 100%; max-width: 400px; scroll-snap-align: center; transition: all 0.4s var(--transition-smooth); }
-        @media (min-width: 768px) { .testimonial-card-slide { flex: 0 0 calc(50% - 0.75rem); } }
-        @media (min-width: 1024px) { .testimonial-card-slide { flex: 0 0 calc(33.333% - 1rem); } }
-        .testimonial-card-slide:hover { transform: translateY(-6px); box-shadow: 0 20px 40px -12px rgba(10,22,40,0.1); }
-        .slider-nav-btn { width: 44px; height: 44px; border-radius: 50%; background: white; border: 1px solid #e2e6ed; display: flex; align-items: center; justify-content: center; color: #0a1628; box-shadow: 0 4px 12px rgba(10,22,40,0.05); transition: all 0.3s; cursor: pointer; }
-        .slider-nav-btn:hover { background: #0a1628; color: white; border-color: #0a1628; }
-        .star-rating-input i { color: #e2e6ed; cursor: pointer; transition: color 0.2s, transform 0.2s; font-size: 1.5rem; }
-        .star-rating-input i.active, .star-rating-input i:hover, .star-rating-input i:hover ~ i { color: #fbbf24; transform: scale(1.1); }
-        .star-rating-input { display: inline-flex; flex-direction: row-reverse; }
-        .star-rating-input i:hover, .star-rating-input i:hover ~ i { color: #fbbf24 !important; }
-        .footer-enterprise { background-color: #050a12; color: #94a3b8; font-size: 0.875rem; }
-        .footer-link { transition: color 0.2s ease, padding-left 0.2s ease; display: inline-flex; align-items: center; gap: 0.5rem; }
-        .footer-link:hover { color: #3b82f6; padding-left: 4px; }
-        .footer-title { color: white; font-weight: 800; font-size: 0.75rem; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 1.25rem; display: flex; align-items: center; gap: 0.5rem; }
-        .footer-title::before { content: ''; display: block; width: 4px; height: 16px; background: #2563eb; border-radius: 4px; }
-        .footer-divider { height: 1px; background: rgba(255,255,255,0.05); margin: 2rem 0; }
-        .badge-pill { display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; border-radius: 99px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); font-size: 10px; font-weight: 700; color: #cbd5e1; }
-        .sales-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; padding: 12px; display: flex; justify-content: space-between; align-items: center; transition: background 0.3s; }
-        .sales-card:hover { background: rgba(255,255,255,0.08); }
-        .sales-avatar { width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 12px; color: white; }
-        .wa-circle { width: 28px; height: 28px; border-radius: 50%; background: rgba(37, 211, 102, 0.1); border: 1px solid rgba(37, 211, 102, 0.2); color: #25D366; display: flex; align-items: center; justify-content: center; transition: all 0.3s; }
-        .sales-card:hover .wa-circle { background: #25D366; color: white; transform: scale(1.1); }
-        .region-tag { border: 1px solid rgba(255,255,255,0.15); padding: 4px 12px; border-radius: 6px; font-size: 11px; transition: all 0.2s; }
-        .region-tag:hover { border-color: #3b82f6; color: white; background: rgba(59,130,246,0.1); }
-        .newsletter-box { background: linear-gradient(135deg, rgba(30,58,95,0.5) 0%, rgba(10,22,40,0.8) 100%); border: 1px solid rgba(59,130,246,0.2); border-radius: 16px; padding: 20px; box-shadow: inset 0 0 0 1px rgba(255,255,255,0.05); }
-        @keyframes loaderSpin { to { transform: rotate(360deg); } }
-        .loader-spinner { animation: loaderSpin 1s linear infinite; }
-        html { scroll-behavior: smooth; }
-        button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 2px solid #2563eb; outline-offset: 2px; }
-        @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; } }
-
-        /* ========== CUSTOM ADDITIONS ========== */
-        /* Running text baru di bawah hero */
-        .running-text-section {
-          background: linear-gradient(90deg, #0a1628, #1e3a5f, #0a1628);
-          padding: 0.75rem 0;
-          border-top: 1px solid rgba(255,255,255,0.05);
-          border-bottom: 1px solid rgba(255,255,255,0.05);
-        }
-        .running-text-track {
-          display: flex;
-          gap: 3rem;
-          animation: runningScroll 30s linear infinite;
-          white-space: nowrap;
-        }
-        .running-text-track span {
-          color: #f1f5f9;
-          font-weight: 600;
-          font-size: 0.9rem;
-          letter-spacing: 0.02em;
-        }
-        .running-text-track i {
-          color: #60a5fa;
-          margin-right: 0.5rem;
-        }
-        @keyframes runningScroll {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(-50%); }
-        }
-
-        /* Product Grid Compact (2x2) */
-        .product-grid-compact .product-card {
-          padding: 1rem !important;
-          border-radius: 1rem !important;
-        }
-        .product-grid-compact .product-card .product-name {
-          font-size: 0.95rem !important;
-          line-height: 1.3 !important;
-        }
-        .product-grid-compact .product-card .product-price {
-          font-size: 1.1rem !important;
-        }
-        .product-grid-compact .product-card .product-btn {
-          padding-top: 0.5rem !important;
-          padding-bottom: 0.5rem !important;
-          font-size: 0.75rem !important;
-        }
-        .product-grid-compact .product-card .segment-badge {
-          font-size: 7px !important;
-          padding: 1px 6px !important;
-        }
-
-        @media (max-width: 640px) {
-          .product-grid-compact {
-            gap: 0.75rem !important;
-          }
-          .product-grid-compact .product-card {
-            padding: 0.75rem !important;
-          }
-          .product-grid-compact .product-card .product-name {
-            font-size: 0.85rem !important;
-          }
-          .product-grid-compact .product-card .product-price {
-            font-size: 1rem !important;
-          }
-        }
-    </style>
 </head>
-<body class="text-slate-800 relative selection:bg-brand-500/20 selection:text-brand-900">
+<body>
 
-<!-- Loader -->
+<!-- ======== LOADER ======== -->
 <div id="loader" class="fixed inset-0 z-[100] bg-brand-900 flex flex-col items-center justify-center transition-opacity duration-700">
     <div class="relative w-20 h-20 flex items-center justify-center">
         <div class="absolute inset-0 border-4 border-brand-800 rounded-full"></div>
@@ -328,7 +109,7 @@
     </div>
 </div>
 
-<!-- Premium Responsive Header -->
+<!-- ======== HEADER ======== -->
 <header class="fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-5xl z-50 transition-all duration-500" id="header" role="banner">
     <div class="glass-pill p-1.5 pr-1.5 sm:px-4 sm:py-2.5 rounded-full flex items-center justify-between shadow-sm border border-slate-200/60" id="headerInner">
         <a href="#" class="flex items-center gap-2.5 sm:gap-3 group shrink-0 relative z-10 brand-hover-transition pl-1 sm:pl-0" aria-label="Beranda">
@@ -368,7 +149,7 @@
 </header>
 
 <main>
-    <!-- Hero Section -->
+    <!-- ======== HERO ======== -->
     <section id="beranda" class="relative pt-36 pb-24 md:pt-48 md:pb-32 overflow-hidden flex items-center min-h-[95vh] md:min-h-screen">
         <div class="absolute inset-0 z-0 bg-brand-900">
             <img src="assets/logo/hero-bg.jpg" alt="Gudang Background" fetchpriority="high" class="w-full h-full object-cover object-center opacity-60 scale-105" id="heroBg">
@@ -427,78 +208,77 @@
         </div>
     </section>
 
-    <!-- RUNNING TEXT BARU (DITAMBAHKAN) -->
+    <!-- ======== RUNNING TEXT ======== -->
     <section class="running-text-section">
-      <div class="container mx-auto px-4 overflow-hidden">
-        <div class="running-text-track">
-          <span><i class="fa-solid fa-bolt"></i> Promo Spesial Akhir Bulan — Diskon s.d. 15% untuk pembelian 2 bal</span>
-          <span><i class="fa-solid fa-truck-fast"></i> Gratis Ongkir 1 Bal (20 Slop) se-Indonesia</span>
-          <span><i class="fa-solid fa-users"></i> 500+ Mitra Toko Telah Bergabung</span>
-          <span><i class="fa-solid fa-certificate"></i> 100% Produk Asli & Fresh dari Pabrik</span>
-          <span><i class="fa-solid fa-clock"></i> Order sebelum 15.00 WIB, kirim hari ini</span>
-          <!-- duplicate -->
-          <span><i class="fa-solid fa-bolt"></i> Promo Spesial Akhir Bulan — Diskon s.d. 15% untuk pembelian 2 bal</span>
-          <span><i class="fa-solid fa-truck-fast"></i> Gratis Ongkir 1 Bal (20 Slop) se-Indonesia</span>
-          <span><i class="fa-solid fa-users"></i> 500+ Mitra Toko Telah Bergabung</span>
-          <span><i class="fa-solid fa-certificate"></i> 100% Produk Asli & Fresh dari Pabrik</span>
-          <span><i class="fa-solid fa-clock"></i> Order sebelum 15.00 WIB, kirim hari ini</span>
+        <div class="container mx-auto px-4 overflow-hidden">
+            <div class="running-text-track">
+                <span><i class="fa-solid fa-bolt"></i> Promo Spesial Akhir Bulan — Diskon s.d. 15% untuk pembelian 2 bal</span>
+                <span><i class="fa-solid fa-truck-fast"></i> Gratis Ongkir 1 Bal (20 Slop) se-Indonesia</span>
+                <span><i class="fa-solid fa-users"></i> 500+ Mitra Toko Telah Bergabung</span>
+                <span><i class="fa-solid fa-certificate"></i> 100% Produk Asli & Fresh dari Pabrik</span>
+                <span><i class="fa-solid fa-clock"></i> Order sebelum 15.00 WIB, kirim hari ini</span>
+                <span><i class="fa-solid fa-bolt"></i> Promo Spesial Akhir Bulan — Diskon s.d. 15% untuk pembelian 2 bal</span>
+                <span><i class="fa-solid fa-truck-fast"></i> Gratis Ongkir 1 Bal (20 Slop) se-Indonesia</span>
+                <span><i class="fa-solid fa-users"></i> 500+ Mitra Toko Telah Bergabung</span>
+                <span><i class="fa-solid fa-certificate"></i> 100% Produk Asli & Fresh dari Pabrik</span>
+                <span><i class="fa-solid fa-clock"></i> Order sebelum 15.00 WIB, kirim hari ini</span>
+            </div>
         </div>
-      </div>
     </section>
 
-    <!-- Why Us -->
-    <section id="why" class="py-24 bg-[#f8f9fc] relative">
+    <!-- ======== WHY US ======== -->
+    <section id="why" class="py-16 md:py-24 bg-[#f8f9fc] relative">
         <div class="container mx-auto px-4 md:px-8 max-w-6xl">
-            <div class="text-center mb-16 fade-on-scroll">
+            <div class="text-center mb-12 md:mb-16 fade-on-scroll">
                 <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-100 text-brand-600 font-bold text-xs uppercase tracking-widest mb-4 border border-brand-200">
                     <i class="fa-solid fa-star"></i> Keunggulan Eksekutif
                 </span>
                 <h2 class="text-3xl md:text-5xl font-extrabold text-brand-900 tracking-tight leading-tight">Sistem B2B Tanpa Risiko.</h2>
-                <p class="text-slate-500 mt-4 text-lg max-w-2xl mx-auto">Dirancang khusus untuk keamanan dan kenyamanan mitra grosir di seluruh Nusantara.</p>
+                <p class="text-slate-500 mt-4 text-base md:text-lg max-w-2xl mx-auto">Dirancang khusus untuk keamanan dan kenyamanan mitra grosir di seluruh Nusantara.</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-min md:auto-rows-[280px]">
-                <div class="md:col-span-2 bg-white rounded-[2rem] p-8 md:p-10 border border-slate-200 shadow-sm relative overflow-hidden card-premium fade-on-scroll flex flex-col justify-between">
+                <div class="md:col-span-2 bg-white rounded-[2rem] p-6 md:p-10 border border-slate-200 shadow-sm relative overflow-hidden card-premium fade-on-scroll flex flex-col justify-between">
                     <div class="absolute -right-20 -top-20 w-64 h-64 bg-emerald-50 rounded-full blur-[60px] pointer-events-none"></div>
                     <div class="relative z-10">
-                        <div class="w-14 h-14 bg-emerald-100 text-emerald-600 rounded-2xl flex items-center justify-center text-2xl mb-6 shadow-sm border border-emerald-200">
+                        <div class="w-12 h-12 md:w-14 md:h-14 bg-emerald-100 text-emerald-600 rounded-2xl flex items-center justify-center text-xl md:text-2xl mb-4 md:mb-6 shadow-sm border border-emerald-200">
                             <i class="fa-solid fa-money-check-dollar"></i>
                         </div>
-                        <h3 class="text-2xl md:text-3xl font-extrabold text-brand-900 mb-3 tracking-tight">Bayar Setelah Resi Keluar</h3>
-                        <p class="text-slate-500 leading-relaxed max-w-md">Tidak ada transfer di awal, bukan sistem COD. Tagihan baru dibayar setelah barang masuk ekspedisi dan resi resmi terbit. <b>100% Anti Penipuan.</b></p>
+                        <h3 class="text-xl md:text-3xl font-extrabold text-brand-900 mb-2 md:mb-3 tracking-tight">Bayar Setelah Resi Keluar</h3>
+                        <p class="text-slate-500 leading-relaxed max-w-md text-sm md:text-base">Tidak ada transfer di awal, bukan sistem COD. Tagihan baru dibayar setelah barang masuk ekspedisi dan resi resmi terbit. <b>100% Anti Penipuan.</b></p>
                     </div>
-                    <div class="mt-8 flex gap-3 z-10">
+                    <div class="mt-6 md:mt-8 flex gap-3 z-10">
                         <span class="px-3 py-1.5 bg-slate-100 text-slate-600 rounded-lg text-xs font-bold">Aman</span>
                         <span class="px-3 py-1.5 bg-slate-100 text-slate-600 rounded-lg text-xs font-bold">Transparan</span>
                     </div>
                 </div>
 
-                <div class="bg-brand-900 rounded-[2rem] p-8 border border-brand-800 shadow-xl relative overflow-hidden card-premium fade-on-scroll flex flex-col">
+                <div class="bg-brand-900 rounded-[2rem] p-6 md:p-8 border border-brand-800 shadow-xl relative overflow-hidden card-premium fade-on-scroll flex flex-col">
                     <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiPgo8cmVjdCB3aWR0aD0iOCIgaGVpZ2h0PSI4IiBmaWxsPSIjZmZmIiBmaWxsLW9wYWNpdHk9IjAuMDUiLz4KPC9zdmc+')] opacity-20"></div>
                     <div class="relative z-10 flex-1 flex flex-col">
-                        <div class="w-14 h-14 bg-white/10 text-brand-300 rounded-2xl flex items-center justify-center text-2xl mb-6 border border-white/20">
+                        <div class="w-12 h-12 md:w-14 md:h-14 bg-white/10 text-brand-300 rounded-2xl flex items-center justify-center text-xl md:text-2xl mb-4 md:mb-6 border border-white/20">
                             <i class="fa-solid fa-camera-retro"></i>
                         </div>
-                        <h3 class="text-xl md:text-2xl font-extrabold text-white mb-3">Real-time Packing</h3>
-                        <p class="text-slate-400 text-sm leading-relaxed mb-6">Kami dokumentasikan (Foto & Video) secara langsung mulai dari pengambilan barang di gudang hingga packing.</p>
+                        <h3 class="text-lg md:text-2xl font-extrabold text-white mb-2 md:mb-3">Real-time Packing</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">Kami dokumentasikan (Foto & Video) secara langsung mulai dari pengambilan barang di gudang hingga packing.</p>
                     </div>
                 </div>
 
-                <div class="bg-white rounded-[2rem] p-8 border border-slate-200 shadow-sm relative overflow-hidden card-premium fade-on-scroll flex flex-col justify-center text-center items-center">
-                    <div class="w-20 h-20 bg-brand-50 text-brand-500 rounded-full flex items-center justify-center text-3xl mb-4 border-8 border-white shadow-md">
+                <div class="bg-white rounded-[2rem] p-6 md:p-8 border border-slate-200 shadow-sm relative overflow-hidden card-premium fade-on-scroll flex flex-col justify-center text-center items-center">
+                    <div class="w-16 h-16 md:w-20 md:h-20 bg-brand-50 text-brand-500 rounded-full flex items-center justify-center text-2xl md:text-3xl mb-3 md:mb-4 border-8 border-white shadow-md">
                         <i class="fa-solid fa-boxes-stacked"></i>
                     </div>
-                    <h3 class="text-4xl md:text-5xl font-black text-brand-900 tracking-tighter mb-1">233</h3>
-                    <p class="text-slate-500 font-medium">Merek Tersedia</p>
+                    <h3 class="text-3xl md:text-5xl font-black text-brand-900 tracking-tighter mb-1">233</h3>
+                    <p class="text-slate-500 font-medium text-sm md:text-base">Merek Tersedia</p>
                 </div>
 
-                <div class="md:col-span-2 bg-gradient-to-br from-brand-50 to-white rounded-[2rem] p-8 md:p-10 border border-brand-100 shadow-sm relative overflow-hidden card-premium fade-on-scroll flex items-center">
+                <div class="md:col-span-2 bg-gradient-to-br from-brand-50 to-white rounded-[2rem] p-6 md:p-10 border border-brand-100 shadow-sm relative overflow-hidden card-premium fade-on-scroll flex items-center">
                     <div class="flex-1 relative z-10">
                         <div class="inline-flex items-center gap-2 px-3 py-1 bg-brand-500 text-white rounded-lg text-[10px] font-bold uppercase tracking-widest mb-4">
                             Promo Mitra
                         </div>
-                        <h3 class="text-2xl md:text-3xl font-extrabold text-brand-900 mb-3 tracking-tight">Subsidi Ongkos Kirim</h3>
-                        <p class="text-slate-600 leading-relaxed max-w-sm mb-6">Dapatkan fasilitas gratis ongkir langsung dari gudang kami tanpa syarat tersembunyi.</p>
+                        <h3 class="text-xl md:text-3xl font-extrabold text-brand-900 mb-2 md:mb-3 tracking-tight">Subsidi Ongkos Kirim</h3>
+                        <p class="text-slate-600 leading-relaxed max-w-sm text-sm md:text-base mb-4 md:mb-6">Dapatkan fasilitas gratis ongkir langsung dari gudang kami tanpa syarat tersembunyi.</p>
                         <div class="inline-flex items-center gap-3 px-4 py-3 bg-white rounded-xl border border-brand-200 shadow-sm">
                             <i class="fa-solid fa-circle-check text-brand-500"></i>
                             <span class="text-sm font-bold text-slate-700">Minimal Order Hanya 1 Bal (20 Slop)</span>
@@ -512,17 +292,17 @@
         </div>
     </section>
 
-    <!-- Product Catalog -->
-    <section id="produk" class="py-24 bg-white relative">
+    <!-- ======== KATALOG PRODUK ======== -->
+    <section id="produk" class="py-16 md:py-24 bg-white relative">
         <div class="container mx-auto px-4 md:px-8 max-w-7xl">
             <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-6 fade-on-scroll">
                 <div>
                     <h2 class="text-3xl md:text-5xl font-extrabold text-brand-900 tracking-tight mb-3">Katalog Harga Reseller</h2>
-                    <p class="text-slate-500 text-lg">Harga tercantum adalah <b class="text-brand-900">Harga Per Slop</b> (10 Bungkus).</p>
+                    <p class="text-slate-500 text-base md:text-lg">Harga tercantum adalah <b class="text-brand-900">Harga Per Slop</b> (10 Bungkus).</p>
                 </div>
                 <div class="text-left md:text-right">
                     <div class="text-sm font-bold text-slate-400 uppercase tracking-widest mb-1">Total Merek</div>
-                    <div class="text-4xl md:text-5xl font-black text-brand-900 tabular-nums" id="totalBrandCount">233</div>
+                    <div class="text-3xl md:text-5xl font-black text-brand-900 tabular-nums" id="totalBrandCount">233</div>
                 </div>
             </div>
 
@@ -553,16 +333,16 @@
             </div>
 
             <!-- Progress Banner -->
-            <div id="shippingProgressBanner" class="mb-8 bg-brand-900 rounded-[2rem] p-6 md:p-8 relative overflow-hidden shadow-2xl fade-on-scroll text-white modal-hardware">
+            <div id="shippingProgressBanner" class="mb-8 bg-brand-900 rounded-[2rem] p-4 md:p-8 relative overflow-hidden shadow-2xl fade-on-scroll text-white modal-hardware">
                 <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiPgo8cmVjdCB3aWR0aD0iOCIgaGVpZ2h0PSI4IiBmaWxsPSIjZmZmIiBmaWxsLW9wYWNpdHk9IjAuMDUiLz4KPC9zdmc+')] opacity-20"></div>
-                <div class="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
-                    <div class="flex items-center gap-5">
-                        <div class="w-14 h-14 rounded-2xl bg-white/10 flex items-center justify-center border border-white/20 backdrop-blur-sm shrink-0">
-                            <i class="fa-solid fa-gift text-2xl text-emerald-400"></i>
+                <div class="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-4 md:gap-6">
+                    <div class="flex items-center gap-4 md:gap-5">
+                        <div class="w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-white/10 flex items-center justify-center border border-white/20 backdrop-blur-sm shrink-0">
+                            <i class="fa-solid fa-gift text-xl md:text-2xl text-emerald-400"></i>
                         </div>
                         <div>
-                            <h4 class="text-xl md:text-2xl font-bold mb-1" id="bannerTitle">Target Gratis Ongkir</h4>
-                            <p class="text-slate-400 text-sm" id="bannerSubtitle">Pilih <b id="bannerRemaining" class="text-white">20 slop</b> lagi untuk subsidi ongkir.</p>
+                            <h4 class="text-lg md:text-2xl font-bold mb-1" id="bannerTitle">Target Gratis Ongkir</h4>
+                            <p class="text-slate-400 text-xs md:text-sm" id="bannerSubtitle">Pilih <b id="bannerRemaining" class="text-white">20 slop</b> lagi untuk subsidi ongkir.</p>
                         </div>
                     </div>
                     <div class="w-full md:w-1/2">
@@ -586,7 +366,7 @@
                     <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-slate-400"></i>
                 </div>
                 <div class="flex flex-col sm:flex-row gap-3 w-full lg:w-auto overflow-x-auto no-scrollbar pb-2 lg:pb-0 items-start sm:items-center">
-                    <div id="filterChipsContainer" class="flex gap-2 shrink-0"></div>
+                    <div id="filterChipsContainer" class="flex gap-2 shrink-0 flex-wrap"></div>
                     <div class="relative shrink-0 w-full sm:w-auto">
                         <select id="sortSelect" onchange="applySort(this.value)" class="w-full appearance-none bg-white border border-slate-200 rounded-xl px-5 py-2.5 pr-10 text-xs font-bold text-slate-700 focus:outline-none focus:border-brand-300 shadow-sm cursor-pointer">
                             <option value="name-asc">A-Z</option>
@@ -608,8 +388,8 @@
                 </div>
             </div>
 
-            <!-- PRODUCT GRID DIUBAH MENJADI 2 KOLOM DENGAN CLASS product-grid-compact -->
-            <div id="productGrid" class="product-grid-compact grid grid-cols-2 gap-3 sm:gap-4"></div>
+            <!-- Product Grid (2 kolom mobile, 3 kolom tablet, 4 kolom desktop) -->
+            <div id="productGrid" class="product-grid-compact grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4"></div>
 
             <div id="noProductFound" class="hidden text-center py-20 bg-slate-50 rounded-[2rem] border-2 border-dashed border-slate-200 mt-8">
                 <i class="fa-solid fa-box-open text-5xl text-slate-300 mb-4"></i>
@@ -617,23 +397,23 @@
                 <p class="text-slate-500 mt-2">Coba kata kunci lain atau ubah filter.</p>
             </div>
 
-            <div id="paginationContainer" class="flex justify-center items-center gap-2 mt-12"></div>
+            <div id="paginationContainer" class="flex justify-center items-center gap-2 mt-12 flex-wrap"></div>
         </div>
     </section>
 
-    <!-- Testimonial Slider Upgraded -->
-    <section id="testimoni" class="py-24 bg-[#f8f9fc] relative overflow-hidden">
+    <!-- ======== TESTIMONI ======== -->
+    <section id="testimoni" class="py-16 md:py-24 bg-[#f8f9fc] relative overflow-hidden">
         <div class="absolute top-0 right-0 w-96 h-96 bg-brand-100/40 rounded-full blur-[120px] pointer-events-none"></div>
         <div class="absolute bottom-0 left-0 w-96 h-96 bg-emerald-50 rounded-full blur-[120px] pointer-events-none"></div>
 
         <div class="container mx-auto px-4 md:px-8 max-w-7xl relative z-10">
-            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6 fade-on-scroll">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 md:mb-12 gap-6 fade-on-scroll">
                 <div>
                     <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-100 text-brand-600 font-bold text-xs uppercase tracking-widest mb-4 border border-brand-200">
                         <i class="fa-solid fa-quote-left"></i> Testimoni Mitra
                     </span>
                     <h2 class="text-3xl md:text-5xl font-extrabold text-brand-900 tracking-tight leading-tight">Dipercaya 500+ Toko di Indonesia.</h2>
-                    <p class="text-slate-500 mt-4 text-lg max-w-2xl">Dengarkan langsung pengalaman mitra grosir kami dari berbagai kota.</p>
+                    <p class="text-slate-500 mt-4 text-base md:text-lg max-w-2xl">Dengarkan langsung pengalaman mitra grosir kami dari berbagai kota.</p>
                 </div>
                 <div class="flex items-center gap-4">
                     <div class="flex gap-2">
@@ -643,14 +423,12 @@
                 </div>
             </div>
 
-            <!-- Testimonial Slider Wrapper -->
             <div class="relative fade-on-scroll">
                 <div class="testimonial-slider-container" id="testimonialSlider">
-                    <!-- Card 1 -->
-                    <div class="testimonial-card-slide bg-white rounded-3xl p-8 border border-slate-200 shadow-sm relative flex flex-col justify-between">
+                    <div class="testimonial-card-slide bg-white rounded-3xl p-6 md:p-8 border border-slate-200 shadow-sm relative flex flex-col justify-between">
                         <div>
                             <div class="flex items-center gap-4 mb-5">
-                                <div class="w-14 h-14 rounded-full avatar-gradient-1 shrink-0"><span class="avatar-initial">A</span></div>
+                                <div class="w-12 h-12 md:w-14 md:h-14 rounded-full avatar-gradient-1 shrink-0"><span class="avatar-initial">A</span></div>
                                 <div>
                                     <h4 class="font-extrabold text-brand-900 text-base">Agus Setiawan</h4>
                                     <p class="text-xs text-slate-500 font-medium">Toko Sinar Jaya • Surabaya</p>
@@ -666,12 +444,10 @@
                             <span class="text-emerald-500 font-bold"><i class="fa-solid fa-circle-check"></i> Verified Buyer</span>
                         </div>
                     </div>
-
-                    <!-- Card 2 -->
-                    <div class="testimonial-card-slide bg-white rounded-3xl p-8 border border-slate-200 shadow-sm relative flex flex-col justify-between">
+                    <div class="testimonial-card-slide bg-white rounded-3xl p-6 md:p-8 border border-slate-200 shadow-sm relative flex flex-col justify-between">
                         <div>
                             <div class="flex items-center gap-4 mb-5">
-                                <div class="w-14 h-14 rounded-full avatar-gradient-2 shrink-0"><span class="avatar-initial">B</span></div>
+                                <div class="w-12 h-12 md:w-14 md:h-14 rounded-full avatar-gradient-2 shrink-0"><span class="avatar-initial">B</span></div>
                                 <div>
                                     <h4 class="font-extrabold text-brand-900 text-base">Budi Hartono</h4>
                                     <p class="text-xs text-slate-500 font-medium">CV Maju Bersama • Jakarta</p>
@@ -687,12 +463,10 @@
                             <span class="text-emerald-500 font-bold"><i class="fa-solid fa-circle-check"></i> Verified Buyer</span>
                         </div>
                     </div>
-
-                    <!-- Card 3 -->
-                    <div class="testimonial-card-slide bg-white rounded-3xl p-8 border border-slate-200 shadow-sm relative flex flex-col justify-between">
+                    <div class="testimonial-card-slide bg-white rounded-3xl p-6 md:p-8 border border-slate-200 shadow-sm relative flex flex-col justify-between">
                         <div>
                             <div class="flex items-center gap-4 mb-5">
-                                <div class="w-14 h-14 rounded-full avatar-gradient-3 shrink-0"><span class="avatar-initial">C</span></div>
+                                <div class="w-12 h-12 md:w-14 md:h-14 rounded-full avatar-gradient-3 shrink-0"><span class="avatar-initial">C</span></div>
                                 <div>
                                     <h4 class="font-extrabold text-brand-900 text-base">Citra Dewi</h4>
                                     <p class="text-xs text-slate-500 font-medium">Toko Makmur • Bandung</p>
@@ -708,12 +482,10 @@
                             <span class="text-emerald-500 font-bold"><i class="fa-solid fa-circle-check"></i> Verified Buyer</span>
                         </div>
                     </div>
-
-                    <!-- Card 4 -->
-                    <div class="testimonial-card-slide bg-white rounded-3xl p-8 border border-slate-200 shadow-sm relative flex flex-col justify-between">
+                    <div class="testimonial-card-slide bg-white rounded-3xl p-6 md:p-8 border border-slate-200 shadow-sm relative flex flex-col justify-between">
                         <div>
                             <div class="flex items-center gap-4 mb-5">
-                                <div class="w-14 h-14 rounded-full avatar-gradient-4 shrink-0"><span class="avatar-initial">D</span></div>
+                                <div class="w-12 h-12 md:w-14 md:h-14 rounded-full avatar-gradient-4 shrink-0"><span class="avatar-initial">D</span></div>
                                 <div>
                                     <h4 class="font-extrabold text-brand-900 text-base">Dedi Kurniawan</h4>
                                     <p class="text-xs text-slate-500 font-medium">Toko Berkah • Medan</p>
@@ -729,12 +501,10 @@
                             <span class="text-emerald-500 font-bold"><i class="fa-solid fa-circle-check"></i> Verified Buyer</span>
                         </div>
                     </div>
-
-                    <!-- Card 5 -->
-                    <div class="testimonial-card-slide bg-white rounded-3xl p-8 border border-slate-200 shadow-sm relative flex flex-col justify-between">
+                    <div class="testimonial-card-slide bg-white rounded-3xl p-6 md:p-8 border border-slate-200 shadow-sm relative flex flex-col justify-between">
                         <div>
                             <div class="flex items-center gap-4 mb-5">
-                                <div class="w-14 h-14 rounded-full avatar-gradient-5 shrink-0"><span class="avatar-initial">E</span></div>
+                                <div class="w-12 h-12 md:w-14 md:h-14 rounded-full avatar-gradient-5 shrink-0"><span class="avatar-initial">E</span></div>
                                 <div>
                                     <h4 class="font-extrabold text-brand-900 text-base">Eko Prasetyo</h4>
                                     <p class="text-xs text-slate-500 font-medium">Grosir Sejahtera • Semarang</p>
@@ -751,13 +521,10 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- Fade Gradients for Slider edges -->
                 <div class="absolute top-0 bottom-0 left-0 w-16 bg-gradient-to-r from-[#f8f9fc] to-transparent pointer-events-none hidden md:block"></div>
                 <div class="absolute top-0 bottom-0 right-0 w-16 bg-gradient-to-l from-[#f8f9fc] to-transparent pointer-events-none hidden md:block"></div>
             </div>
 
-            <!-- Add Review Action -->
             <div class="mt-12 flex flex-col items-center text-center fade-on-scroll">
                 <div class="inline-flex items-center gap-3 px-6 py-3 bg-white rounded-full border border-slate-200 shadow-sm mb-6">
                     <div class="flex gap-0.5 text-amber-400">
@@ -773,58 +540,51 @@
         </div>
     </section>
 
-    <!-- FAQ Section -->
-    <section id="faq" class="py-24 bg-white relative">
+    <!-- ======== FAQ ======== -->
+    <section id="faq" class="py-16 md:py-24 bg-white relative">
         <div class="container mx-auto px-4 md:px-8 max-w-4xl">
-            <div class="text-center mb-16 fade-on-scroll">
+            <div class="text-center mb-12 md:mb-16 fade-on-scroll">
                 <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-100 text-brand-600 font-bold text-xs uppercase tracking-widest mb-4 border border-brand-200">
                     <i class="fa-solid fa-circle-question"></i> FAQ
                 </span>
                 <h2 class="text-3xl md:text-5xl font-extrabold text-brand-900 tracking-tight leading-tight">Pertanyaan Umum.</h2>
-                <p class="text-slate-500 mt-4 text-lg max-w-2xl mx-auto">Temukan jawaban cepat untuk pertanyaan seputar layanan kami.</p>
+                <p class="text-slate-500 mt-4 text-base md:text-lg max-w-2xl mx-auto">Temukan jawaban cepat untuk pertanyaan seputar layanan kami.</p>
             </div>
 
             <div class="space-y-4 fade-on-scroll">
-                <details class="faq-item bg-white rounded-2xl border border-slate-200 p-6 shadow-sm hover:border-brand-300 transition-colors">
+                <details class="faq-item bg-white rounded-2xl border border-slate-200 p-4 md:p-6 shadow-sm hover:border-brand-300 transition-colors">
                     <summary class="flex items-center justify-between cursor-pointer list-none">
                         <h3 class="font-extrabold text-brand-900 text-base md:text-lg pr-4">Apa itu sistem "Bayar Setelah Resi Keluar"?</h3>
                         <span class="faq-icon w-8 h-8 rounded-full bg-brand-50 text-brand-600 flex items-center justify-center shrink-0 text-sm"><i class="fa-solid fa-plus"></i></span>
                     </summary>
-                    <div class="faq-content text-slate-600 text-sm leading-relaxed">
-                        Pembayaran baru dilakukan setelah barang sudah masuk ekspedisi dan nomor resi resmi diterbitkan. Anda bisa melacak paket sebelum membayar. Ini bukan COD, melainkan sistem kepercayaan B2B.
-                    </div>
+                    <div class="faq-content text-slate-600 text-sm leading-relaxed">Pembayaran baru dilakukan setelah barang sudah masuk ekspedisi dan nomor resi resmi diterbitkan. Anda bisa melacak paket sebelum membayar. Ini bukan COD, melainkan sistem kepercayaan B2B.</div>
                 </details>
-
-                <details class="faq-item bg-white rounded-2xl border border-slate-200 p-6 shadow-sm hover:border-brand-300 transition-colors">
+                <details class="faq-item bg-white rounded-2xl border border-slate-200 p-4 md:p-6 shadow-sm hover:border-brand-300 transition-colors">
                     <summary class="flex items-center justify-between cursor-pointer list-none">
                         <h3 class="font-extrabold text-brand-900 text-base md:text-lg pr-4">Berapa minimal order untuk gratis ongkir?</h3>
                         <span class="faq-icon w-8 h-8 rounded-full bg-brand-50 text-brand-600 flex items-center justify-center shrink-0 text-sm"><i class="fa-solid fa-plus"></i></span>
                     </summary>
-                    <div class="faq-content text-slate-600 text-sm leading-relaxed">
-                        Minimal order 1 bal (20 slop) sudah mendapatkan subsidi ongkir dari gudang kami. Berlaku untuk seluruh Indonesia melalui ekspedisi cargo. Bisa campur antara katalog R2 dan Resmi.
-                    </div>
+                    <div class="faq-content text-slate-600 text-sm leading-relaxed">Minimal order 1 bal (20 slop) sudah mendapatkan subsidi ongkir dari gudang kami. Berlaku untuk seluruh Indonesia melalui ekspedisi cargo. Bisa campur antara katalog R2 dan Resmi.</div>
                 </details>
-
-                <details class="faq-item bg-white rounded-2xl border border-slate-200 p-6 shadow-sm hover:border-brand-300 transition-colors">
+                <details class="faq-item bg-white rounded-2xl border border-slate-200 p-4 md:p-6 shadow-sm hover:border-brand-300 transition-colors">
                     <summary class="flex items-center justify-between cursor-pointer list-none">
                         <h3 class="font-extrabold text-brand-900 text-base md:text-lg pr-4">Apakah R2 Nusantara distributor resmi?</h3>
                         <span class="faq-icon w-8 h-8 rounded-full bg-brand-50 text-brand-600 flex items-center justify-center shrink-0 text-sm"><i class="fa-solid fa-plus"></i></span>
                     </summary>
-                    <div class="faq-content text-slate-600 text-sm leading-relaxed">
-                        Ya, R2 Nusantara adalah gudang distributor resmi yang dipercaya oleh 500+ toko. Semua produk dijamin asli dan fresh dari pabrik.
-                    </div>
+                    <div class="faq-content text-slate-600 text-sm leading-relaxed">Ya, R2 Nusantara adalah gudang distributor resmi yang dipercaya oleh 500+ toko. Semua produk dijamin asli dan fresh dari pabrik.</div>
                 </details>
             </div>
         </div>
     </section>
 
-    <!-- Enterprise Footer Upgrade (sama seperti sebelumnya, tidak diubah) -->
+    <!-- ======== FOOTER ======== -->
     <footer class="footer-enterprise relative overflow-hidden" role="contentinfo">
         <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-500 via-emerald-400 to-blue-500"></div>
         <div class="absolute top-40 right-40 w-[500px] h-[500px] bg-brand-500/10 rounded-full blur-[120px] pointer-events-none"></div>
 
-        <div class="container mx-auto px-4 md:px-8 max-w-7xl pt-16 pb-8 relative z-10">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-x-8 gap-y-12">
+        <div class="container mx-auto px-4 md:px-8 max-w-7xl pt-12 md:pt-16 pb-8 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 md:gap-12">
+                <!-- Brand -->
                 <div class="lg:col-span-3 flex flex-col gap-6">
                     <div class="flex items-center gap-3">
                         <div class="relative">
@@ -837,14 +597,12 @@
                         </div>
                     </div>
                     <p class="text-xs leading-relaxed text-slate-400">Gudang distributor rokok resmi dan B2B terpercaya. Ekosistem transaksi aman dengan transparansi total bagi mitra bisnis grosir seluruh Indonesia.</p>
-
                     <div class="flex gap-2">
                         <a href="#" aria-label="Instagram" class="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-white/10 transition-colors text-slate-300 hover:text-white"><i class="fa-brands fa-instagram text-sm"></i></a>
                         <a href="#" aria-label="Facebook" class="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-white/10 transition-colors text-slate-300 hover:text-white"><i class="fa-brands fa-facebook-f text-sm"></i></a>
                         <a href="https://wa.me/6285715905079" aria-label="WhatsApp" class="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-[#25D366]/20 hover:border-[#25D366]/50 hover:text-[#25D366] transition-colors text-slate-300"><i class="fa-brands fa-whatsapp text-sm"></i></a>
                         <a href="#" aria-label="TikTok" class="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-white/10 transition-colors text-slate-300 hover:text-white"><i class="fa-brands fa-tiktok text-sm"></i></a>
                     </div>
-
                     <div class="flex flex-wrap gap-2 mt-2">
                         <span class="badge-pill"><i class="fa-solid fa-shield-halved text-emerald-400"></i> Secure</span>
                         <span class="badge-pill"><i class="fa-solid fa-circle-check text-blue-400"></i> Verified</span>
@@ -852,6 +610,7 @@
                     </div>
                 </div>
 
+                <!-- Tim Sales -->
                 <div class="lg:col-span-3 flex flex-col">
                     <h4 class="footer-title">TIM SALES KAMI</h4>
                     <div class="flex flex-col gap-3">
@@ -866,7 +625,6 @@
                             </div>
                             <a href="https://wa.me/6285715905079" target="_blank" class="wa-circle" aria-label="Chat Sales 1"><i class="fa-brands fa-whatsapp"></i></a>
                         </div>
-
                         <div class="sales-card">
                             <div class="flex items-center gap-3">
                                 <div class="sales-avatar bg-purple-600">S2</div>
@@ -878,7 +636,6 @@
                             </div>
                             <a href="https://wa.me/6283169386894" target="_blank" class="wa-circle" aria-label="Chat Sales 2"><i class="fa-brands fa-whatsapp"></i></a>
                         </div>
-
                         <div class="sales-card">
                             <div class="flex items-center gap-3">
                                 <div class="sales-avatar bg-cyan-600">S3</div>
@@ -896,6 +653,7 @@
                     </div>
                 </div>
 
+                <!-- Informasi Bisnis & Navigasi -->
                 <div class="lg:col-span-3 flex flex-col gap-8">
                     <div>
                         <h4 class="footer-title">INFORMASI BISNIS</h4>
@@ -910,7 +668,6 @@
                             </li>
                         </ul>
                     </div>
-
                     <div class="grid grid-cols-2 gap-4">
                         <div>
                             <h4 class="footer-title">NAVIGASI</h4>
@@ -934,6 +691,7 @@
                     </div>
                 </div>
 
+                <!-- Jangkauan & Newsletter -->
                 <div class="lg:col-span-3 flex flex-col gap-6">
                     <div>
                         <h4 class="footer-title">JANGKAUAN PENGIRIMAN</h4>
@@ -948,7 +706,6 @@
                             <span class="region-tag">Maluku</span>
                         </div>
                     </div>
-
                     <div class="newsletter-box">
                         <div class="flex items-center gap-3 mb-3">
                             <div class="w-8 h-8 rounded-full bg-blue-500/20 text-blue-400 flex items-center justify-center shrink-0">
@@ -969,6 +726,7 @@
 
             <div class="footer-divider"></div>
 
+            <!-- Legal & Maps -->
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
                 <div class="bg-white/5 border border-white/10 rounded-2xl p-6 md:p-8 flex flex-col justify-center relative overflow-hidden group shadow-lg">
                     <div class="absolute -right-10 -top-10 w-32 h-32 bg-emerald-500/10 rounded-full blur-2xl group-hover:bg-emerald-500/20 transition-all"></div>
@@ -986,26 +744,14 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="relative h-[250px] lg:h-auto rounded-2xl overflow-hidden border border-white/10 group shadow-lg bg-slate-900">
-                    <iframe 
-                        src="https://maps.google.com/maps?q=Desa%20Karangduren,%20Kec.%20Pakisaji,%20Kab.%20Malang&t=&z=14&ie=UTF8&iwloc=&output=embed" 
-                        width="100%" 
-                        height="100%" 
-                        style="border:0;" 
-                        allowfullscreen="" 
-                        loading="lazy" 
-                        referrerpolicy="no-referrer-when-downgrade"
-                        class="absolute inset-0 w-full h-full filter grayscale-[30%] opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700 pointer-events-auto">
-                    </iframe>
+                    <iframe src="https://maps.google.com/maps?q=Desa%20Karangduren,%20Kec.%20Pakisaji,%20Kab.%20Malang&t=&z=14&ie=UTF8&iwloc=&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="absolute inset-0 w-full h-full filter grayscale-[30%] opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700 pointer-events-auto"></iframe>
                     <div class="absolute top-4 left-4 right-4 bg-[#050a12]/85 backdrop-blur-md text-white px-4 py-3 rounded-xl border border-white/10 text-xs flex flex-col sm:flex-row gap-3 items-start sm:items-center justify-between z-10 shadow-xl pointer-events-none">
                         <div>
                             <div class="font-bold text-sm text-emerald-400 mb-0.5"><i class="fa-solid fa-location-dot"></i> Gudang Fisik R2 Nusantara</div>
                             <div class="text-[10px] text-slate-300">Jl. Raya Karangduren, Pakisaji, Kab. Malang</div>
                         </div>
-                        <a href="https://maps.app.goo.gl/5mSJ3xwNS54W9ht48?g_st=ac" target="_blank" class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-4 py-2 rounded-lg transition-colors shrink-0 flex items-center gap-2 pointer-events-auto shadow-lg shadow-blue-900/50">
-                            Buka di Maps <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                        </a>
+                        <a href="https://maps.app.goo.gl/5mSJ3xwNS54W9ht48?g_st=ac" target="_blank" class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-4 py-2 rounded-lg transition-colors shrink-0 flex items-center gap-2 pointer-events-auto shadow-lg shadow-blue-900/50">Buka di Maps <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                     </div>
                 </div>
             </div>
@@ -1044,7 +790,7 @@
     </footer>
 </main>
 
-<!-- CART SIDEBAR -->
+<!-- ======== CART SIDEBAR ======== -->
 <div id="cartOverlay" class="fixed inset-0 bg-brand-900/60 backdrop-blur-sm z-[70] hidden opacity-0 transition-opacity duration-300 modal-hardware" onclick="toggleCart()" aria-hidden="true"></div>
 <div id="cartSidebar" class="fixed top-0 right-0 h-full w-full sm:w-[480px] bg-[#f8f9fc] z-[80] transform translate-x-full transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] shadow-2xl flex flex-col border-l border-white/20 modal-hardware" aria-hidden="true">
     <div class="px-6 py-5 bg-white border-b border-slate-100 flex items-center justify-between z-10 shadow-sm">
@@ -1072,18 +818,16 @@
     </div>
 </div>
 
-<!-- FULLSCREEN CHECKOUT MODAL UPGRADE -->
+<!-- ======== CHECKOUT MODAL ======== -->
 <div id="checkoutModalOverlay" class="fixed inset-0 bg-brand-900/80 backdrop-blur-md z-[100] opacity-0 pointer-events-none transition-opacity duration-250 ease-out modal-hardware" aria-hidden="true" onclick="closeCheckoutModal()"></div>
 <div id="checkoutModal" class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[800px] bg-[#f8f9fc] rounded-3xl shadow-[0_32px_64px_rgba(0,0,0,0.3)] z-[101] opacity-0 scale-95 pointer-events-none transition-all duration-250 ease-out flex flex-col overflow-hidden max-h-[90vh] md:max-h-[85vh] border border-white/20 modal-hardware" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-    <!-- Modal Header -->
     <div class="px-6 py-5 bg-white border-b border-slate-100 flex items-center justify-between sticky top-0 z-30">
         <h2 id="modalTitle" class="text-xl font-extrabold text-brand-900 flex items-center gap-3">
             <div class="w-8 h-8 bg-brand-100 text-brand-600 rounded-full flex items-center justify-center text-sm"><i class="fa-solid fa-clipboard-check"></i></div>
             Informasi Pengiriman
         </h2>
-        <button onclick="closeCheckoutModal()" class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-500 hover:bg-slate-200 transition-colors" aria-label="Tutup Checkout"><i class="fa-solid fa-xmark"></i></button>
+        <button onclick="closeCheckoutModal()" class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-500 hover:bg-slate-200 transition-colors"><i class="fa-solid fa-xmark"></i></button>
     </div>
-    <!-- Progress Step Indicator -->
     <div class="bg-white border-b border-slate-100 px-6 py-4 sticky top-[73px] z-20">
         <div class="flex items-center justify-between relative max-w-sm mx-auto">
             <div class="absolute left-0 top-1/2 -translate-y-1/2 w-full h-1 bg-slate-100 rounded-full z-0">
@@ -1103,10 +847,8 @@
             </div>
         </div>
     </div>
-    <!-- Scrollable Form Body -->
     <div class="flex-1 overflow-y-auto p-6 scroll-smooth form-scroll-area" id="modalFormScroll">
         <form id="checkoutFormFull" onsubmit="event.preventDefault(); submitOrder();">
-            <!-- STEP 1: DATA PRIBADI -->
             <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm mb-6" data-step="1">
                 <h3 class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4 flex items-center gap-2"><i class="fa-solid fa-user text-brand-400"></i> Data Personal</h3>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -1125,7 +867,6 @@
                     </div>
                 </div>
             </div>
-            <!-- STEP 2: ALAMAT LENGKAP -->
             <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm mb-6" data-step="2">
                 <h3 class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4 flex items-center gap-2"><i class="fa-solid fa-map-location-dot text-brand-400"></i> Detail Alamat</h3>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
@@ -1162,7 +903,6 @@
                     </div>
                 </div>
             </div>
-            <!-- STEP 3: KONFIRMASI PENGIRIMAN & PEMBAYARAN -->
             <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm" data-step="3">
                 <h3 class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4 flex items-center gap-2"><i class="fa-solid fa-truck-fast text-brand-400"></i> Opsi Pengiriman & Pembayaran</h3>
                 <div class="space-y-4">
@@ -1210,7 +950,6 @@
             </div>
         </form>
     </div>
-    <!-- Modal Footer (Sticky) -->
     <div class="p-4 md:px-6 md:py-4 bg-white border-t border-slate-100 sticky bottom-0 z-30 flex flex-col sm:flex-row gap-3 items-center justify-between">
         <div class="hidden sm:block text-brand-900 font-bold">
             <span class="text-xs text-slate-500 font-medium block">Total Tagihan:</span>
@@ -1226,7 +965,7 @@
     </div>
 </div>
 
-<!-- ADD REVIEW MODAL -->
+<!-- ======== REVIEW MODAL ======== -->
 <div id="reviewModalOverlay" class="fixed inset-0 bg-brand-900/80 backdrop-blur-md z-[100] opacity-0 pointer-events-none transition-opacity duration-250 ease-out modal-hardware" onclick="closeReviewModal()"></div>
 <div id="reviewModal" class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[500px] bg-white rounded-3xl shadow-[0_32px_64px_rgba(0,0,0,0.3)] z-[101] opacity-0 scale-95 pointer-events-none transition-all duration-250 ease-out flex flex-col modal-hardware p-6">
     <div class="flex items-center justify-between mb-6">
@@ -1255,1057 +994,20 @@
             <div>
                 <textarea id="reviewText" placeholder="Bagaimana pengalaman Anda berbelanja di R2 Nusantara?" rows="3" required class="w-full px-4 py-3 bg-[#f8f9fc] border border-slate-200 rounded-xl focus:border-brand-400 focus:outline-none text-sm font-medium resize-none"></textarea>
             </div>
-            <button type="submit" id="submitReviewBtn" class="w-full py-3.5 bg-brand-900 text-white rounded-xl font-bold text-sm hover:bg-brand-700 transition-all ripple">
-                Kirim Ulasan
-            </button>
+            <button type="submit" id="submitReviewBtn" class="w-full py-3.5 bg-brand-900 text-white rounded-xl font-bold text-sm hover:bg-brand-700 transition-all ripple">Kirim Ulasan</button>
         </div>
     </form>
 </div>
 
-<!-- Back to Top Button -->
+<!-- ======== BACK TO TOP & TOAST ======== -->
 <button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0, behavior:'smooth'})" aria-label="Kembali ke atas">
     <i class="fa-solid fa-arrow-up text-sm"></i>
 </button>
-
-<!-- Toast Container -->
 <div id="toast-container" class="fixed top-24 right-4 flex flex-col gap-2 pointer-events-none z-[110]"></div>
 
-<!-- Main Application Script -->
-<script>
-(function(){
-    'use strict';
-
-    // ============================================
-    // SMART CONTEXT FOR CHATLING BOT
-    // ============================================
-    window.R2Context = {
-        init: function(){
-            this.device = /Mobile|Android|iP(hone|od|ad)/i.test(navigator.userAgent) ? 'Mobile' : 'Desktop';
-            this.language = navigator.language || navigator.userLanguage;
-            this.referrer = document.referrer || 'Direct';
-            this.isReturning = localStorage.getItem('r2_visited') ? true : false;
-            localStorage.setItem('r2_visited', 'true');
-        },
-        getCartSummary: function(){
-            if(!window.__cart) return 'Keranjang Kosong';
-            var total = window.__cart.reduce(function(s, i){ return s + i.qty; }, 0);
-            return total + ' Slop';
-        }
-    };
-    window.R2Context.init();
-
-    // Config global yang akan dibaca Chatling
-    window.chtlConfig = {
-        chatbotId: "4136889914"
-    };
-
-    // Lazy load Chatling script optimization for Core Web Vitals
-    window.addEventListener('load', function(){
-        setTimeout(function(){
-            var script = document.createElement('script');
-            script.async = true;
-            script.dataset.id = "4136889914";
-            script.id = "chtl-script";
-            script.type = "text/javascript";
-            script.src = "https://chatling.ai/js/embed.js";
-            document.body.appendChild(script);
-        }, 3000);
-    });
-
-    // ============================================
-    // PRODUCT DATA — DUAL CATALOG UPGRADED
-    // ============================================
-    var productsR2 = [
-        { id:'r2-1', name:"Absolute Bold", price: 118000},
-        { id:'r2-2', name:"Age Pro", price: 65000},
-        { id:'r2-3', name:"Alpha Bold", price: 76000},
-        { id:'r2-4', name:"Alpha Menthol", price: 76000},
-        { id:'r2-5', name:"Apache Bold", price: 145000},
-        { id:'r2-6', name:"Apache Mild", price: 160000},
-        { id:'r2-7', name:"Aroma Kretek", price: 69000},
-        { id:'r2-8', name:"Aroma Slim", price: 72000},
-        { id:'r2-9', name:"Arrow Bold", price: 115000},
-        { id:'r2-10', name:"Arrow Menthol", price: 112000},
-        { id:'r2-11', name:"Astro Bold", price: 73000},
-        { id:'r2-12', name:"Astro Filter", price: 71000},
-        { id:'r2-13', name:"Balveer", price: 80000},
-        { id:'r2-14', name:"Bani Click", price: 85000},
-        { id:'r2-15', name:"Bigben", price: 80000},
-        { id:'r2-16', name:"Bima Kretek", price: 85000},
-        { id:'r2-17', name:"Blitz Menthol", price: 114000},
-        { id:'r2-18', name:"Blitz Red", price: 70000},
-        { id:'r2-19', name:"Booster", price: 80000},
-        { id:'r2-20', name:"Borneo Filter", price: 98000},
-        { id:'r2-21', name:"Bos Mild", price: 130000},
-        { id:'r2-22', name:"Brand Djati", price: 85000},
-        { id:'r2-23', name:"Brand X Bold", price: 68000},
-        { id:'r2-24', name:"Brand X Menthol", price: 68000},
-        { id:'r2-25', name:"Brand X Mild", price: 140000},
-        { id:'r2-26', name:"Bravo 12", price: 68000},
-        { id:'r2-27', name:"Bravo Kretek", price: 88000},
-        { id:'r2-28', name:"Bravo Menthol", price: 69000},
-        { id:'r2-29', name:"Bravo Mild", price: 118000},
-        { id:'r2-30', name:"Bravo Red", price: 69000},
-        { id:'r2-31', name:"Bull Black", price: 73000},
-        { id:'r2-32', name:"Bull Bold", price: 105000},
-        { id:'r2-33', name:"Bull Filter", price: 70000},
-        { id:'r2-34', name:"CA Bold", price: 110000},
-        { id:'r2-35', name:"Cahaya Pro", price: 85000},
-        { id:'r2-36', name:"Cakra Kretek", price: 90000},
-        { id:'r2-37', name:"Canyon Bold", price: 75000},
-        { id:'r2-38', name:"Canyon Menthol", price: 75000},
-        { id:'r2-39', name:"Cappuccino Classic", price: 80000},
-        { id:'r2-40', name:"Cappuccino Gold", price: 85000},
-        { id:'r2-41', name:"Cappuccino King", price: 82000},
-        { id:'r2-42', name:"Cartel", price: 80000},
-        { id:'r2-43', name:"Cesa", price: 80000},
-        { id:'r2-44', name:"Coffee Stick", price: 80000},
-        { id:'r2-45', name:"Connext", price: 80000},
-        { id:'r2-46', name:"Country Bold", price: 112000},
-        { id:'r2-47', name:"Dalill Fine", price: 75000},
-        { id:'r2-48', name:"Dalill Menthol", price: 77000},
-        { id:'r2-49', name:"Diplomat Bold", price: 150000},
-        { id:'r2-50', name:"Djanda", price: 85000},
-        { id:'r2-51', name:"DTE", price: 80000},
-        { id:'r2-52', name:"ERA", price: 90000},
-        { id:'r2-53', name:"Escort Bold 12", price: 145000},
-        { id:'r2-54', name:"Escort Filter", price: 132000},
-        { id:'r2-55', name:"Excel Click", price: 85000},
-        { id:'r2-56', name:"Falcon Bold", price: 72000},
-        { id:'r2-57', name:"Falcon Filter", price: 70000},
-        { id:'r2-58', name:"Feloz", price: 85000},
-        { id:'r2-59', name:"Filter King", price: 94000},
-        { id:'r2-60', name:"Flash Bold", price: 120000},
-        { id:'r2-61', name:"Flash Menthol", price: 74000},
-        { id:'r2-62', name:"GA Bold", price: 80000},
-        { id:'r2-63', name:"Gan Bold", price: 80000},
-        { id:'r2-64', name:"Gess Bold", price: 80000},
-        { id:'r2-65', name:"Gico Filter", price: 68000},
-        { id:'r2-66', name:"Gico Kretek", price: 82000},
-        { id:'r2-67', name:"Grendel Filter", price: 115000},
-        { id:'r2-68', name:"Gudang Baru Bold", price: 135000},
-        { id:'r2-69', name:"Gudang Baru Regular", price: 115000},
-        { id:'r2-70', name:"Gunung Mas", price: 85000},
-        { id:'r2-71', name:"H Mind Bold", price: 78000},
-        { id:'r2-72', name:"H Mind Menthol", price: 78000},
-        { id:'r2-73', name:"H&D", price: 85000},
-        { id:'r2-74', name:"Hero Bold", price: 108000},
-        { id:'r2-75', name:"Hmild Menthol", price: 128000},
-        { id:'r2-76', name:"IB", price: 80000},
-        { id:'r2-77', name:"Jarvis Red", price: 108000},
-        { id:'r2-78', name:"Jeco", price: 85000},
-        { id:'r2-79', name:"Kalbaco", price: 85000},
-        { id:'r2-80', name:"King Garet", price: 80000},
-        { id:'r2-81', name:"King Hall", price: 85000},
-        { id:'r2-82', name:"Konser", price: 85000},
-        { id:'r2-83', name:"Link Bold", price: 80000},
-        { id:'r2-84', name:"Liox", price: 80000},
-        { id:'r2-85', name:"Lois Bold", price: 116000},
-        { id:'r2-86', name:"Lois Filter", price: 102000},
-        { id:'r2-87', name:"Luffman", price: 78000},
-        { id:'r2-88', name:"Luffman Black", price: 70000},
-        { id:'r2-89', name:"Luffman Merah", price: 68000},
-        { id:'r2-90', name:"Luffman Menthols", price: 70000},
-        { id:'r2-91', name:"Luffman Silver", price: 68000},
-        { id:'r2-92', name:"Luxio Filter", price: 72000},
-        { id:'r2-93', name:"Luxio Menthol", price: 74000},
-        { id:'r2-94', name:"Luxio Mild", price: 124000},
-        { id:'r2-95', name:"Luxio Red", price: 120000},
-        { id:'r2-96', name:"Mak Nyus Mild", price: 96000},
-        { id:'r2-97', name:"Mami Baru", price: 85000},
-        { id:'r2-98', name:"Manchester", price: 90000},
-        { id:'r2-99', name:"Manchester Blue", price: 128000},
-        { id:'r2-100', name:"Manchester Ice Crush", price: 85000},
-        { id:'r2-101', name:"Manchester Red", price: 125000},
-        { id:'r2-102', name:"Manchester Ruby", price: 82000},
-        { id:'r2-103', name:"Manggo Top", price: 80000},
-        { id:'r2-104', name:"Martel", price: 85000},
-        { id:'r2-105', name:"Maxus Bold", price: 74000},
-        { id:'r2-106', name:"Maxus Menthol", price: 74000},
-        { id:'r2-107', name:"Maxus Mild", price: 126000},
-        { id:'r2-108', name:"MBS", price: 85000},
-        { id:'r2-109', name:"Milano Blue", price: 75000},
-        { id:'r2-110', name:"Milano London", price: 78000},
-        { id:'r2-111', name:"Milano Menthol", price: 135000},
-        { id:'r2-112', name:"Milano Red", price: 75000},
-        { id:'r2-113', name:"Naxan Bold", price: 80000},
-        { id:'r2-114', name:"Naxan Click", price: 85000},
-        { id:'r2-115', name:"Nayan Bold", price: 80000},
-        { id:'r2-116', name:"Nayan Click", price: 85000},
-        { id:'r2-117', name:"Neo Mild", price: 220000},
-        { id:'r2-118', name:"Neo Mild Menthol", price: 230000},
-        { id:'r2-119', name:"Nevada Blue", price: 72000},
-        { id:'r2-120', name:"Nevada Red", price: 72000},
-        { id:'r2-121', name:"Nexus Bold", price: 73000},
-        { id:'r2-122', name:"Nexus Menthol", price: 73000},
-        { id:'r2-123', name:"NJ Bold", price: 92000},
-        { id:'r2-124', name:"Novem", price: 85000},
-        { id:'r2-125', name:"Oris Mild", price: 130000},
-        { id:'r2-126', name:"Oris Red", price: 125000},
-        { id:'r2-127', name:"Plimsoll Filter", price: 98000},
-        { id:'r2-128', name:"PMS", price: 85000},
-        { id:'r2-129', name:"Premier Bold", price: 122000},
-        { id:'r2-130', name:"Premiere Bold", price: 76000},
-        { id:'r2-131', name:"Premiere Menthol", price: 76000},
-        { id:'r2-132', name:"PS Djeram", price: 70000},
-        { id:'r2-133', name:"QQ", price: 80000},
-        { id:'r2-134', name:"R9 Bold", price: 80000},
-        { id:'r2-135', name:"Rakata Bold", price: 110000},
-        { id:'r2-136', name:"Rastel", price: 80000},
-        { id:'r2-137', name:"RC", price: 80000},
-        { id:'r2-138', name:"Rocker", price: 80000},
-        { id:'r2-139', name:"Rokok Nusantara King", price: 90000},
-        { id:'r2-140', name:"Saga", price: 80000},
-        { id:'r2-141', name:"San Marino", price: 90000},
-        { id:'r2-142', name:"Sembilan Wali", price: 95000},
-        { id:'r2-143', name:"Seven Bold", price: 76000},
-        { id:'r2-144', name:"Seven Menthol", price: 76000},
-        { id:'r2-145', name:"Slava", price: 80000},
-        { id:'r2-146', name:"Smith", price: 75000},
-        { id:'r2-147', name:"Smith Bold", price: 74000},
-        { id:'r2-148', name:"Smith Classic", price: 72000},
-        { id:'r2-149', name:"Smith Filter", price: 145000},
-        { id:'r2-150', name:"Smith Menthol", price: 72000},
-        { id:'r2-151', name:"Smith Mild", price: 165000},
-        { id:'r2-152', name:"Star Mild", price: 160000},
-        { id:'r2-153', name:"Star Mild Menthol", price: 138000},
-        { id:'r2-154', name:"Star Pro", price: 105000},
-        { id:'r2-155', name:"Stigma", price: 75000},
-        { id:'r2-156', name:"Tabaco", price: 85000},
-        { id:'r2-157', name:"Titan Bold", price: 115000},
-        { id:'r2-158', name:"Toracino", price: 80000},
-        { id:'r2-159', name:"Tropis Bold", price: 102000},
-        { id:'r2-160', name:"Urban Bold", price: 77000},
-        { id:'r2-161', name:"Urban Filter", price: 75000},
-        { id:'r2-162', name:"Van Bold", price: 80000},
-        { id:'r2-163', name:"Vega Kretek", price: 75000},
-        { id:'r2-164', name:"Volt Bold", price: 112000},
-        { id:'r2-165', name:"Win Click", price: 85000},
-        { id:'r2-166', name:"Win Kretek", price: 120000},
-        { id:'r2-167', name:"Win Mild", price: 165000}
-    ].map(function(p){ p.category = 'r2'; return p; });
-
-    var productsResmi = [
-        { id:'resmi-1', name:"A Mild 12", price: 185000, segment:'C', segmentName:'Mild/ Rendah Tar'},
-        { id:'resmi-2', name:"A Mild 16", price: 245000, segment:'C', segmentName:'Mild/ Rendah Tar'},
-        { id:'resmi-3', name:"A Mild Menthol", price: 260000, segment:'C', segmentName:'Mild/ Rendah Tar'},
-        { id:'resmi-4', name:"Dji Sam Soe Filter", price: 220000, segment:'A', segmentName:'Kretek Filter Premium'},
-        { id:'resmi-5', name:"Dji Sam Soe Kretek (SKT)", price: 200000, segment:'E', segmentName:'Kretek Tangan/ Legacy'},
-        { id:'resmi-6', name:"Dji Sam Soe Magnum Mild", price: 300000, segment:'C', segmentName:'Mild/ Rendah Tar'},
-        { id:'resmi-7', name:"Marlboro Gold", price: 310000, segment:'D', segmentName:'SPM Internasional'},
-        { id:'resmi-8', name:"Marlboro Ice Blast", price: 320000, segment:'D', segmentName:'SPM Internasional'},
-        { id:'resmi-9', name:"Marlboro Menthol", price: 310000, segment:'D', segmentName:'SPM Internasional'},
-        { id:'resmi-10', name:"Marlboro Red", price: 300000, segment:'D', segmentName:'SPM Internasional'},
-        { id:'resmi-11', name:"Sampoerna Hijau (SKT)", price: 140000, segment:'E', segmentName:'Kretek Tangan/ Legacy'},
-        { id:'resmi-12', name:"Sampoerna Kretek", price: 140000, segment:'E', segmentName:'Kretek Tangan/ Legacy'},
-        { id:'resmi-13', name:"Sampoerna Mild 12", price: 185000, segment:'C', segmentName:'Mild/ Rendah Tar'},
-        { id:'resmi-14', name:"Sampoerna Mild 16", price: 245000, segment:'C', segmentName:'Mild/ Rendah Tar'},
-        { id:'resmi-15', name:"Sampoerna Mild Menthol", price: 260000, segment:'C', segmentName:'Mild/ Rendah Tar'},
-        { id:'resmi-16', name:"Sampoerna U Bold", price: 230000, segment:'B', segmentName:'Kretek Filter Reguler'},
-        { id:'resmi-17', name:"Sampoerna U Mild", price: 210000, segment:'C', segmentName:'Mild/ Rendah Tar'},
-        { id:'resmi-18', name:"Sampoerna U Mild 12", price: 175000, segment:'C', segmentName:'Mild/ Rendah Tar'},
-        { id:'resmi-19', name:"Gudang Garam Djaja (SKT)", price: 160000, segment:'E', segmentName:'Kretek Tangan/ Legacy'},
-        { id:'resmi-20', name:"Gudang Garam Filter", price: 155000, segment:'B', segmentName:'Kretek Filter Reguler'},
-        { id:'resmi-21', name:"Gudang Garam Inter", price: 185000, segment:'B', segmentName:'Kretek Filter Reguler'},
-        { id:'resmi-22', name:"Gudang Garam Merah", price: 180000, segment:'B', segmentName:'Kretek Filter Reguler'},
-        { id:'resmi-23', name:"Gudang Garam Signature Mild", price: 240000, segment:'C', segmentName:'Mild/ Rendah Tar'},
-        { id:'resmi-24', name:"Surya 12", price: 170000, segment:'B', segmentName:'Kretek Filter Reguler'},
-        { id:'resmi-25', name:"Surya 16", price: 230000, segment:'A', segmentName:'Kretek Filter Premium'},
-        { id:'resmi-26', name:"Surya Pro 12", price: 160000, segment:'B', segmentName:'Kretek Filter Reguler'},
-        { id:'resmi-27', name:"Surya Pro 16", price: 200000, segment:'B', segmentName:'Kretek Filter Reguler'},
-        { id:'resmi-28', name:"Surya Promild", price: 225000, segment:'C', segmentName:'Mild/ Rendah Tar'},
-        { id:'resmi-29', name:"Djarum 76", price: 135000, segment:'B', segmentName:'Kretek Filter Reguler'},
-        { id:'resmi-30', name:"Djarum 76 Menthol", price: 150000, segment:'B', segmentName:'Kretek Filter Reguler'},
-        { id:'resmi-31', name:"Djarum Black", price: 210000, segment:'A', segmentName:'Kretek Filter Premium'},
-        { id:'resmi-32', name:"Djarum Black Menthol", price: 230000, segment:'A', segmentName:'Kretek Filter Premium'},
-        { id:'resmi-33', name:"Djarum Coklat (SKT)", price: 150000, segment:'E', segmentName:'Kretek Tangan/ Legacy'},
-        { id:'resmi-34', name:"Djarum Super (SKT)", price: 190000, segment:'E', segmentName:'Kretek Tangan/ Legacy'},
-        { id:'resmi-35', name:"Djarum Super 12", price: 215000, segment:'B', segmentName:'Kretek Filter Reguler'},
-        { id:'resmi-36', name:"Djarum Super Mild", price: 230000, segment:'C', segmentName:'Mild/ Rendah Tar'},
-        { id:'resmi-37', name:"Djarum Super Mild 12", price: 190000, segment:'C', segmentName:'Mild/ Rendah Tar'},
-        { id:'resmi-38', name:"Djarum Super Mild Menthol", price: 240000, segment:'C', segmentName:'Mild/ Rendah Tar'},
-        { id:'resmi-39', name:"LA Bold", price: 215000, segment:'C', segmentName:'Mild/ Rendah Tar'},
-        { id:'resmi-40', name:"LA Lights 12", price: 180000, segment:'C', segmentName:'Mild/ Rendah Tar'},
-        { id:'resmi-41', name:"LA Lights 16", price: 220000, segment:'C', segmentName:'Mild/ Rendah Tar'},
-        { id:'resmi-42', name:"LA Lights Menthol", price: 240000, segment:'C', segmentName:'Mild/ Rendah Tar'},
-        { id:'resmi-43', name:"Bentoel Biru", price: 160000, segment:'B', segmentName:'Kretek Filter Reguler'},
-        { id:'resmi-44', name:"Bentoel Filter", price: 150000, segment:'B', segmentName:'Kretek Filter Reguler'},
-        { id:'resmi-45', name:"Bentoel Mild", price: 180000, segment:'C', segmentName:'Mild/ Rendah Tar'},
-        { id:'resmi-46', name:"Bentoel Sejati (SKT)", price: 130000, segment:'E', segmentName:'Kretek Tangan/ Legacy'},
-        { id:'resmi-47', name:"Camel Filter", price: 220000, segment:'D', segmentName:'SPM Internasional'},
-        { id:'resmi-48', name:"Camel Yellow", price: 210000, segment:'D', segmentName:'SPM Internasional'},
-        { id:'resmi-49', name:"Dunhill Filter", price: 230000, segment:'D', segmentName:'SPM Internasional'},
-        { id:'resmi-50', name:"Dunhill Mild", price: 240000, segment:'D', segmentName:'SPM Internasional'},
-        { id:'resmi-51', name:"Lucky Strike Filter", price: 220000, segment:'D', segmentName:'SPM Internasional'},
-        { id:'resmi-52', name:"Pall Mall Filter", price: 200000, segment:'D', segmentName:'SPM Internasional'},
-        { id:'resmi-53', name:"Class Filter", price: 120000, segment:'B', segmentName:'Kretek Filter Reguler'},
-        { id:'resmi-54', name:"Class Mild 12", price: 175000, segment:'C', segmentName:'Mild/ Rendah Tar'},
-        { id:'resmi-55', name:"Class Mild 16", price: 210000, segment:'C', segmentName:'Mild/ Rendah Tar'},
-        { id:'resmi-56', name:"Class Mild Menthol", price: 220000, segment:'C', segmentName:'Mild/ Rendah Tar'},
-        { id:'resmi-57', name:"Clas Mild 12", price: 175000, segment:'C', segmentName:'Mild/ Rendah Tar'},
-        { id:'resmi-58', name:"Clas Mild 16", price: 210000, segment:'C', segmentName:'Mild/ Rendah Tar'},
-        { id:'resmi-59', name:"Minak Djinggo Original", price: 95000, segment:'E', segmentName:'Kretek Tangan/ Legacy'},
-        { id:'resmi-60', name:"Minak Djinggo Rempah", price: 95000, segment:'E', segmentName:'Kretek Tangan/ Legacy'},
-        { id:'resmi-61', name:"Galan Filter", price: 100000, segment:'B', segmentName:'Kretek Filter Reguler'},
-        { id:'resmi-62', name:"Galan Kretek", price: 100000, segment:'E', segmentName:'Kretek Tangan/ Legacy'},
-        { id:'resmi-63', name:"Wismilak Filter", price: 110000, segment:'B', segmentName:'Kretek Filter Reguler'},
-        { id:'resmi-64', name:"Wismilak Kretek (SKT)", price: 105000, segment:'E', segmentName:'Kretek Tangan/ Legacy'},
-        { id:'resmi-65', name:"Wismilak Mild", price: 140000, segment:'C', segmentName:'Mild/ Rendah Tar'},
-        { id:'resmi-66', name:"Wismilak Special", price: 110000, segment:'B', segmentName:'Kretek Filter Reguler'}
-    ].map(function(p){ p.category = 'resmi'; return p; });
-
-    var allProducts = productsR2.concat(productsResmi);
-    var activeCatalog = 'r2';
-    var cart = [];
-    window.__cart = cart;
-    var currentPage = 1;
-    // ===== ITEMS PER PAGE DIUBAH MENJADI 8 =====
-    var itemsPerPage = 8;
-    var activeFilter = 'all';
-    var activeSort = 'name-asc';
-    var searchTerm = '';
-
-    // ============================================
-    // UTILITIES
-    // ============================================
-    function formatRupiah(n){
-        return new Intl.NumberFormat('id-ID', { style:'currency', currency:'IDR', maximumFractionDigits: 0 }).format(n);
-    }
-
-    function getR2Tier(price){
-        if(price <= 76000) return 'hemat';
-        if(price >= 90000) return 'premium';
-        return 'populer';
-    }
-
-    function getCartQty(id){
-        var i = cart.find(function(x){ return x.id === id; });
-        return i ? i.qty : 0;
-    }
-
-    function showToast(m, type){
-        type = type || 'success';
-        var c = document.getElementById('toast-container');
-        if(!c) return;
-        var to = document.createElement('div');
-        var iconClass = type === 'success' ? 'fa-check-circle text-emerald-400' : type === 'error' ? 'fa-circle-exclamation text-red-400' : 'fa-circle-info text-brand-400';
-        to.className = 'bg-brand-900 text-white px-5 py-3 rounded-xl shadow-xl flex items-center gap-3 transform translate-x-full transition-transform duration-300 border border-white/10 modal-hardware';
-        to.innerHTML = '<i class="fa-solid ' + iconClass + '"></i><span class="font-bold text-xs">' + m + '</span>';
-        c.appendChild(to);
-        setTimeout(function(){ to.classList.remove('translate-x-full'); }, 10);
-        setTimeout(function(){
-            to.classList.add('translate-x-full');
-            setTimeout(function(){ to.remove(); }, 300);
-        }, 2500);
-    }
-
-    function escapeHtml(str){
-        var div = document.createElement('div');
-        div.textContent = str;
-        return div.innerHTML;
-    }
-
-    // ============================================
-    // CATALOG FUNCTIONS (sama seperti sebelumnya, tidak diubah)
-    // ============================================
-    window.switchCatalog = function(cat){
-        if(cat !== 'r2' && cat !== 'resmi') return;
-        activeCatalog = cat;
-        activeFilter = 'all';
-        currentPage = 1;
-        searchTerm = '';
-        var searchInput = document.getElementById('searchInput');
-        if(searchInput) searchInput.value = '';
-        document.querySelectorAll('.catalog-tab').forEach(function(tab){
-            var isActive = tab.dataset.tab === cat;
-            tab.classList.toggle('active', isActive);
-            tab.setAttribute('aria-selected', isActive ? 'true' : 'false');
-        });
-        updateCatalogInfoBanner();
-        buildFilterChips();
-        var indicator = document.getElementById('activeFilterIndicator');
-        if(indicator) indicator.classList.add('hidden');
-        renderProductDisplay();
-    };
-
-    function updateCatalogInfoBanner(){
-        var banner = document.getElementById('catalogInfoBanner');
-        var icon = document.getElementById('catalogInfoIcon');
-        var title = document.getElementById('catalogInfoTitle');
-        var desc = document.getElementById('catalogInfoDesc');
-        if(!banner) return;
-        if(activeCatalog === 'r2'){
-            banner.classList.remove('resmi');
-            if(icon) icon.className = 'fa-solid fa-fire-flame-curved text-lg';
-            if(title) title.textContent = 'Katalog R2 Nusantara';
-            if(desc) desc.textContent = '167 merek lokal pilihan dengan harga kompetitif untuk margin maksimal.';
-        } else {
-            banner.classList.add('resmi');
-            if(icon) icon.className = 'fa-solid fa-certificate text-lg';
-            if(title) title.textContent = 'Katalog Resmi — Brand Nasional & Internasional';
-            if(desc) desc.textContent = '66 merek resmi terbagi dalam 5 segmen. Harga grosir per slop.';
-        }
-    }
-
-    function buildFilterChips(){
-        var container = document.getElementById('filterChipsContainer');
-        if(!container) return;
-        if(activeCatalog === 'r2'){
-            container.innerHTML = '<button onclick="applyFilter(\'all\')" id="chip-all" class="filter-chip px-5 py-2.5 rounded-xl text-xs font-bold transition-all bg-brand-900 text-white shadow-md">Semua</button>' +
-                '<button onclick="applyFilter(\'hemat\')" id="chip-hemat" class="filter-chip px-5 py-2.5 rounded-xl text-xs font-bold transition-all bg-white text-slate-600 border border-slate-200 hover:border-emerald-300 hover:text-emerald-600"><i class="fa-solid fa-piggy-bank text-[10px]"></i> Hemat</button>' +
-                '<button onclick="applyFilter(\'populer\')" id="chip-populer" class="filter-chip px-5 py-2.5 rounded-xl text-xs font-bold transition-all bg-white text-slate-600 border border-slate-200 hover:border-brand-300 hover:text-brand-600"><i class="fa-solid fa-fire text-[10px]"></i> Populer</button>' +
-                '<button onclick="applyFilter(\'premium\')" id="chip-premium" class="filter-chip px-5 py-2.5 rounded-xl text-xs font-bold transition-all bg-white text-slate-600 border border-slate-200 hover:border-violet-300 hover:text-violet-600"><i class="fa-solid fa-crown text-[10px]"></i> Premium</button>';
-        } else {
-            container.innerHTML = '<button onclick="applyFilter(\'all\')" id="chip-all" class="filter-chip px-5 py-2.5 rounded-xl text-xs font-bold transition-all bg-brand-900 text-white shadow-md">Semua</button>' +
-                '<button onclick="applyFilter(\'segA\')" id="chip-segA" class="filter-chip filter-chip-resmi px-5 py-2.5 rounded-xl text-xs font-bold transition-all bg-white text-slate-600 border border-slate-200 hover:border-amber-300 hover:text-amber-700"><i class="fa-solid fa-gem text-[10px]"></i> Segmen A</button>' +
-                '<button onclick="applyFilter(\'segB\')" id="chip-segB" class="filter-chip filter-chip-resmi px-5 py-2.5 rounded-xl text-xs font-bold transition-all bg-white text-slate-600 border border-slate-200 hover:border-blue-300 hover:text-blue-700"><i class="fa-solid fa-star text-[10px]"></i> Segmen B</button>' +
-                '<button onclick="applyFilter(\'segC\')" id="chip-segC" class="filter-chip filter-chip-resmi px-5 py-2.5 rounded-xl text-xs font-bold transition-all bg-white text-slate-600 border border-slate-200 hover:border-emerald-300 hover:text-emerald-700"><i class="fa-solid fa-leaf text-[10px]"></i> Segmen C</button>' +
-                '<button onclick="applyFilter(\'segD\')" id="chip-segD" class="filter-chip filter-chip-resmi px-5 py-2.5 rounded-xl text-xs font-bold transition-all bg-white text-slate-600 border border-slate-200 hover:border-pink-300 hover:text-pink-700"><i class="fa-solid fa-globe text-[10px]"></i> Segmen D</button>' +
-                '<button onclick="applyFilter(\'segE\')" id="chip-segE" class="filter-chip filter-chip-resmi px-5 py-2.5 rounded-xl text-xs font-bold transition-all bg-white text-slate-600 border border-slate-200 hover:border-indigo-300 hover:text-indigo-700"><i class="fa-solid fa-hand-holding-heart text-[10px]"></i> Segmen E</button>';
-        }
-    }
-
-    function getProcessedProducts(){
-        var source = activeCatalog === 'r2' ? productsR2 : productsResmi;
-        var r = source.slice();
-        if(searchTerm) r = r.filter(function(p){ return p.name.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1; });
-        if(activeCatalog === 'r2'){
-            if(activeFilter !== 'all') r = r.filter(function(p){ return getR2Tier(p.price) === activeFilter; });
-        } else {
-            if(activeFilter !== 'all'){
-                var seg = activeFilter.replace('seg', '');
-                r = r.filter(function(p){ return p.segment === seg; });
-            }
-        }
-        r.sort(function(a, b){
-            if(activeSort === 'price-asc') return a.price - b.price;
-            if(activeSort === 'price-desc') return b.price - a.price;
-            return a.name.localeCompare(b.name);
-        });
-        return r;
-    }
-
-    // ============================================
-    // RENDER PRODUCTS — DENGAN CARD COMPACT
-    // ============================================
-    function renderProductDisplay(){
-        var processed = getProcessedProducts();
-        var tp = Math.ceil(processed.length / itemsPerPage) || 1;
-        if(currentPage > tp) currentPage = tp;
-        var pp = processed.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
-        var g = document.getElementById('productGrid');
-        if(!g) return;
-        g.innerHTML = '';
-        if(!pp.length){
-            var np = document.getElementById('noProductFound');
-            if(np) np.classList.remove('hidden');
-            renderPagination(tp);
-            return;
-        }
-        var np = document.getElementById('noProductFound');
-        if(np) np.classList.add('hidden');
-        pp.forEach(function(p, idx){
-            var c = document.createElement('div');
-            var isResmi = p.category === 'resmi';
-            // Class card lebih compact: rounded-2xl p-4
-            c.className = 'product-card bg-white rounded-2xl p-4 border border-slate-200 card-premium card-glow relative overflow-hidden flex flex-col justify-between group card-enter' + (isResmi ? ' product-card-resmi' : '');
-            c.style.animationDelay = (idx * 40) + 'ms';
-            c.addEventListener('mousemove', function(e){
-                var rect = c.getBoundingClientRect();
-                c.style.setProperty('--mouse-x', (e.clientX - rect.left) + 'px');
-                c.style.setProperty('--mouse-y', (e.clientY - rect.top) + 'px');
-            });
-            var badge = '';
-            if(isResmi){
-                var seg = p.segment;
-                var segLabels = { A:'PREMIUM', B:'REGULER', C:'MILD', D:'INTERNATIONAL', E:'LEGACY' };
-                var segIcons = { A:'gem', B:'star', C:'leaf', D:'globe', E:'hand-holding-heart' };
-                badge = '<span class="segment-badge segment-' + seg + '"><i class="fa-solid fa-' + segIcons[seg] + '"></i> SEG ' + seg + ' · ' + segLabels[seg] + '</span>';
-            } else {
-                var ti = getR2Tier(p.price);
-                if(ti === 'hemat') badge = '<span class="segment-badge tier-hemat"><i class="fa-solid fa-piggy-bank"></i> HEMAT</span>';
-                else if(ti === 'premium') badge = '<span class="segment-badge tier-premium"><i class="fa-solid fa-crown"></i> PREMIUM</span>';
-                else badge = '<span class="segment-badge tier-populer"><i class="fa-solid fa-fire"></i> POPULER</span>';
-            }
-            var q = getCartQty(p.id);
-            // Tombol lebih compact: mt-3 py-2, text-xs
-            var btn = q > 0
-                ? '<div class="flex items-center justify-between border-2 border-brand-500 rounded-lg bg-brand-50 p-0.5 mt-3 stepper-enter"><button onclick="window.__updateQty(\'' + p.id + '\',-1)" class="w-8 h-8 rounded-lg bg-white text-brand-600 font-bold shadow-sm hover:bg-slate-50 active:scale-95 transition-transform">-</button><span class="font-bold text-brand-900">' + q + '</span><button onclick="window.__updateQty(\'' + p.id + '\',1)" class="w-8 h-8 rounded-lg bg-brand-500 text-white font-bold shadow-sm hover:bg-brand-600 active:scale-95 transition-transform">+</button></div>'
-                : '<button onclick="window.__addCart(\'' + p.id + '\')" class="w-full mt-3 py-2 bg-slate-100 text-brand-900 font-bold rounded-lg hover:bg-brand-900 hover:text-white transition-colors text-xs flex items-center justify-center gap-1"><i class="fa-solid fa-plus text-[10px]"></i> Tambah</button>';
-            var catIndicator = isResmi
-                ? '<span class="inline-flex items-center gap-1 text-[8px] font-bold text-amber-700 bg-amber-50 px-1.5 py-0.5 rounded border border-amber-200"><i class="fa-solid fa-certificate text-[7px]"></i> RESMI</span>'
-                : '<span class="inline-flex items-center gap-1 text-[8px] font-bold text-brand-700 bg-brand-50 px-1.5 py-0.5 rounded border border-brand-200"><i class="fa-solid fa-fire-flame-curved text-[7px]"></i> R2</span>';
-            c.innerHTML = '<div class="relative z-10"><div class="flex justify-between items-start mb-2 gap-2">' + badge + '<div class="flex flex-col items-end gap-0.5 shrink-0">' + catIndicator + '<span class="text-slate-300 text-[8px] font-mono font-bold">' + p.id.toUpperCase() + '</span></div></div><h3 class="product-name text-sm font-extrabold text-brand-900 leading-tight mb-0.5 group-hover:text-brand-500 transition-colors">' + escapeHtml(p.name) + '</h3>' + (isResmi ? '<p class="text-[8px] text-slate-500 font-medium mb-1 italic">' + escapeHtml(p.segmentName) + '</p>' : '') + '<p class="product-price text-lg font-black text-brand-900 font-mono tracking-tighter">' + formatRupiah(p.price) + '<span class="text-[8px] text-slate-400 font-sans font-medium ml-0.5">/slop</span></p></div><div class="relative z-10">' + btn + '</div>';
-            g.appendChild(c);
-        });
-        renderPagination(tp);
-        updateActiveFilterIndicator();
-    }
-
-    function updateActiveFilterIndicator(){
-        var indicator = document.getElementById('activeFilterIndicator');
-        var text = document.getElementById('activeFilterText');
-        if(!indicator || !text) return;
-        if(activeFilter === 'all'){
-            indicator.classList.add('hidden');
-            return;
-        }
-        indicator.classList.remove('hidden');
-        var labels = {
-            'hemat':'Hemat (≤ Rp 76.000)',
-            'populer':'Populer (Rp 77.000 - 89.000)',
-            'premium':'Premium (≥ Rp 90.000)',
-            'segA':'Segmen A — Kretek Filter Premium',
-            'segB':'Segmen B — Kretek Filter Reguler',
-            'segC':'Segmen C — Mild/ Rendah Tar',
-            'segD':'Segmen D — SPM Internasional',
-            'segE':'Segmen E — Kretek Tangan/ Legacy'
-        };
-        text.textContent = 'Filter: ' + (labels[activeFilter] || activeFilter);
-    }
-
-    function renderPagination(tp){
-        var c = document.getElementById('paginationContainer');
-        if(!c) return;
-        if(tp <= 1){ c.innerHTML = ''; return; }
-        var h = '';
-        for(var i = 1; i <= tp; i++){
-            h += '<button onclick="window.__goToPage(' + i + ')" class="w-10 h-10 rounded-xl text-sm font-bold transition-all ' + (i === currentPage ? 'bg-brand-900 text-white shadow-md' : 'bg-white border border-slate-200 text-slate-600 hover:border-brand-400') + '">' + i + '</button>';
-        }
-        c.innerHTML = h;
-    }
-
-    window.__goToPage = function(p){
-        currentPage = p;
-        renderProductDisplay();
-        document.getElementById('produk').scrollIntoView({ behavior:'smooth', block:'start' });
-    };
-
-    window.applyFilter = function(f){
-        activeFilter = f;
-        currentPage = 1;
-        document.querySelectorAll('.filter-chip').forEach(function(c){
-            if(c.classList.contains('filter-chip-resmi')){
-                c.classList.remove('filter-chip-resmi', 'segment-active');
-                c.classList.add('bg-white', 'text-slate-600', 'border', 'border-slate-200');
-            } else {
-                c.classList.remove('bg-brand-900', 'text-white', 'shadow-md');
-                c.classList.add('bg-white', 'text-slate-600', 'border', 'border-slate-200');
-            }
-        });
-        var active = document.getElementById('chip-' + f);
-        if(active){
-            if(active.classList.contains('filter-chip-resmi') || f.indexOf('seg') === 0){
-                active.classList.add('segment-active');
-                active.classList.remove('bg-white', 'text-slate-600');
-            } else {
-                active.classList.add('bg-brand-900', 'text-white', 'shadow-md');
-                active.classList.remove('bg-white', 'text-slate-600');
-            }
-        }
-        renderProductDisplay();
-    };
-
-    window.applySort = function(s){
-        activeSort = s;
-        currentPage = 1;
-        renderProductDisplay();
-    };
-
-    // ============================================
-    // CART LOGIC (sama seperti sebelumnya)
-    // ============================================
-    window.__addCart = function(id){
-        var p = allProducts.find(function(x){ return x.id === id; });
-        if(!p) return;
-        var existing = cart.find(function(x){ return x.id === id; });
-        if(existing) existing.qty += 1;
-        else cart.push({ id: p.id, name: p.name, price: p.price, qty: 1, category: p.category });
-        updateCartUI();
-        showToast("Berhasil ditambahkan");
-    };
-
-    window.__updateQty = function(id, ch){
-        var i = cart.find(function(x){ return x.id === id; });
-        if(i){
-            i.qty += ch;
-            if(i.qty < 1) cart = cart.filter(function(x){ return x.id !== id; });
-        }
-        updateCartUI();
-    };
-
-    function updateCartUI(){
-        var t = cart.reduce(function(s, i){ return s + i.qty; }, 0);
-        var tp = cart.reduce(function(s, i){ return s + (i.price * i.qty); }, 0);
-        var badge = document.getElementById('cartBadge');
-        if(badge){
-            badge.innerText = t;
-            badge.classList.toggle('scale-0', t === 0);
-        }
-        var bannerQty = document.getElementById('bannerQty');
-        var progressFill = document.getElementById('progressFill');
-        var bannerTitle = document.getElementById('bannerTitle');
-        var bannerSubtitle = document.getElementById('bannerSubtitle');
-        var banner = document.getElementById('shippingProgressBanner');
-        if(bannerQty) bannerQty.innerText = t;
-        if(progressFill) progressFill.style.width = Math.min((t / 20) * 100, 100) + '%';
-        if(t >= 20){
-            if(bannerTitle) bannerTitle.innerText = '🎉 Target Tercapai';
-            if(bannerSubtitle) bannerSubtitle.innerHTML = 'Anda mendapat <b class="text-emerald-300">GRATIS ONGKIR</b>';
-            if(banner){ banner.classList.add('bg-emerald-600'); banner.classList.remove('bg-brand-900'); }
-        } else {
-            if(bannerTitle) bannerTitle.innerText = 'Target Gratis Ongkir';
-            if(bannerSubtitle) bannerSubtitle.innerHTML = 'Pilih <b class="text-emerald-300">' + (20 - t) + ' slop</b> lagi untuk subsidi.';
-            if(banner){ banner.classList.remove('bg-emerald-600'); banner.classList.add('bg-brand-900'); }
-        }
-        var cc = document.getElementById('cartItemsContainer');
-        var cs = document.getElementById('cartSummary');
-        if(!cart.length){
-            if(cc) cc.innerHTML = '<div class="h-full flex flex-col items-center justify-center text-center opacity-50"><i class="fa-solid fa-cart-shopping text-6xl text-slate-300 mb-4"></i><p class="font-bold text-slate-600">Keranjang Kosong</p></div>';
-            if(cs) cs.classList.add('hidden');
-        } else {
-            if(cs) cs.classList.remove('hidden');
-            var totalItemsDisplay = document.getElementById('totalItemsDisplay');
-            var totalPriceDisplay = document.getElementById('totalPriceDisplay');
-            if(totalItemsDisplay) totalItemsDisplay.innerText = t;
-            if(totalPriceDisplay) totalPriceDisplay.innerText = formatRupiah(tp);
-            if(cc){
-                cc.innerHTML = cart.map(function(i){
-                    var catBadge = i.category === 'resmi'
-                        ? '<span class="inline-flex items-center gap-1 text-[9px] font-bold text-amber-700 bg-amber-50 px-1.5 py-0.5 rounded border border-amber-200"><i class="fa-solid fa-certificate text-[8px]"></i> RESMI</span>'
-                        : '<span class="inline-flex items-center gap-1 text-[9px] font-bold text-brand-700 bg-brand-50 px-1.5 py-0.5 rounded border border-brand-200"><i class="fa-solid fa-fire-flame-curved text-[8px]"></i> R2</span>';
-                    return '<div class="bg-white p-4 rounded-2xl border border-slate-100 shadow-sm flex gap-4"><div class="flex-1 min-w-0"><div class="flex items-center gap-2 mb-1"><span class="font-bold text-sm text-brand-900 truncate">' + escapeHtml(i.name) + '</span>' + catBadge + '</div><div class="text-brand-500 font-bold font-mono text-sm">' + formatRupiah(i.price) + '</div></div><div class="flex items-center border border-slate-200 rounded-lg h-9 shrink-0"><button onclick="window.__updateQty(\'' + i.id + '\',-1)" class="w-9 h-full font-bold text-slate-500 hover:bg-slate-50 transition-colors">-</button><span class="w-8 text-center text-xs font-bold font-mono">' + i.qty + '</span><button onclick="window.__updateQty(\'' + i.id + '\',1)" class="w-9 h-full font-bold text-brand-500 hover:bg-slate-50 transition-colors">+</button></div></div>';
-                }).join('');
-            }
-        }
-        var modalPriceDisplay = document.getElementById('modalTotalPrice');
-        if(modalPriceDisplay) modalPriceDisplay.innerText = formatRupiah(tp);
-        renderProductDisplay();
-    }
-
-    window.toggleCart = function(){
-        var o = document.getElementById('cartOverlay');
-        var s = document.getElementById('cartSidebar');
-        if(!o || !s) return;
-        if(s.classList.contains('translate-x-full')){
-            o.classList.remove('hidden');
-            setTimeout(function(){ o.classList.remove('opacity-0'); }, 10);
-            s.classList.remove('translate-x-full');
-            document.body.style.overflow = 'hidden';
-        } else {
-            o.classList.add('opacity-0');
-            s.classList.add('translate-x-full');
-            setTimeout(function(){ o.classList.add('hidden'); }, 300);
-            document.body.style.overflow = '';
-        }
-    };
-
-    // ============================================
-    // CHECKOUT MODAL LOGIC (sama seperti sebelumnya, tidak diubah)
-    // ============================================
-    window.openCheckoutModal = function(){
-        toggleCart();
-        setTimeout(function(){
-            var o = document.getElementById('checkoutModalOverlay');
-            var m = document.getElementById('checkoutModal');
-            if(o) o.classList.add('overlay-enter');
-            if(m) m.classList.add('modal-enter');
-            document.body.style.overflow = 'hidden';
-            updateProgressStep(1);
-            setTimeout(function(){
-                var n = document.getElementById('newCustName');
-                if(n) n.focus();
-                validateCheckoutForm();
-            }, 300);
-        }, 300);
-    };
-
-    window.closeCheckoutModal = function(){
-        var o = document.getElementById('checkoutModalOverlay');
-        var m = document.getElementById('checkoutModal');
-        if(o) o.classList.remove('overlay-enter');
-        if(m) m.classList.remove('modal-enter');
-        document.body.style.overflow = '';
-    };
-
-    document.addEventListener('keydown', function(e){
-        var m = document.getElementById('checkoutModal');
-        var r = document.getElementById('reviewModal');
-        if(m && m.classList.contains('modal-enter') && e.key === 'Escape') closeCheckoutModal();
-        if(r && r.classList.contains('modal-enter') && e.key === 'Escape') closeReviewModal();
-    });
-
-    const formInputs = document.querySelectorAll('#checkoutFormFull input, #checkoutFormFull textarea, #checkoutFormFull select');
-    formInputs.forEach((input, index) => {
-        input.addEventListener('keydown', function(e){
-            if(e.key === 'Enter' && input.tagName !== 'TEXTAREA'){
-                e.preventDefault();
-                if(index < formInputs.length - 1) formInputs[index + 1].focus();
-            }
-        });
-        input.addEventListener('focus', function(){
-            var stepGroup = input.closest('[data-step]');
-            if(stepGroup) updateProgressStep(parseInt(stepGroup.getAttribute('data-step')));
-        });
-        input.addEventListener('input', validateCheckoutForm);
-        input.addEventListener('change', validateCheckoutForm);
-        input.addEventListener('blur', validateCheckoutForm);
-    });
-
-    function updateProgressStep(stepNum){
-        let indicators = [document.getElementById('step1Indicator'), document.getElementById('step2Indicator'), document.getElementById('step3Indicator')];
-        let line = document.getElementById('stepProgressLine');
-        indicators.forEach((ind, idx) => {
-            if(!ind) return;
-            let numCircle = ind.querySelector('div');
-            let textSpan = ind.querySelector('span');
-            numCircle.className = "w-7 h-7 rounded-full text-xs font-bold flex items-center justify-center transition-colors duration-300 border-2 border-white ring-2 ring-slate-100 step-indicator" + (idx + 1 === stepNum ? " active shadow-sm" : (idx + 1 < stepNum ? " completed shadow-sm" : " bg-slate-100 text-slate-400"));
-            textSpan.className = "text-[9px] font-bold uppercase tracking-widest" + (idx + 1 === stepNum ? " text-brand-900" : (idx + 1 < stepNum ? " text-emerald-500" : " text-slate-400"));
-        });
-        let widthPercentage = stepNum === 1 ? 0 : stepNum === 2 ? 50 : 100;
-        if(line) line.style.width = widthPercentage + "%";
-    }
-
-    var phoneInput = document.getElementById('newCustPhone');
-    if(phoneInput){
-        phoneInput.addEventListener('input', function(e){
-            var v = e.target.value.replace(/\D/g, '');
-            if(v.startsWith('62')) v = v.substring(2);
-            if(v.startsWith('0')) v = v.substring(1);
-            var match = v.match(/(\d{0,3})(\d{0,4})(\d{0,5})/);
-            if(match){
-                var formatted = !match[2] ? match[1] : match[1] + ' ' + match[2] + (match[3] ? ' ' + match[3] : '');
-                e.target.value = formatted.substring(0, 15);
-            } else {
-                e.target.value = v;
-            }
-        });
-    }
-
-    function showError(fieldId, errorId, message){
-        var f = document.getElementById(fieldId);
-        var e = document.getElementById(errorId);
-        if(f){ f.classList.add('form-field-error'); f.classList.remove('field-valid'); }
-        if(e){
-            if(message){
-                var s = e.querySelector('span');
-                if(s) s.textContent = message;
-            }
-            e.classList.add('show');
-        }
-    }
-
-    function clearError(fieldId, errorId){
-        var f = document.getElementById(fieldId);
-        var e = document.getElementById(errorId);
-        if(f){ f.classList.remove('form-field-error'); f.classList.add('field-valid'); }
-        if(e) e.classList.remove('show');
-    }
-
-    function validateCheckoutForm(){
-        var isValid = true;
-        var name = document.getElementById('newCustName');
-        if(name && name.value.trim().length >= 2){
-            clearError('newCustName', 'newErrName');
-        } else {
-            if(name && name.value.trim().length > 0) showError('newCustName', 'newErrName', 'Minimal 2 karakter');
-            isValid = false;
-        }
-        var phone = document.getElementById('newCustPhone');
-        var phoneClean = phone ? phone.value.replace(/\D/g, '') : '';
-        if(phoneClean && /^8[1-9]\d{6,11}$/.test(phoneClean)){
-            clearError('newCustPhone', 'newErrPhone');
-        } else {
-            if(phoneClean) showError('newCustPhone', 'newErrPhone', 'Nomor tidak valid');
-            isValid = false;
-        }
-        var alamat = document.getElementById('newAlamat');
-        if(alamat && alamat.value.trim().length >= 20){
-            clearError('newAlamat', 'newErrAlamat');
-        } else {
-            if(alamat && alamat.value.trim().length > 0) showError('newAlamat', 'newErrAlamat', 'Minimal 20 karakter');
-            isValid = false;
-        }
-        var reqFields = ['newProvinsi', 'newKota', 'newKecamatan', 'newKelurahan', 'newKodePos', 'newEkspedisi', 'newMetode', 'newAdmin'];
-        reqFields.forEach(function(id){
-            var el = document.getElementById(id);
-            if(!el || !el.value.trim()) isValid = false;
-        });
-        var btn = document.getElementById('finalCheckoutBtn');
-        if(btn){
-            if(isValid){
-                btn.removeAttribute('disabled');
-            } else {
-                btn.setAttribute('disabled', 'true');
-            }
-        }
-        return isValid;
-    }
-
-    window.submitOrder = function(){
-        if(!validateCheckoutForm()){
-            showToast('Lengkapi formulir dengan benar', 'error');
-            return;
-        }
-        var fName = document.getElementById('newCustName');
-        var fPhone = document.getElementById('newCustPhone');
-        var fProvinsi = document.getElementById('newProvinsi');
-        var fKota = document.getElementById('newKota');
-        var fKec = document.getElementById('newKecamatan');
-        var fKel = document.getElementById('newKelurahan');
-        var fPos = document.getElementById('newKodePos');
-        var fAlamat = document.getElementById('newAlamat');
-        var fPatokan = document.getElementById('newPatokan');
-        var fEkspedisi = document.getElementById('newEkspedisi');
-        var fMetode = document.getElementById('newMetode');
-        var fAdmin = document.getElementById('newAdmin');
-        var btn = document.getElementById('finalCheckoutBtn');
-        var btnText = document.getElementById('finalBtnText');
-        var btnIcon = document.getElementById('finalBtnIcon');
-        btn.classList.add('checkout-btn-loading');
-        btnText.textContent = 'Memproses...';
-        btnIcon.style.display = 'none';
-        setTimeout(function(){
-            btn.classList.remove('checkout-btn-loading');
-            btn.classList.add('checkout-success');
-            btnText.textContent = 'Membuka WhatsApp...';
-            btnIcon.className = 'fa-solid fa-check text-lg';
-            btnIcon.style.display = '';
-            var phoneClean = fPhone.value.replace(/\D/g, '');
-            var waNumber = fAdmin.value;
-            var total = cart.reduce((s, i) => s + i.qty, 0);
-            var r2Items = cart.filter(i => i.category === 'r2');
-            var resmiItems = cart.filter(i => i.category === 'resmi');
-            var fullAddress = fAlamat.value.trim() + ' (Patokan: ' + (fPatokan.value.trim() || '-') + ')\n' + 'Kel: ' + fKel.value.trim() + ', Kec: ' + fKec.value.trim() + '\n' + fKota.value.trim() + ', ' + fProvinsi.value.trim() + ' - ' + fPos.value.trim();
-            var m = '📝 *ORDER R2 NUSANTARA (ENTERPRISE)*\n\n';
-            m += '👤 *Nama:* ' + fName.value.trim() + '\n';
-            m += '📱 *No. HP:* +62 ' + fPhone.value.trim() + '\n';
-            m += '📍 *Alamat Pengiriman:*\n' + fullAddress + '\n\n';
-            m += '🚚 *Ekspedisi:* ' + fEkspedisi.value + '\n';
-            m += '💳 *Pembayaran:* ' + fMetode.value + '\n\n';
-            if(r2Items.length > 0){
-                m += '*🔥 KATALOG R2:*\n';
-                r2Items.forEach(i => { m += '• ' + i.name + ' — ' + i.qty + ' slop\n'; });
-                m += '\n';
-            }
-            if(resmiItems.length > 0){
-                m += '*🏅 KATALOG RESMI:*\n';
-                resmiItems.forEach(i => { m += '• ' + i.name + ' — ' + i.qty + ' slop\n'; });
-                m += '\n';
-            }
-            m += '*Total Order:* ' + total + ' Slop\n';
-            m += '*Status Ongkir:* ' + (total >= 20 ? '✅ Gratis Ongkir' : 'Reguler');
-            setTimeout(function(){
-                window.open('https://wa.me/' + waNumber + '?text=' + encodeURIComponent(m), '_blank');
-                cart = [];
-                window.__cart = cart;
-                updateCartUI();
-                closeCheckoutModal();
-                document.getElementById('checkoutFormFull').reset();
-                btn.classList.remove('checkout-success');
-                btnText.textContent = 'Konfirmasi Pesanan';
-                btnIcon.className = 'fa-brands fa-whatsapp text-lg';
-                validateCheckoutForm();
-                showToast('Pesanan berhasil dilanjutkan! 🎉');
-            }, 800);
-        }, 1500);
-    };
-
-    // ============================================
-    // TESTIMONIAL SLIDER (sama)
-    // ============================================
-    var slider = document.getElementById('testimonialSlider');
-    var prevBtn = document.getElementById('sliderPrevBtn');
-    var nextBtn = document.getElementById('sliderNextBtn');
-    if(slider && prevBtn && nextBtn){
-        let isDown = false;
-        let startX;
-        let scrollLeft;
-        slider.addEventListener('mousedown', (e) => {
-            isDown = true;
-            slider.style.scrollSnapType = 'none';
-            startX = e.pageX - slider.offsetLeft;
-            scrollLeft = slider.scrollLeft;
-        });
-        slider.addEventListener('mouseleave', () => {
-            isDown = false;
-            slider.style.scrollSnapType = 'x mandatory';
-        });
-        slider.addEventListener('mouseup', () => {
-            isDown = false;
-            slider.style.scrollSnapType = 'x mandatory';
-        });
-        slider.addEventListener('mousemove', (e) => {
-            if(!isDown) return;
-            e.preventDefault();
-            const x = e.pageX - slider.offsetLeft;
-            const walk = (x - startX) * 2;
-            slider.scrollLeft = scrollLeft - walk;
-        });
-        function getScrollAmount(){
-            var card = slider.querySelector('.testimonial-card-slide');
-            return card ? card.offsetWidth + 24 : 350;
-        }
-        nextBtn.addEventListener('click', () => {
-            slider.scrollBy({ left: getScrollAmount(), behavior:'smooth' });
-        });
-        prevBtn.addEventListener('click', () => {
-            slider.scrollBy({ left: -getScrollAmount(), behavior:'smooth' });
-        });
-        var autoSlide = setInterval(() => {
-            if(!isDown){
-                if(slider.scrollLeft + slider.clientWidth >= slider.scrollWidth - 10){
-                    slider.scrollTo({ left: 0, behavior:'smooth' });
-                } else {
-                    slider.scrollBy({ left: getScrollAmount(), behavior:'smooth' });
-                }
-            }
-        }, 4000);
-        slider.addEventListener('mouseenter', () => clearInterval(autoSlide));
-    }
-
-    // ============================================
-    // REVIEW MODAL (sama)
-    // ============================================
-    window.openReviewModal = function(){
-        var o = document.getElementById('reviewModalOverlay');
-        var m = document.getElementById('reviewModal');
-        if(o) o.classList.add('overlay-enter');
-        if(m) m.classList.add('modal-enter');
-        document.body.style.overflow = 'hidden';
-    };
-
-    window.closeReviewModal = function(){
-        var o = document.getElementById('reviewModalOverlay');
-        var m = document.getElementById('reviewModal');
-        if(o) o.classList.remove('overlay-enter');
-        if(m) m.classList.remove('modal-enter');
-        document.body.style.overflow = '';
-        setTimeout(() => {
-            document.getElementById('reviewForm').reset();
-            setRating(5);
-        }, 300);
-    };
-
-    window.setRating = function(val){
-        document.getElementById('reviewRating').value = val;
-        var stars = document.querySelectorAll('#starRatingSelector i');
-        stars.forEach(s => {
-            if(parseInt(s.getAttribute('data-rating')) <= val){
-                s.classList.add('text-amber-400');
-                s.classList.remove('text-slate-200');
-            } else {
-                s.classList.remove('text-amber-400');
-                s.classList.add('text-slate-200');
-            }
-        });
-    };
-
-    window.submitReview = function(){
-        var btn = document.getElementById('submitReviewBtn');
-        var name = document.getElementById('reviewName').value;
-        var store = document.getElementById('reviewStore').value;
-        var text = document.getElementById('reviewText').value;
-        var rating = document.getElementById('reviewRating').value;
-        btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Memproses...';
-        btn.classList.add('opacity-80', 'pointer-events-none');
-        setTimeout(() => {
-            var starsHtml = '';
-            for(let i = 0; i < 5; i++){
-                starsHtml += i < rating ? '<i class="fa-solid fa-star"></i>' : '<i class="fa-solid fa-star text-slate-200"></i>';
-            }
-            var initial = name.charAt(0).toUpperCase();
-            var newCard = document.createElement('div');
-            newCard.className = 'testimonial-card-slide bg-white rounded-3xl p-8 border border-slate-200 shadow-sm relative flex flex-col justify-between';
-            newCard.innerHTML = `
-                <div>
-                    <div class="flex items-center gap-4 mb-5">
-                        <div class="w-14 h-14 rounded-full avatar-gradient-9 shrink-0"><span class="avatar-initial">${initial}</span></div>
-                        <div>
-                            <h4 class="font-extrabold text-brand-900 text-base">${escapeHtml(name)}</h4>
-                            <p class="text-xs text-slate-500 font-medium">${escapeHtml(store)}</p>
-                        </div>
-                    </div>
-                    <div class="flex gap-0.5 mb-4 text-amber-400 text-sm">${starsHtml}</div>
-                    <p class="text-slate-600 text-sm leading-relaxed">"${escapeHtml(text)}"</p>
-                </div>
-                <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-400">
-                    <span><i class="fa-solid fa-calendar-days mr-1"></i> Baru saja</span>
-                    <span class="text-slate-400 font-bold"><i class="fa-solid fa-clock"></i> Pending Review</span>
-                </div>
-            `;
-            if(slider){
-                slider.insertBefore(newCard, slider.firstChild);
-                slider.scrollTo({ left: 0, behavior:'smooth' });
-            }
-            showToast('Terima kasih! Ulasan Anda berhasil dikirim.');
-            closeReviewModal();
-            btn.innerHTML = 'Kirim Ulasan';
-            btn.classList.remove('opacity-80', 'pointer-events-none');
-        }, 1000);
-    };
-
-    window.handleNewsletterSubmit = function(form){
-        var input = form.querySelector('input[type="email"]');
-        if(input && input.value){
-            showToast('Terima kasih! Anda telah berlangganan newsletter.');
-            input.value = '';
-        }
-    };
-
-    // ============================================
-    // INIT
-    // ============================================
-    document.addEventListener('DOMContentLoaded', function(){
-        var loader = document.getElementById('loader');
-        if(loader){
-            if(window.__clearLoader) window.__clearLoader();
-            loader.style.opacity = '0';
-            setTimeout(function(){ loader.style.display = 'none'; }, 700);
-        }
-        buildFilterChips();
-        updateCatalogInfoBanner();
-        renderProductDisplay();
-        var countR2 = document.getElementById('countR2');
-        var countResmi = document.getElementById('countResmi');
-        var totalCount = document.getElementById('totalBrandCount');
-        if(countR2) countR2.textContent = productsR2.length;
-        if(countResmi) countResmi.textContent = productsResmi.length;
-        if(totalCount) totalCount.textContent = allProducts.length;
-        var obs = new IntersectionObserver(function(entries){
-            entries.forEach(function(en){
-                if(en.isIntersecting) en.target.classList.add('is-visible');
-            });
-        }, { threshold: 0.1 });
-        document.querySelectorAll('.fade-on-scroll').forEach(function(el){ obs.observe(el); });
-        window.addEventListener('scroll', function(){
-            var h = document.getElementById('headerInner');
-            var btt = document.getElementById('backToTop');
-            if(h){
-                if(window.scrollY > 50){ h.classList.add('py-2', 'shadow-lg'); h.classList.remove('py-3'); }
-                else { h.classList.add('py-3'); h.classList.remove('py-2', 'shadow-lg'); }
-            }
-            if(btt){
-                if(window.scrollY > 500) btt.classList.add('visible');
-                else btt.classList.remove('visible');
-            }
-        });
-        var searchInput = document.getElementById('searchInput');
-        if(searchInput){
-            var searchTimer;
-            searchInput.addEventListener('input', function(e){
-                clearTimeout(searchTimer);
-                searchTimer = setTimeout(function(){
-                    searchTerm = e.target.value;
-                    currentPage = 1;
-                    renderProductDisplay();
-                }, 200);
-            });
-        }
-        validateCheckoutForm();
-    });
-})();
-</script>
+<!-- ======== SCRIPTS ======== -->
+<script src="data.js"></script>
+<script src="app.js"></script>
 
 </body>
 </html>
