@@ -7,11 +7,12 @@
   var SUPABASE_KEY = 'sb_publishable_mqJp3tqSL1gCjz1xdcgWGQ_mtDFRTmg';
   var TABLE = 'products';
   var SELECT = 'id,name,price,category,segment,segment_name,description,rating,is_active,created_at,updated_at';
+  var VERSION = '20260828-supabase-prod-3';
 
   function loadScript(src) {
     return new Promise(function (resolve, reject) {
       var script = document.createElement('script');
-      script.src = src + '?v=20260828-supabase-prod-2';
+      script.src = src + '?v=' + VERSION;
       script.async = false;
       script.onload = resolve;
       script.onerror = function () { reject(new Error('Gagal memuat ' + src)); };
@@ -68,7 +69,7 @@
         if (typeof window.renderProductDisplay === 'function') window.renderProductDisplay();
         return;
       }
-      if (attempts < 80) window.setTimeout(render, 50);
+      if (attempts < 100) window.setTimeout(render, 50);
       else console.error('[R2] app.js loaded but switchCatalog() was not found.');
     }
     render();
