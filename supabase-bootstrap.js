@@ -20,35 +20,33 @@
   }
 
   function classify(rows) {
-    var r2Legacy = {};
-    var resmiLegacy = {};
-    (window.productsR2 || []).forEach(function (p) { r2Legacy[normalize(p.name)] = p; });
-    (window.productsResmi || []).forEach(function (p) { resmiLegacy[normalize(p.name)] = p; });
+    var legacy = {};
+    (window.productsR2 || []).concat(window.productsResmi || []).forEach(function (p) {
+      legacy[normalize(p.name)] = p;
+    });
 
     return rows.filter(function (row) {
       return row.Published !== false && String(row.Status || 'active').toLowerCase() === 'active';
     }).map(function (row, index) {
       var name = row.Title || row['Option1 Value'] || row.Handle || ('Produk ' + (index + 1));
       var key = normalize(name);
-      var legacy = resmiLegacy[key] || r2Legacy[key] || {};
-      var isResmi = !!resmiLegacy[key];
+      var old = legacy[key] || {};
+      var sku = String(row['Variant SKU'] || '');
+      var isResmi = /^resmi-/i.test(sku) || /(^|,)\s*resmi\s*(,|$)/i.test(String(row.Tags || ''));
+
       return {
-        id: legacy.id || row['Variant SKU'] || ((isResmi ? 'resmi-' : 'r2-') + (index + 1)),
+        id: old.id || sku || ((isResmi ? 'resmi-' : 'r2-') + (index + 1)),
         name: name,
-        price: Number(row['Variant Price'] || legacy.price || 0),
+        price: Number(row['Variant Price'] || old.price || 0),
         category: isResmi ? 'resmi' : 'r2',
-        segment: legacy.segment,
-        segmentName: legacy.segmentName,
-        sku: row['Variant SKU'] || '',
+        segment: old.segment,
+        segmentName: old.segmentName,
+        sku: sku,
         inventoryQty: Number(row['Variant Inventory Qty'] || 0),
         vendor: row.Vendor || '',
         tags: row.Tags || ''
       };
     });
-  }
-
-  function startApp() {
-    return loadScript('app.js');
   }
 
   loadScript('legacy-data.js')
@@ -66,16 +64,17 @@
     })
     .then(function (rows) {
       var products = classify(rows);
-      window.productsR2 = products.filter(function (p) { return p.category !== 'resmi'; });
+      window.productsR2 = products.filter(function (p) { return p.category === 'r2'; });
       window.productsResmi = products.filter(function (p) { return p.category === 'resmi'; });
       window.allProducts = products;
       window.R2_CATALOG_SOURCE = 'supabase';
       window.R2_CATALOG_SYNCED_AT = new Date().toISOString();
       console.info('[R2] Catalog synchronized from Supabase:', products.length, 'products');
+      return loadScript('app.js');
     })
     .catch(function (error) {
       console.error('[R2] Supabase synchronization failed; using legacy catalog.', error);
       window.R2_CATALOG_SOURCE = 'legacy-data.js';
-    })
-    .then(startApp);
+      return loadScript('app.js');
+    });
 })();
