@@ -1,5 +1,5 @@
 // R2 NUSANTARA — Production Supabase Catalog Bootstrap
-// Loads the live catalog first, then starts app.js. No dependency on legacy catalog for production.
+// Loads live Supabase catalog first, then starts app.js and explicitly renders the catalog.
 (function () {
   'use strict';
 
@@ -11,7 +11,7 @@
   function loadScript(src) {
     return new Promise(function (resolve, reject) {
       var script = document.createElement('script');
-      script.src = src;
+      script.src = src + '?v=20260828';
       script.async = false;
       script.onload = resolve;
       script.onerror = function () { reject(new Error('Gagal memuat ' + src)); };
@@ -19,16 +19,11 @@
     });
   }
 
-  function text(value) {
-    return String(value == null ? '' : value).trim();
-  }
-
-  function normalize(value) {
-    return text(value).toLowerCase();
-  }
+  function text(value) { return String(value == null ? '' : value).trim(); }
+  function normalize(value) { return text(value).toLowerCase(); }
 
   function getTagSegment(tags) {
-    var match = text(tags).match(/(?:^|,)\s*Segment\s*([A-E])\s*(?:,|$)/i);
+    var match = text(tags).match(/(?:^|,)\s*(?:Segment|Segmen|Seg)\s*[-:]?\s*([A-E])\s*(?:,|$)/i);
     return match ? match[1].toUpperCase() : undefined;
   }
 
@@ -41,7 +36,7 @@
         var sku = text(row['Variant SKU']);
         var tags = text(row.Tags);
         var name = text(row.Title) || text(row['Option1 Value']) || text(row.Handle) || ('Produk ' + (index + 1));
-        var isResmi = /^resmi-/i.test(sku) || /(?:^|,)\s*resmi\s*(?:,|$)/i.test(tags);
+        var isResmi = /^resmi[-_]/i.test(sku) || /(?:^|,)\s*resmi\s*(?:,|$)/i.test(tags);
         var segment = getTagSegment(tags);
 
         return {
@@ -59,8 +54,22 @@
       });
   }
 
+  function renderAfterAppLoaded() {
+    // app.js is loaded dynamically after DOMContentLoaded, so its normal init listener
+    // may already have passed. Explicitly initialize the visible catalog here.
+    if (typeof window.switchCatalog === 'function') {
+      window.switchCatalog('r2');
+      return;
+    }
+    window.setTimeout(function () {
+      if (typeof window.switchCatalog === 'function') window.switchCatalog('r2');
+    }, 50);
+  }
+
   function startApp() {
-    return loadScript('app.js');
+    return loadScript('app.js').then(function () {
+      renderAfterAppLoaded();
+    });
   }
 
   function expose(products) {
@@ -71,11 +80,7 @@
     window.R2_CATALOG_COUNT = products.length;
     window.R2_CATALOG_SYNCED_AT = new Date().toISOString();
     window.dispatchEvent(new CustomEvent('r2:supabase-catalog-ready', {
-      detail: {
-        total: products.length,
-        r2: window.productsR2.length,
-        resmi: window.productsResmi.length
-      }
+      detail: { total: products.length, r2: window.productsR2.length, resmi: window.productsResmi.length }
     }));
     console.info('[R2] Supabase catalog ready:', products.length, 'products | R2:', window.productsR2.length, '| Resmi:', window.productsResmi.length);
   }
@@ -90,15 +95,10 @@
   }
 
   function boot() {
-    var endpoint = SUPABASE_URL + '/rest/v1/' + TABLE + '?select=' + encodeURIComponent(SELECT) + '&order=Title.asc&limit=1000';
+    var endpoint = SUPABASE_URL + '/rest/v1/' + TABLE + '?select=' + encodeURIComponent(SELECT) + '&Published=eq.true&Status=eq.active&order=Title.asc&limit=1000';
     fetch(endpoint, {
-      method: 'GET',
-      cache: 'no-store',
-      headers: {
-        apikey: SUPABASE_KEY,
-        Authorization: 'Bearer ' + SUPABASE_KEY,
-        Accept: 'application/json'
-      }
+      method: 'GET', cache: 'no-store',
+      headers: { apikey: SUPABASE_KEY, Authorization: 'Bearer ' + SUPABASE_KEY, Accept: 'application/json' }
     })
       .then(function (response) {
         if (!response.ok) throw new Error('Supabase HTTP ' + response.status);
@@ -112,13 +112,12 @@
       })
       .catch(function (error) {
         showCatalogError(error);
-        return startApp();
+        return loadScript('data.js').then(startApp).catch(function (fallbackError) {
+          console.error('[R2] fallback failed:', fallbackError);
+        });
       });
   }
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', boot, { once: true });
-  } else {
-    boot();
-  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot, { once: true });
+  else boot();
 })();
