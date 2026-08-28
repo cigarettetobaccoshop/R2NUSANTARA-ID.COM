@@ -2,32 +2,27 @@ name: R2 Supabase Catalog Sync
 
 on:
   push:
-    branches: [main]
+    branches:
+      - main
 
 permissions:
   contents: write
 
 jobs:
-  sync-catalog:
-    if: ${{ !contains(github.event.head_commit.message, 'chore: integrate Supabase catalog') }}
+  sync:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Install Supabase catalog bootstrap
-        env:
-          SUPABASE_URL: https://zgsbtexngystdmakqjyi.supabase.co
-          SUPABASE_KEY: sb_publishable_7wqbX7wUVFJZqinPyy8XLQ_SimByBEo
+      - name: Build Supabase bootstrap
+        shell: bash
         run: |
           cat > supabase-bootstrap.js <<'EOF'
           (function () {
             'use strict';
-            var SUPABASE_URL = 'https://zgsbtexngystdmakqjyi.supabase.co';
-            var SUPABASE_KEY = 'sb_publishable_7wqbX7wUVFJZqinPyy8XLQ_SimByBEo';
-            var TABLE = 'R2%20NUSANTARA';
-
-            function loadScript(src) {
+            var URL = 'https://zgsbtexngystdmakqjyi.supabase.co/rest/v1/R2%20NUSANTARA?select=*';
+            var KEY = 'sb_publishable_7wqbX7wUVFJZqinPyy8XLQ_SimByBEo';
+            function load(src) {
               return new Promise(function (resolve, reject) {
                 var s = document.createElement('script');
                 s.src = src;
@@ -36,100 +31,61 @@ jobs:
                 document.head.appendChild(s);
               });
             }
-
-            function normalizeName(value) {
-              return String(value || '').trim().toLowerCase();
-            }
-
-            function classify(rows) {
-              var legacyR2 = {};
-              var legacyResmi = {};
-              (window.productsR2 || []).forEach(function (p) { legacyR2[normalizeName(p.name)] = p; });
-              (window.productsResmi || []).forEach(function (p) { legacyResmi[normalizeName(p.name)] = p; });
-
-              return rows.map(function (row, index) {
-                var name = row['Title'] || row['Option1 Value'] || row['Handle'] || 'Produk ' + (index + 1);
-                var key = normalizeName(name);
-                var legacy = legacyR2[key] || legacyResmi[key] || {};
-                var isResmi = !!legacyResmi[key];
-                var status = String(row['Status'] || '').toLowerCase();
-                var published = row['Published'] !== false;
-                var active = !status || status === 'active';
-                if (!published || !active) return null;
-
-                return {
-                  id: legacy.id || row['Variant SKU'] || (isResmi ? 'resmi-' : 'r2-') + (index + 1),
-                  name: name,
-                  price: Number(row['Variant Price'] || legacy.price || 0),
-                  category: isResmi ? 'resmi' : 'r2',
-                  segment: legacy.segment,
-                  segmentName: legacy.segmentName,
-                  sku: row['Variant SKU'] || '',
-                  inventoryQty: Number(row['Variant Inventory Qty'] || 0),
-                  requiresShipping: row['Variant Requires Shipping'] !== false,
-                  vendor: row['Vendor'] || '',
-                  tags: row['Tags'] || ''
-                };
-              }).filter(Boolean);
-            }
-
-            function apply(rows) {
-              var products = classify(rows);
-              window.productsR2 = products.filter(function (p) { return p.category !== 'resmi'; });
-              window.productsResmi = products.filter(function (p) { return p.category === 'resmi'; });
-              window.allProducts = products;
-              window.R2_CATALOG_SOURCE = 'supabase';
-              window.R2_CATALOG_SYNCED_AT = new Date().toISOString();
-            }
-
             function boot() {
-              return loadScript('data.js')
-                .then(function () {
-                  return fetch(SUPABASE_URL + '/rest/v1/' + TABLE + '?select=*', {
-                    headers: {
-                      apikey: SUPABASE_KEY,
-                      Authorization: 'Bearer ' + SUPABASE_KEY
-                    }
-                  });
-                })
-                .then(function (response) {
-                  if (!response.ok) throw new Error('Supabase HTTP ' + response.status);
-                  return response.json();
-                })
-                .then(function (rows) {
-                  apply(rows);
-                })
-                .catch(function (error) {
-                  console.error('[R2] Supabase catalog sync failed:', error);
-                  window.R2_CATALOG_SOURCE = 'fallback-data.js';
-                })
-                .then(function () {
-                  return loadScript('app.js');
+              return load('data.js').then(function () {
+                return fetch(URL, { headers: { apikey: KEY, Authorization: 'Bearer ' + KEY } });
+              }).then(function (r) {
+                if (!r.ok) throw new Error('Supabase HTTP ' + r.status);
+                return r.json();
+              }).then(function (rows) {
+                var r2 = {}, resmi = {};
+                (window.productsR2 || []).forEach(function (p) { r2[String(p.name).trim().toLowerCase()] = p; });
+                (window.productsResmi || []).forEach(function (p) { resmi[String(p.name).trim().toLowerCase()] = p; });
+                var all = rows.filter(function (x) { return x.Published !== false && String(x.Status || 'active').toLowerCase() === 'active'; }).map(function (x, i) {
+                  var name = x.Title || x['Option1 Value'] || x.Handle || ('Produk ' + (i + 1));
+                  var key = String(name).trim().toLowerCase();
+                  var legacy = resmi[key] || r2[key] || {};
+                  var isResmi = !!resmi[key];
+                  return {
+                    id: legacy.id || x['Variant SKU'] || ((isResmi ? 'resmi-' : 'r2-') + (i + 1)),
+                    name: name,
+                    price: Number(x['Variant Price'] || legacy.price || 0),
+                    category: isResmi ? 'resmi' : 'r2',
+                    segment: legacy.segment,
+                    segmentName: legacy.segmentName,
+                    sku: x['Variant SKU'] || '',
+                    inventoryQty: Number(x['Variant Inventory Qty'] || 0)
+                  };
                 });
+                window.productsR2 = all.filter(function (p) { return p.category !== 'resmi'; });
+                window.productsResmi = all.filter(function (p) { return p.category === 'resmi'; });
+                window.allProducts = all;
+                window.R2_CATALOG_SOURCE = 'supabase';
+              }).catch(function (e) {
+                console.error('[R2] Supabase sync failed; using data.js fallback.', e);
+                window.R2_CATALOG_SOURCE = 'fallback-data.js';
+              }).then(function () { return load('app.js'); });
             }
-
             boot();
           })();
           EOF
-
-      - name: Switch index to Supabase bootstrap
-        run: |
           python3 - <<'PY'
           from pathlib import Path
           p = Path('index.html')
           s = p.read_text(encoding='utf-8')
           old = '<script src="data.js"></script>\n<script src="app.js"></script>'
-          new = '<script src="supabase-bootstrap.js"></script>'
-          if old not in s:
-              raise SystemExit('Expected script block not found; refusing to modify index.html')
-          p.write_text(s.replace(old, new, 1), encoding='utf-8')
+          if old in s:
+              p.write_text(s.replace(old, '<script src="supabase-bootstrap.js"></script>', 1), encoding='utf-8')
+          else:
+              raise SystemExit('index.html script block not found')
           PY
 
-      - name: Commit and push
+      - name: Commit integration
+        shell: bash
         run: |
           git config user.name 'R2 Nusantara Automation'
           git config user.email 'cigaratetobacoshop@gmail.com'
           git add index.html supabase-bootstrap.js
           git diff --cached --quiet && exit 0
           git commit -m 'chore: integrate Supabase catalog'
-          git push origin HEAD:main
+          git push origin main
