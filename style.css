@@ -1,3 +1,6 @@
+/* ============================================
+   style.css â€” R2 NUSANTARA
+============================================ */
 :root {
   --transition-smooth: cubic-bezier(0.16, 1, 0.3, 1);
   --color-primary: #1E5FA8;
@@ -536,3 +539,141 @@ button:disabled { opacity: .5; cursor: not-allowed; }
 @media (max-width: 767px) { .info-slider-dots { display: flex; } }
 .info-dot { width: 7px; height: 7px; border-radius: 50%; background: #cbd5e1; border: none; cursor: pointer; padding: 0; transition: all .2s; }
 .info-dot.is-active { background: var(--color-accent); width: 20px; border-radius: 4px; }
+
+
+/* =========================================================
+   GLASSMORPHISM THEME OVERRIDES (UPGRADE)
+========================================================= */
+
+/* 1. Latar Belakang & Ambient Blobs (Gradient Dinamis) */
+body {
+  background: linear-gradient(135deg, #f0f4f8 0%, #d9e2ec 100%) !important;
+  background-attachment: fixed !important;
+  position: relative;
+}
+body::before, body::after {
+  content: '';
+  position: fixed;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  filter: blur(120px);
+  z-index: -1;
+  opacity: 0.6;
+  pointer-events: none;
+  animation: ambientDrift 25s ease-in-out infinite alternate;
+}
+body::before {
+  top: -100px; left: -100px;
+  background: rgba(138, 150, 168, 0.45); /* Brand Gold/Slate Tint */
+}
+body::after {
+  bottom: -100px; right: -100px;
+  background: rgba(15, 61, 110, 0.25); /* Brand Deep Blue Tint */
+  animation-delay: -12.5s;
+}
+@keyframes ambientDrift {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(150px, 150px) scale(1.2); }
+}
+
+/* Hapus background warna solid agar efek kaca terlihat */
+section.bg-ivory, section.bg-white, .bg-ivory, .bg-white {
+  background-color: transparent !important;
+}
+
+/* 2. Glass Base Classes (Header, Pill, & Surface) */
+.glass-pill, .glass-surface, .glass-surface-strong {
+  background: rgba(255, 255, 255, 0.35) !important;
+  backdrop-filter: blur(20px) saturate(160%) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(160%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.6) !important;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.05) !important;
+}
+.glass-dark {
+  background: rgba(15, 61, 110, 0.25) !important;
+  backdrop-filter: blur(16px) saturate(160%) !important;
+  -webkit-backdrop-filter: blur(16px) saturate(160%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1) !important;
+}
+
+/* 3. Cards & Modules (Katalog Produk, Testimoni, Widget) */
+.mp-card, .featured-card, .info-card-2x2, .product-table-wrap,
+.search-suggestions-box, .checkout-summary-box, .eksp-card,
+.testimonial-card-slide, .catalog-info-banner, .mb-dock,
+.header-search-bar, .faq-item, .bg-white.rounded-3xl, 
+.sales-card, .newsletter-box {
+  background: rgba(255, 255, 255, 0.3) !important;
+  backdrop-filter: blur(16px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(16px) saturate(180%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.6) !important;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.05) !important;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+.mp-card:hover, .featured-card:hover, .eksp-card:hover {
+  transform: translateY(-5px) !important;
+  background: rgba(255, 255, 255, 0.5) !important;
+  border-color: rgba(255, 255, 255, 1) !important;
+  box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.08) !important;
+}
+
+/* 4. Modals & Sidebars (Keranjang, Checkout, Quick View) */
+#checkoutModal, #reviewModal, #quickViewModal, #legalModal,
+#successPopup, aside#cartSidebar, aside#wishlistSidebar {
+  background: rgba(255, 255, 255, 0.4) !important;
+  backdrop-filter: blur(24px) saturate(200%) !important;
+  -webkit-backdrop-filter: blur(24px) saturate(200%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.7) !important;
+  box-shadow: 0 16px 40px 0 rgba(31, 38, 135, 0.1) !important;
+}
+
+/* 5. Inputs & Forms (Kolom Input Transparan) */
+input, select, textarea {
+  background: rgba(255, 255, 255, 0.4) !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.6) !important;
+  color: #0F3D6E !important;
+}
+input:focus, select:focus, textarea:focus {
+  background: rgba(255, 255, 255, 0.65) !important;
+  border-color: #8A96A8 !important;
+  box-shadow: 0 0 0 4px rgba(138, 150, 168, 0.15) !important;
+}
+
+/* 6. Minor UI Elements (Tombol Wishlist, Stepper, Tab) */
+.wishlist-heart-btn, .quickview-btn, .mp-stepper, 
+.view-toggle-switcher, .catalog-tab-switcher {
+  background: rgba(255, 255, 255, 0.3) !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.6) !important;
+}
+.mp-step-btn {
+  background: rgba(255, 255, 255, 0.4) !important;
+}
+.mp-step-btn-gold {
+  background: #8A96A8 !important;
+  color: #fff !important;
+}
+.catalog-tab.active {
+  background: rgba(255, 255, 255, 0.7) !important;
+}
+
+/* 7. Footer Transparan */
+.footer-bg {
+  background: rgba(15, 61, 110, 0.5) !important;
+  backdrop-filter: blur(24px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(24px) saturate(180%) !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.15) !important;
+}
+.footer-bg::before {
+  opacity: 0.15 !important; /* Menipiskan background image agar efek kaca lebih optimal */
+}
+
+/* 8. Fix Bayangan Peta */
+.map-frame::before {
+  background: transparent !important;
+  border: 1px solid rgba(255, 255, 255, 0.4) !important;
+}
