@@ -1,0 +1,80 @@
+:root { --transition-smooth: cubic-bezier(0.16, 1, 0.3, 1); }
+body { background-color: #f8fafc; font-feature-settings: 'cv02', 'cv03', 'cv04'; overflow-x: hidden; -webkit-font-smoothing: antialiased; font-family: 'Inter', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+
+/* Scrollbar Premium */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: #f1f5f9; }
+::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; border: 2px solid #f1f5f9; }
+::-webkit-scrollbar-thumb:hover { background: #3b82f6; }
+
+/* Glassmorphism Corporate */
+.glass-pill {
+    background: rgba(255, 255, 255, 0.80);
+    backdrop-filter: blur(16px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 8px 32px -8px rgba(15, 23, 42, 0.08), inset 0 0 0 1px rgba(255, 255, 255, 0.5);
+}
+
+/* Text Gradients */
+.text-gradient-blue {
+    background: linear-gradient(135deg, #ffffff 0%, #bfdbfe 50%, #ffffff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* 3D Hero Orbs & Geometry */
+.hero-3d-container {
+    position: absolute; inset: 0; overflow: hidden; perspective: 1200px;
+    display: flex; justify-content: center; align-items: center;
+}
+.hero-orb {
+    position: absolute; border-radius: 50%; filter: blur(80px); opacity: 0.6; will-change: transform;
+    animation: floatOrb 10s cubic-bezier(0.4, 0, 0.2, 1) infinite alternate;
+}
+.orb-1 { width: 400px; height: 400px; background: #3b82f6; top: -10%; left: -10%; transform: rotate(0deg) scale(1); }
+.orb-2 { width: 300px; height: 300px; background: #60a5fa; bottom: -10%; right: -10%; animation-delay: 3s; transform: rotate(0deg) scale(1.2); }
+.orb-3 { width: 200px; height: 200px; background: #93c5fd; top: 50%; left: 50%; transform: translate(-50%, -50%); animation-delay: 6s; }
+
+@keyframes floatOrb {
+    0% { transform: translateY(0) rotate(0deg) scale(1); }
+    50% { transform: translateY(-30px) rotate(180deg) scale(1.1); }
+    100% { transform: translateY(30px) rotate(360deg) scale(0.9); }
+}
+
+/* 3D Card Perspective */
+.card-3d {
+    transition: transform 0.1s ease, box-shadow 0.3s ease;
+    transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1);
+    will-change: transform;
+}
+.card-3d:hover {
+    box-shadow: 0 20px 40px -12px rgba(15, 23, 42, 0.15), 0 10px 20px -8px rgba(15, 23, 42, 0.05);
+}
+
+/* Catalog Tabs Premium */
+.catalog-tab-switcher { display: inline-flex; background: white; border: 1px solid #e2e8f0; border-radius: 1rem; padding: 4px; box-shadow: 0 4px 12px rgba(0,0,0,0.02); }
+.catalog-tab { padding: 10px 20px; border-radius: 0.75rem; font-weight: 700; font-size: 13px; color: #64748b; transition: all 0.3s; }
+.catalog-tab.active { background: #0f172a; color: white; box-shadow: 0 4px 12px rgba(15, 23, 42, 0.2); }
+.catalog-tab .tab-count { font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 999px; background: rgba(100, 116, 139, 0.15); }
+.catalog-tab.active .tab-count { background: rgba(255, 255, 255, 0.2); }
+
+/* Ticker */
+.ticker-wrap { width: 100%; overflow: hidden; }
+.animate-marquee { animation: marquee 30s linear infinite; }
+@keyframes marquee { 0% { transform: translateX(0%); } 100% { transform: translateX(-50%); } }
+
+/* Forms & Animations */
+.modal-enter { opacity: 1 !important; transform: translate(-50%, -50%) scale(1) !important; pointer-events: auto !important; }
+.overlay-enter { opacity: 1 !important; pointer-events: auto !important; }
+.fade-on-scroll { opacity: 0; transform: translateY(40px); transition: opacity 0.9s, transform 0.9s; }
+.fade-on-scroll.is-visible { opacity: 1; transform: translateY(0); }
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* Loader Animation */
+.animate-spin-slow { animation: spin 3s linear infinite; }
+.animate-spin-reverse { animation: spin 2s linear infinite reverse; }
+.animate-bounce-slow { animation: bounce 1s infinite; }
+
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes bounce { 0%, 100% { transform: translateY(-25%); animation-timing-function: cubic-bezier(0.8,0,1,1); } 50% { transform: translateY(0); animation-timing-function: cubic-bezier(0,0,0.2,1); } }
