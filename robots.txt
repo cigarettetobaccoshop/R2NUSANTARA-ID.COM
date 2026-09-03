@@ -1,3 +1,4 @@
 User-agent: *
-   Allow: /
-   Sitemap: https://gudangdistributormalang-r2nusantara.github.io/R2-Nusantara/sitemap.xml
+Allow: /
+
+Sitemap: https://cigarettetobaccoshop.github.io/id.com/sitemap.xml
