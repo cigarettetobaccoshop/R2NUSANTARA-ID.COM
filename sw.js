@@ -1,45 +1,25 @@
-const CACHE_NAME = 'r2-nusantara-cache-v1';
-const urlsToCache = [
+// sw.js - basic service worker cache
+const CACHE_NAME = 'r2-static-v1';
+const FILES_TO_CACHE = [
   '/',
   '/index.html',
-  '/manifest.json',
-  '/logo.png'
-  // Tambahkan path gambar hero/bg Anda di sini jika ada
+  '/assets/css/main.css',
+  '/assets/css/components.css',
+  '/assets/js/app.js'
 ];
 
-self.addEventListener('install', event => {
-  event.waitUntil(
-    caches.open(CACHE_NAME)
-      .then(cache => {
-        return cache.addAll(urlsToCache);
-      })
+self.addEventListener('install', (evt)=>{
+  evt.waitUntil(
+    caches.open(CACHE_NAME).then(cache=>cache.addAll(FILES_TO_CACHE))
   );
+  self.skipWaiting();
 });
-
-self.addEventListener('fetch', event => {
-  event.respondWith(
-    caches.match(event.request)
-      .then(response => {
-        // Cache hit - return response
-        if (response) {
-          return response;
-        }
-        return fetch(event.request);
-      })
-  );
+self.addEventListener('activate', (evt)=>{
+  evt.waitUntil(self.clients.claim());
 });
-
-self.addEventListener('activate', event => {
-  const cacheWhitelist = [CACHE_NAME];
-  event.waitUntil(
-    caches.keys().then(cacheNames => {
-      return Promise.all(
-        cacheNames.map(cacheName => {
-          if (cacheWhitelist.indexOf(cacheName) === -1) {
-            return caches.delete(cacheName);
-          }
-        })
-      );
-    })
+self.addEventListener('fetch', (evt)=>{
+  if(evt.request.method !== 'GET') return;
+  evt.respondWith(
+    caches.match(evt.request).then(resp=>resp||fetch(evt.request))
   );
 });

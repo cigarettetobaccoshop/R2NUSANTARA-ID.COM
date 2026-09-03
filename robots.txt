@@ -1,16 +1,3 @@
-# robots.txt - R2 Nusantara
-# https://gudangdistributormalang-r2nusantara.github.io/R2-Nusantara/
-
 User-agent: *
-Allow: /
-Allow: /index.html
-Allow: /sitemap.xml
-Allow: /manifest.json
-
-# Disallow system files
-Disallow: /404.html
-
-# Crawl-delay
-Crawl-delay: 1
-
-Sitemap: https://gudangdistributormalang-r2nusantara.github.io/R2-Nusantara/sitemap.xml
+   Allow: /
+   Sitemap: https://gudangdistributormalang-r2nusantara.github.io/R2-Nusantara/sitemap.xml

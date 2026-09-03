@@ -1,0 +1,15 @@
+﻿Kategori,Implementasi
+Branding,"""Wholesale Trading Partner"" di seluruh header, meta, schema, footer. Editorial tone konsisten."
+Design System,#FAFAF8 ivory · #0A0A0A deep black · #C9A84C champagne gold · #0F1B3D navy
+Typography,Instrument Serif (italic display) + Geist (body) — editorial premium
+Hero,Mesh gradient orbs + grid background + bento stats + scroll indicator + editorial title
+Bento Grid,"Why Us section (4 kolom asymmetric), Trust section (3 kolom asymmetric)"
+Micro-interactions,"Magnetic buttons, glass hover, reveal-up on scroll, word rotator, shimmer progress bar, ping animations"
+Marquee,Infinite trust signals (6 item × 2 untuk seamless loop)
+Trust Section,"Trust score 4.9/5, badan hukum, escrow, 10 ekspedisi partner"
+Cards Premium,"Glass morphism header, soft shadows, gold border glow on hover, editorial featured cards"
+SEO,"Schema.org (Organization + LocalBusiness + WebSite + FAQPage), OG/Twitter cards lengkap"
+Performance,"Critical CSS inline, deferred fonts/chatbot, lazy iframe, efficient DOM"
+Accessibility,"ARIA labels, semantic HTML5, keyboard nav, focus visible, reduced motion"
+Footer,"Enterprise grade dengan headline besar ""Mari Bangun Kemitraan"" + 4 kolom navigasi + legal cards"
+Dark Mode,"Warm ivory→dark walnut, gold accent dipertahankan, semua komponen compatible"
