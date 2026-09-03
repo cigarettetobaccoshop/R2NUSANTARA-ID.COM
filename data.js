@@ -1,90 +1,37 @@
-// R2 NUSANTARA — LIVE PRODUCT CATALOG
-// Primary source: Supabase Production. Static legacy-data.js is fallback only.
-(function () {
-  'use strict';
+/* ============================================
+   data.js — DATA KATALOG PRODUK R2 NUSANTARA
+============================================ */
+'use strict';
 
-  var SUPABASE_URL = 'https://nwrqdcrknipnfvhogjyg.supabase.co';
-  var SUPABASE_KEY = 'sb_publishable_mqJp3tqSL1gCjz1xdcgWGQ_mtDFRTmg';
-  var VERSION = '20260828-live-catalog-1';
-  var SELECT = 'id,name,price,category,segment,segment_name,description,rating,is_active,created_at,updated_at';
+// Informasi Perusahaan
+window.COMPANY_INFO = {
+    name: 'R2 Nusantara - Cigarette Tobacco Shop',
+    whatsapp: '6285715905079',
+    address: 'WJMC+WG8, Karangduren, Kec. Pakisaji, Kab. Malang, Jawa Timur 65162'
+};
 
-  function classify(rows) {
-    return (Array.isArray(rows) ? rows : []).filter(function (row) {
-      return row && row.is_active !== false;
-    }).map(function (row, index) {
-      var id = String(row.id == null ? '' : row.id).trim() || ('produk-' + (index + 1));
-      var category = String(row.category == null ? '' : row.category).trim().toLowerCase() === 'resmi' ? 'resmi' : 'r2';
-      return {
-        id: id,
-        name: String(row.name == null ? '' : row.name).trim() || ('Produk ' + (index + 1)),
-        price: Number(row.price) || 0,
-        category: category,
-        segment: String(row.segment == null ? '' : row.segment).trim().toUpperCase(),
-        segmentName: String(row.segment_name == null ? '' : row.segment_name).trim(),
-        description: String(row.description == null ? '' : row.description).trim(),
-        rating: Number(row.rating) || 0,
-        sku: id,
-        inventoryQty: 0,
-        tags: '',
-        vendor: 'R2 NUSANTARA'
-      };
-    });
-  }
+// Data Produk R2
+window.productsR2 = [
+    { id: 'r2-1', name: "Absolute Bold", price: 118000, category: 'R2' },
+    { id: 'r2-5', name: "Apache Bold", price: 145000, category: 'R2', badge: 'hot' },
+    { id: 'r2-6', name: "Apache Mild", price: 160000, category: 'R2' },
+    { id: 'r2-9', name: "Arrow Bold", price: 115000, category: 'R2' },
+    { id: 'r2-11', name: "Astro Bold", price: 73000, category: 'R2' }
+];
 
-  function expose(products) {
-    window.productsR2 = products.filter(function (p) { return p.category === 'r2'; });
-    window.productsResmi = products.filter(function (p) { return p.category === 'resmi'; });
-    window.allProducts = products;
-    window.R2_CATALOG_SOURCE = 'supabase:nwrqdcrknipnfvhogjyg';
-    window.R2_CATALOG_COUNT = products.length;
-    window.R2_CATALOG_SYNCED_AT = new Date().toISOString();
-    document.documentElement.dataset.catalogReady = 'true';
-    console.info('[R2] LIVE Supabase catalog:', products.length, 'products | R2:', window.productsR2.length, '| Resmi:', window.productsResmi.length);
-  }
+// Data Produk Resmi
+window.productsResmi = [
+    { id: 'resmi-1', name: "Gudang Garam Surya 12", price: 235000, category: 'Gudang Garam', badge: 'hot' },
+    { id: 'resmi-2', name: "Gudang Garam Surya 16", price: 310000, category: 'Gudang Garam', badge: 'vip' },
+    { id: 'resmi-3', name: "Gudang Garam International", price: 220000, category: 'Gudang Garam' },
+    { id: 'resmi-9', name: "Sampoerna Mild 16", price: 305000, category: 'Sampoerna', badge: 'vip' },
+    { id: 'resmi-10', name: "Sampoerna Mild 12", price: 230000, category: 'Sampoerna' },
+    { id: 'resmi-23', name: "Djarum Super 16", price: 315000, category: 'Djarum', badge: 'hot' },
+    { id: 'resmi-27', name: "LA Lights", price: 285000, category: 'Djarum' },
+    { id: 'resmi-55', name: "Class Mild 16", price: 210000, category: 'Lainnya' },
+    { id: 'resmi-61', name: "Galan Filter", price: 100000, category: 'Lainnya' },
+    { id: 'resmi-67', name: "Wismilak Diplomat", price: 210000, category: 'Wismilak' }
+];
 
-  function loadLegacyFallback() {
-    try {
-      var xhr = new XMLHttpRequest();
-      xhr.open('GET', 'legacy-data.js?v=' + VERSION, false);
-      xhr.send(null);
-      if (xhr.status >= 200 && xhr.status < 300) {
-        (0, eval)(xhr.responseText);
-        window.R2_CATALOG_SOURCE = 'legacy-fallback';
-        return true;
-      }
-    } catch (e) {}
-    return false;
-  }
-
-  function boot() {
-    try {
-      var xhr = new XMLHttpRequest();
-      var endpoint = SUPABASE_URL + '/rest/v1/products?select=' + encodeURIComponent(SELECT) + '&is_active=eq.true&order=name.asc&limit=1000';
-      xhr.open('GET', endpoint, false);
-      xhr.setRequestHeader('apikey', SUPABASE_KEY);
-      xhr.setRequestHeader('Authorization', 'Bearer ' + SUPABASE_KEY);
-      xhr.setRequestHeader('Accept', 'application/json');
-      xhr.send(null);
-
-      if (xhr.status >= 200 && xhr.status < 300) {
-        var products = classify(JSON.parse(xhr.responseText));
-        if (products.length) {
-          expose(products);
-          return;
-        }
-      }
-    } catch (error) {
-      console.error('[R2] Supabase live catalog failed:', error);
-    }
-
-    if (!loadLegacyFallback()) {
-      window.productsR2 = [];
-      window.productsResmi = [];
-      window.allProducts = [];
-      window.R2_CATALOG_SOURCE = 'error';
-      console.error('[R2] Catalog unavailable.');
-    }
-  }
-
-  boot();
-})();
+// Gabungkan Semua Data (Global Variable agar bisa dibaca app.js)
+window.allProducts = [...window.productsR2, ...window.productsResmi];

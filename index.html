@@ -3,999 +3,147 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
-    <title>R2 NUSANTARA | Gudang Distributor Rokok R2/RESMI</title>
-    <meta name="description" content="Gudang distributor rokok resmi Malang. 230+ merek ready stock (R2 & Resmi). Sistem bayar setelah resi keluar, gratis ongkir min 1 bal. Mitra terpercaya 500+ toko.">
-    <meta name="keywords" content="distributor rokok malang, grosir rokok murah, rokok harga slop, gudang rokok malang, R2 Nusantara, rokok resmi, rokok R2">
-    <meta name="robots" content="index, follow">
-    <meta name="author" content="CV. R2 Nusantara">
-    <link rel="icon" type="image/png" href="assets/images/logo/logo-resmi.png">
-    <link rel="canonical" href="https://gudangdistributormalang-r2nusantara.github.io/R2-Nusantara/">
-    <meta name="theme-color" content="#0a1628">
-    <link rel="manifest" href="manifest.json">
-    <meta name="apple-mobile-web-app-capable" content="yes">
+    <title>R2 Nusantara | Distributor Rokok Grosir Resmi Malang</title>
     
-    <meta property="og:title" content="R2 Nusantara — Distributor Rokok Grosir Premium Malang">
-    <meta property="og:description" content="Gudang distributor resmi. Bayar setelah resi keluar. Gratis ongkir min 1 bal. 230+ merek ready stock (R2 & Resmi).">
-    <meta property="og:image" content="https://gudangdistributormalang-r2nusantara.github.io/R2-Nusantara/assets/images/logo/logo-resmi.png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:url" content="https://gudangdistributormalang-r2nusantara.github.io/R2-Nusantara/">
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="R2 Nusantara">
-
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WholesaleStore",
-        "name": "CV. R2 Nusantara",
-        "description": "Gudang distributor rokok resmi Malang. 230+ merek ready stock.",
-        "url": "https://gudangdistributormalang-r2nusantara.github.io/R2-Nusantara/",
-        "image": "https://gudangdistributormalang-r2nusantara.github.io/R2-Nusantara/assets/images/logo/logo-resmi.png",
-        "logo": "https://gudangdistributormalang-r2nusantara.github.io/R2-Nusantara/assets/images/logo/logo-resmi.png",
-        "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "Desa Karangduren, Kec. Pakisaji",
-            "addressLocality": "Kab. Malang",
-            "addressRegion": "Jawa Timur",
-            "postalCode": "65162",
-            "addressCountry": "ID"
-        },
-        "telephone": "+6285715905079",
-        "openingHours": "Mo-Sa 08:00-17:00",
-        "priceRange": "Rp 65.000 - Rp 480.000",
-        "contactPoint": {
-            "@type": "ContactPoint",
-            "telephone": "+6285715905079",
-            "contactType": "customer service"
-        }
-    }
-    </script>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.cdnfonts.com/css/plus-jakarta-sans" rel="stylesheet">
-    <link href="https://fonts.cdnfonts.com/css/ibm-plex-mono" rel="stylesheet">
+    <meta name="description" content="Gudang distributor rokok resmi Malang. 233+ merek ready stock. Bayar setelah resi keluar.">
+    <link rel="icon" type="image/png" href="logo.png">
+    
+    <!-- Font & Icon -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
+    <!-- Tailwind CSS (CDN) -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
-                    fontFamily: {
-                        sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
-                        mono: ['"IBM Plex Mono"', 'monospace']
-                    },
-                    colors: {
-                        brand: { 900: '#060d18', 800: '#0a1628', 700: '#162544', 600: '#1e3a5f', 500: '#2563eb', 400: '#3b82f6', 300: '#60a5fa', 200: '#93c5fd', 100: '#dbeafe', 50: '#eff6ff' },
-                        silver: { 900: '#1a1d23', 700: '#3d4250', 500: '#6b7280', 300: '#c8cdd6', 200: '#e2e6ed', 100: '#f1f3f7', 50: '#f8f9fc' }
-                    }
+                    fontFamily: { sans: ['Plus Jakarta Sans', 'sans-serif'] },
+                    colors: { primary: '#0F3D6E', primaryDark: '#0A2A50', gold: '#C8962E', surface: '#F8FAFC' }
                 }
             }
         }
     </script>
 
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
-
-    <script>
-        (function(){
-            var ft = setTimeout(function(){
-                var l = document.getElementById('loader');
-                if(l){ l.style.opacity = '0'; setTimeout(function(){ l.style.display = 'none'; }, 500); }
-            }, 4000);
-            window.__clearLoader = function(){ clearTimeout(ft); };
-        })();
-    </script>
 </head>
-<body>
+<body class="antialiased bg-surface overflow-hidden">
 
-<!-- LOADER -->
-<div id="loader" class="fixed inset-0 z-[100] bg-brand-900 flex flex-col items-center justify-center transition-opacity duration-700">
-    <div class="relative w-20 h-20 flex items-center justify-center">
-        <div class="absolute inset-0 border-4 border-brand-800 rounded-full"></div>
-        <div class="absolute inset-0 border-4 border-brand-500 rounded-full border-t-transparent loader-spinner"></div>
-        <img src="assets/images/logo/loader-logo.png" alt="Logo R2 Nusantara" class="w-12 h-12 rounded-full object-cover bg-white">
+    <!-- ==========================================
+         1. GLOBAL LOADER (ANTI-MENTOK)
+         ========================================== -->
+    <div id="global-loader">
+        <img src="logo.png" alt="R2 Logo" class="loader-logo" onerror="this.src='https://via.placeholder.com/120?text=R2';">
+        <h1 class="text-2xl font-bold text-white tracking-widest uppercase mb-4">R2 Nusantara</h1>
+        <div class="loading-bar-container"><div class="loading-bar"></div></div>
     </div>
-    <div class="mt-6 flex gap-1">
-        <div class="w-1.5 h-1.5 bg-brand-500 rounded-full animate-bounce" style="animation-delay: 0s"></div>
-        <div class="w-1.5 h-1.5 bg-brand-400 rounded-full animate-bounce" style="animation-delay: 0.15s"></div>
-        <div class="w-1.5 h-1.5 bg-brand-300 rounded-full animate-bounce" style="animation-delay: 0.3s"></div>
-    </div>
-</div>
 
-<!-- HEADER -->
-<header class="fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-5xl z-50 transition-all duration-500" id="header" role="banner">
-    <div class="glass-pill p-1.5 pr-1.5 sm:px-4 sm:py-2.5 rounded-full flex items-center justify-between shadow-sm border border-slate-200/60" id="headerInner">
-        <a href="#" class="flex items-center gap-2.5 sm:gap-3 group shrink-0 relative z-10 brand-hover-transition pl-1 sm:pl-0" aria-label="Beranda">
-            <div class="smoke-wrapper">
-                <div class="smoke-particle sp-1"></div>
-                <div class="smoke-particle sp-2"></div>
-                <div class="smoke-particle sp-3"></div>
-                <div class="smoke-particle sp-4"></div>
-            </div>
-            <div class="relative transform group-hover:scale-105 transition-transform duration-350 ease-out shrink-0">
-                <img src="assets/images/logo/logo-resmi.png" alt="Logo R2" class="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-slate-200/50 shadow-sm bg-white">
-                <div class="absolute -bottom-0.5 -right-0.5 w-3 h-3 sm:w-3.5 sm:h-3.5 bg-[#25D366] border-2 border-white rounded-full"></div>
-            </div>
-            <div class="flex flex-col transform group-hover:translate-x-1 transition-transform duration-350 ease-out">
-                <div class="flex items-center gap-1 sm:gap-1.5 mb-0.5">
-                    <span class="font-extrabold text-[13px] sm:text-[15px] tracking-tight leading-none premium-text-gradient uppercase">R2 Nusantara</span>
-                    <i class="fa-solid fa-circle-check text-blue-500 text-[11px] sm:text-[13px] verified-badge"></i>
-                </div>
-                <span class="text-[7.5px] sm:text-[9px] text-slate-500 font-bold uppercase tracking-[0.15em] sm:tracking-[0.2em] leading-tight">Cigarette Tobacco Shop</span>
-            </div>
-        </a>
-
-        <nav class="hidden lg:flex items-center gap-1 font-bold text-[13px] text-slate-600 mx-auto">
-            <a href="#beranda" class="px-4 py-2 rounded-full hover:text-brand-900 hover:bg-slate-100/50 transition-all">Beranda</a>
-            <a href="#why" class="px-4 py-2 rounded-full hover:text-brand-900 hover:bg-slate-100/50 transition-all">Keunggulan</a>
-            <a href="#produk" class="px-4 py-2 rounded-full hover:text-brand-900 hover:bg-slate-100/50 transition-all">Katalog</a>
-            <a href="#testimoni" class="px-4 py-2 rounded-full hover:text-brand-900 hover:bg-slate-100/50 transition-all">Testimoni</a>
-            <a href="#faq" class="px-4 py-2 rounded-full hover:text-brand-900 hover:bg-slate-100/50 transition-all">FAQ</a>
-        </nav>
-
-        <button onclick="toggleCart()" class="relative w-10 h-10 sm:w-auto sm:h-10 sm:px-4 flex items-center justify-center gap-2 bg-[#050a12] text-white rounded-full hover:bg-brand-800 transition-all shadow-md hover:shadow-lg shrink-0 group" aria-label="Lihat Keranjang">
-            <i class="fa-solid fa-cart-shopping text-[13px] sm:text-sm group-hover:scale-110 transition-transform"></i>
-            <span class="text-xs font-bold hidden sm:block">Pesanan</span>
-            <span id="cartBadge" class="absolute -top-1 -right-1 bg-red-500 text-white text-[10px] font-extrabold w-5 h-5 rounded-full flex items-center justify-center transform scale-0 transition-transform border-2 border-white">0</span>
-        </button>
-    </div>
-</header>
-
-<main>
-    <!-- ======== HERO ======== -->
-    <section id="beranda" class="relative pt-36 pb-24 md:pt-48 md:pb-32 overflow-hidden flex items-center min-h-[95vh] md:min-h-screen">
-        <div class="absolute inset-0 z-0 bg-brand-900">
-            <img src="assets/images/logo/hero-bg.jpg" alt="Gudang Background" fetchpriority="high" class="w-full h-full object-cover object-center opacity-60 scale-105" id="heroBg">
-            <div class="absolute inset-0 hero-overlay"></div>
-            <div class="absolute inset-0 grid-pattern"></div>
-        </div>
-
-        <div class="absolute top-1/4 left-0 w-96 h-96 bg-brand-500/20 rounded-full blur-[120px] animate-blob z-0"></div>
-        <div class="absolute bottom-1/4 right-0 w-96 h-96 bg-blue-400/20 rounded-full blur-[120px] animate-blob animation-delay-2000 z-0"></div>
-
-        <div class="container mx-auto px-4 md:px-8 relative z-10 flex flex-col items-center text-center">
-            <div class="animate-slide-up" style="animation-delay: 0.1s;">
-                <div class="inline-flex items-center gap-3 py-2 px-4 rounded-full glass-dark text-white text-[11px] font-bold tracking-[0.15em] uppercase mb-8 shadow-2xl border border-white/20 hover:bg-white/10 transition-colors cursor-default">
-                    <span class="relative flex h-2 w-2">
-                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                        <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-                    </span>
-                    Distributor Resmi Malang
-                </div>
-            </div>
-
-            <h1 class="text-4xl sm:text-6xl md:text-7xl lg:text-[5.5rem] font-extrabold text-white leading-[1.1] mb-6 animate-slide-up drop-shadow-2xl max-w-5xl tracking-tight" style="animation-delay: 0.2s;">
-                Skala Bisnis Anda,<br>
-                <span class="text-gradient inline-block mt-2">Gudang Kami Siap Penuhi.</span>
-            </h1>
-
-            <p class="text-slate-300 text-base md:text-xl max-w-2xl mx-auto mb-10 animate-slide-up font-medium leading-relaxed" style="animation-delay: 0.3s;">
-                <span class="text-white font-bold">230+ merek</span> rokok (R2 & Resmi) <span class="text-white font-bold">Ready Stock</span>. Fasilitas <span class="text-brand-300 font-bold">Gratis Ongkir</span> & transaksi <span class="text-emerald-400 font-bold">Bayar Setelah Resi</span> untuk 500+ toko di Indonesia.
-            </p>
-
-            <div class="flex flex-col sm:flex-row gap-4 animate-slide-up items-center justify-center w-full max-w-md mx-auto" style="animation-delay: 0.4s;">
-                <a href="#produk" class="w-full sm:w-auto btn-glow ripple px-8 py-4 bg-white text-brand-900 font-extrabold rounded-2xl shadow-[0_8px_30px_rgba(255,255,255,0.2)] hover:-translate-y-1 transition-transform flex items-center justify-center gap-3 text-sm">
-                    Lihat Harga Spesial <i class="fa-solid fa-arrow-right"></i>
-                </a>
-                <a href="https://wa.me/6285715905079" target="_blank" class="w-full sm:w-auto px-8 py-4 glass-dark text-white font-bold rounded-2xl hover:bg-white/10 transition-all flex items-center justify-center gap-2.5 text-sm">
-                    <i class="fa-brands fa-whatsapp text-emerald-400 text-lg"></i> Tanya Admin
-                </a>
-            </div>
-
-            <div class="mt-12 animate-slide-up flex flex-col items-center gap-3" style="animation-delay: 0.5s;">
-                <div class="flex -space-x-3">
-                    <div class="w-10 h-10 rounded-full border-2 border-brand-900 avatar-gradient-9 avatar-initial text-xs">A</div>
-                    <div class="w-10 h-10 rounded-full border-2 border-brand-900 avatar-gradient-1 avatar-initial text-xs">B</div>
-                    <div class="w-10 h-10 rounded-full border-2 border-brand-900 avatar-gradient-3 avatar-initial text-xs">C</div>
-                    <div class="w-10 h-10 rounded-full border-2 border-brand-900 avatar-gradient-4 avatar-initial text-xs">D</div>
-                    <div class="w-10 h-10 rounded-full border-2 border-brand-900 bg-brand-700 flex items-center justify-center text-[10px] font-bold text-white shadow-inner">+500</div>
-                </div>
-                <div class="text-slate-400 text-xs font-medium">Telah dipercaya oleh <span class="text-white font-bold">500+ Mitra Toko</span></div>
-            </div>
-        </div>
-
-        <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-none z-10">
-            <svg class="relative block w-full h-[60px] md:h-[100px]" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V95.8C59.71,118,137.9,122.9,209.52,112.5,248.59,106.87,287.65,78.29,321.39,56.44Z" fill="#f8f9fc"></path>
-            </svg>
-        </div>
-    </section>
-
-    <!-- ======== RUNNING TEXT ======== -->
-    <section class="running-text-section">
-        <div class="container mx-auto px-4 overflow-hidden">
-            <div class="running-text-track">
-                <span><i class="fa-solid fa-bolt"></i> Promo Spesial Akhir Bulan — Diskon s.d. 15% untuk pembelian 2 bal</span>
-                <span><i class="fa-solid fa-truck-fast"></i> Gratis Ongkir 1 Bal (20 Slop) se-Indonesia</span>
-                <span><i class="fa-solid fa-users"></i> 500+ Mitra Toko Telah Bergabung</span>
-                <span><i class="fa-solid fa-certificate"></i> 100% Produk Asli & Fresh dari Pabrik</span>
-                <span><i class="fa-solid fa-clock"></i> Order sebelum 15.00 WIB, kirim hari ini</span>
-                <span><i class="fa-solid fa-bolt"></i> Promo Spesial Akhir Bulan — Diskon s.d. 15% untuk pembelian 2 bal</span>
-                <span><i class="fa-solid fa-truck-fast"></i> Gratis Ongkir 1 Bal (20 Slop) se-Indonesia</span>
-                <span><i class="fa-solid fa-users"></i> 500+ Mitra Toko Telah Bergabung</span>
-                <span><i class="fa-solid fa-certificate"></i> 100% Produk Asli & Fresh dari Pabrik</span>
-                <span><i class="fa-solid fa-clock"></i> Order sebelum 15.00 WIB, kirim hari ini</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- ======== WHY US ======== -->
-    <section id="why" class="py-16 md:py-24 bg-[#f8f9fc] relative">
-        <div class="container mx-auto px-4 md:px-8 max-w-6xl">
-            <div class="text-center mb-12 md:mb-16 fade-on-scroll">
-                <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-100 text-brand-600 font-bold text-xs uppercase tracking-widest mb-4 border border-brand-200">
-                    <i class="fa-solid fa-star"></i> Keunggulan Eksekutif
-                </span>
-                <h2 class="text-3xl md:text-5xl font-extrabold text-brand-900 tracking-tight leading-tight">Sistem B2B Tanpa Risiko.</h2>
-                <p class="text-slate-500 mt-4 text-base md:text-lg max-w-2xl mx-auto">Dirancang khusus untuk keamanan dan kenyamanan mitra grosir di seluruh Nusantara.</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-min md:auto-rows-[280px]">
-                <div class="md:col-span-2 bg-white rounded-[2rem] p-6 md:p-10 border border-slate-200 shadow-sm relative overflow-hidden card-premium fade-on-scroll flex flex-col justify-between">
-                    <div class="absolute -right-20 -top-20 w-64 h-64 bg-emerald-50 rounded-full blur-[60px] pointer-events-none"></div>
-                    <div class="relative z-10">
-                        <div class="w-12 h-12 md:w-14 md:h-14 bg-emerald-100 text-emerald-600 rounded-2xl flex items-center justify-center text-xl md:text-2xl mb-4 md:mb-6 shadow-sm border border-emerald-200">
-                            <i class="fa-solid fa-money-check-dollar"></i>
-                        </div>
-                        <h3 class="text-xl md:text-3xl font-extrabold text-brand-900 mb-2 md:mb-3 tracking-tight">Bayar Setelah Resi Keluar</h3>
-                        <p class="text-slate-500 leading-relaxed max-w-md text-sm md:text-base">Tidak ada transfer di awal, bukan sistem COD. Tagihan baru dibayar setelah barang masuk ekspedisi dan resi resmi terbit. <b>100% Anti Penipuan.</b></p>
-                    </div>
-                    <div class="mt-6 md:mt-8 flex gap-3 z-10">
-                        <span class="px-3 py-1.5 bg-slate-100 text-slate-600 rounded-lg text-xs font-bold">Aman</span>
-                        <span class="px-3 py-1.5 bg-slate-100 text-slate-600 rounded-lg text-xs font-bold">Transparan</span>
-                    </div>
-                </div>
-
-                <div class="bg-brand-900 rounded-[2rem] p-6 md:p-8 border border-brand-800 shadow-xl relative overflow-hidden card-premium fade-on-scroll flex flex-col">
-                    <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiPgo8cmVjdCB3aWR0aD0iOCIgaGVpZ2h0PSI4IiBmaWxsPSIjZmZmIiBmaWxsLW9wYWNpdHk9IjAuMDUiLz4KPC9zdmc+')] opacity-20"></div>
-                    <div class="relative z-10 flex-1 flex flex-col">
-                        <div class="w-12 h-12 md:w-14 md:h-14 bg-white/10 text-brand-300 rounded-2xl flex items-center justify-center text-xl md:text-2xl mb-4 md:mb-6 border border-white/20">
-                            <i class="fa-solid fa-camera-retro"></i>
-                        </div>
-                        <h3 class="text-lg md:text-2xl font-extrabold text-white mb-2 md:mb-3">Real-time Packing</h3>
-                        <p class="text-slate-400 text-sm leading-relaxed">Kami dokumentasikan (Foto & Video) secara langsung mulai dari pengambilan barang di gudang hingga packing.</p>
-                    </div>
-                </div>
-
-                <div class="bg-white rounded-[2rem] p-6 md:p-8 border border-slate-200 shadow-sm relative overflow-hidden card-premium fade-on-scroll flex flex-col justify-center text-center items-center">
-                    <div class="w-16 h-16 md:w-20 md:h-20 bg-brand-50 text-brand-500 rounded-full flex items-center justify-center text-2xl md:text-3xl mb-3 md:mb-4 border-8 border-white shadow-md">
-                        <i class="fa-solid fa-boxes-stacked"></i>
-                    </div>
-                    <h3 class="text-3xl md:text-5xl font-black text-brand-900 tracking-tighter mb-1">233</h3>
-                    <p class="text-slate-500 font-medium text-sm md:text-base">Merek Tersedia</p>
-                </div>
-
-                <div class="md:col-span-2 bg-gradient-to-br from-brand-50 to-white rounded-[2rem] p-6 md:p-10 border border-brand-100 shadow-sm relative overflow-hidden card-premium fade-on-scroll flex items-center">
-                    <div class="flex-1 relative z-10">
-                        <div class="inline-flex items-center gap-2 px-3 py-1 bg-brand-500 text-white rounded-lg text-[10px] font-bold uppercase tracking-widest mb-4">
-                            Promo Mitra
-                        </div>
-                        <h3 class="text-xl md:text-3xl font-extrabold text-brand-900 mb-2 md:mb-3 tracking-tight">Subsidi Ongkos Kirim</h3>
-                        <p class="text-slate-600 leading-relaxed max-w-sm text-sm md:text-base mb-4 md:mb-6">Dapatkan fasilitas gratis ongkir langsung dari gudang kami tanpa syarat tersembunyi.</p>
-                        <div class="inline-flex items-center gap-3 px-4 py-3 bg-white rounded-xl border border-brand-200 shadow-sm">
-                            <i class="fa-solid fa-circle-check text-brand-500"></i>
-                            <span class="text-sm font-bold text-slate-700">Minimal Order Hanya 1 Bal (20 Slop)</span>
-                        </div>
-                    </div>
-                    <div class="hidden md:block w-48 relative">
-                        <i class="fa-solid fa-truck-fast text-[8rem] text-brand-200/50 absolute right-0 top-1/2 -translate-y-1/2 rotate-[-5deg]"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ======== KATALOG PRODUK ======== -->
-    <section id="produk" class="py-16 md:py-24 bg-white relative">
-        <div class="container mx-auto px-4 md:px-8 max-w-7xl">
-            <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-6 fade-on-scroll">
+    <!-- ==========================================
+         2. NAVBAR
+         ========================================== -->
+    <header class="bg-primary text-white sticky top-0 z-40 shadow-lg border-b-2 border-gold">
+        <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <img src="logo.png" alt="Logo" class="w-10 h-10 rounded-full bg-white p-1 border border-gold" onerror="this.style.display='none';">
                 <div>
-                    <h2 class="text-3xl md:text-5xl font-extrabold text-brand-900 tracking-tight mb-3">Katalog Harga Reseller</h2>
-                    <p class="text-slate-500 text-base md:text-lg">Harga tercantum adalah <b class="text-brand-900">Harga Per Slop</b> (10 Bungkus).</p>
-                </div>
-                <div class="text-left md:text-right">
-                    <div class="text-sm font-bold text-slate-400 uppercase tracking-widest mb-1">Total Merek</div>
-                    <div class="text-3xl md:text-5xl font-black text-brand-900 tabular-nums" id="totalBrandCount">233</div>
+                    <h1 class="font-bold text-lg leading-tight uppercase text-gold">R2 Nusantara</h1>
+                    <p class="text-[0.65rem] text-gray-300 uppercase tracking-wider">Distributor Malang</p>
                 </div>
             </div>
-
-            <!-- Catalog Tab Switcher -->
-            <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 mb-6 fade-on-scroll">
-                <div class="catalog-tab-switcher" role="tablist" aria-label="Pilih Katalog">
-                    <button class="catalog-tab active" data-tab="r2" onclick="switchCatalog('r2')" role="tab" aria-selected="true">
-                        <i class="fa-solid fa-fire-flame-curved"></i>
-                        <span>Rokok R2</span>
-                        <span class="tab-count" id="countR2">167</span>
-                    </button>
-                    <button class="catalog-tab" data-tab="resmi" onclick="switchCatalog('resmi')" role="tab" aria-selected="false">
-                        <i class="fa-solid fa-certificate"></i>
-                        <span>Rokok Resmi</span>
-                        <span class="tab-count" id="countResmi">66</span>
-                    </button>
-                </div>
-
-                <div id="catalogInfoBanner" class="catalog-info-banner flex-1 lg:max-w-xl">
-                    <div class="w-11 h-11 rounded-xl bg-brand-100 text-brand-600 flex items-center justify-center shrink-0 border border-brand-200">
-                        <i class="fa-solid fa-fire-flame-curved text-lg" id="catalogInfoIcon"></i>
-                    </div>
-                    <div class="flex-1 min-w-0">
-                        <h4 class="font-extrabold text-brand-900 text-sm mb-0.5" id="catalogInfoTitle">Katalog R2 Nusantara</h4>
-                        <p class="text-xs text-slate-500 leading-snug" id="catalogInfoDesc">167 merek lokal pilihan dengan harga kompetitif untuk margin maksimal.</p>
-                    </div>
-                </div>
+            
+            <div class="hidden md:flex flex-1 max-w-xl mx-8 relative">
+                <input type="text" id="searchInput" placeholder="Cari rokok (misal: Surya, Apache)..." class="w-full pl-10 pr-4 py-2.5 rounded-full bg-primaryDark/60 border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:border-gold">
+                <i class="fas fa-search absolute left-4 top-3.5 text-gray-400"></i>
             </div>
-
-            <!-- Progress Banner -->
-            <div id="shippingProgressBanner" class="mb-8 bg-brand-900 rounded-[2rem] p-4 md:p-8 relative overflow-hidden shadow-2xl fade-on-scroll text-white modal-hardware">
-                <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiPgo8cmVjdCB3aWR0aD0iOCIgaGVpZ2h0PSI4IiBmaWxsPSIjZmZmIiBmaWxsLW9wYWNpdHk9IjAuMDUiLz4KPC9zdmc+')] opacity-20"></div>
-                <div class="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-4 md:gap-6">
-                    <div class="flex items-center gap-4 md:gap-5">
-                        <div class="w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-white/10 flex items-center justify-center border border-white/20 backdrop-blur-sm shrink-0">
-                            <i class="fa-solid fa-gift text-xl md:text-2xl text-emerald-400"></i>
-                        </div>
-                        <div>
-                            <h4 class="text-lg md:text-2xl font-bold mb-1" id="bannerTitle">Target Gratis Ongkir</h4>
-                            <p class="text-slate-400 text-xs md:text-sm" id="bannerSubtitle">Pilih <b id="bannerRemaining" class="text-white">20 slop</b> lagi untuk subsidi ongkir.</p>
-                        </div>
-                    </div>
-                    <div class="w-full md:w-1/2">
-                        <div class="flex justify-between items-end mb-3">
-                            <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Progress Pemesanan</span>
-                            <span class="inline-flex items-center gap-1.5 px-3 py-1 bg-white/10 rounded-lg text-sm font-bold font-mono">
-                                <span id="bannerQty">0</span>/20 Slop
-                            </span>
-                        </div>
-                        <div class="h-3 bg-white/10 rounded-full overflow-hidden relative border border-white/5">
-                            <div id="progressFill" class="h-full bg-gradient-to-r from-brand-500 to-emerald-400 rounded-full transition-all duration-700 relative" style="width:0%;"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Toolbar -->
-            <div class="flex flex-col lg:flex-row gap-4 mb-8 fade-on-scroll justify-between items-start lg:items-center bg-[#f8f9fc] p-2 rounded-2xl border border-slate-100">
-                <div class="relative w-full lg:w-96">
-                    <input type="text" id="searchInput" placeholder="Ketik nama merek..." class="w-full pl-12 pr-4 py-3.5 bg-white border border-transparent rounded-xl focus:outline-none focus:border-brand-300 focus:ring-4 focus:ring-brand-500/10 transition-all shadow-sm font-medium text-sm">
-                    <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-slate-400"></i>
-                </div>
-                <div class="flex flex-col sm:flex-row gap-3 w-full lg:w-auto overflow-x-auto no-scrollbar pb-2 lg:pb-0 items-start sm:items-center">
-                    <div id="filterChipsContainer" class="flex gap-2 shrink-0 flex-wrap"></div>
-                    <div class="relative shrink-0 w-full sm:w-auto">
-                        <select id="sortSelect" onchange="applySort(this.value)" class="w-full appearance-none bg-white border border-slate-200 rounded-xl px-5 py-2.5 pr-10 text-xs font-bold text-slate-700 focus:outline-none focus:border-brand-300 shadow-sm cursor-pointer">
-                            <option value="name-asc">A-Z</option>
-                            <option value="price-asc">Termurah</option>
-                            <option value="price-desc">Termahal</option>
-                        </select>
-                        <i class="fa-solid fa-sort absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none"></i>
-                    </div>
-                </div>
-            </div>
-
-            <div id="activeFilterIndicator" class="hidden mb-6 fade-on-scroll">
-                <div class="inline-flex items-center gap-2 px-4 py-2 bg-brand-50 border border-brand-200 rounded-full text-xs font-bold text-brand-700">
-                    <i class="fa-solid fa-filter"></i>
-                    <span id="activeFilterText">Filter aktif</span>
-                    <button onclick="applyFilter('all')" class="ml-1 w-5 h-5 rounded-full bg-brand-100 hover:bg-brand-200 flex items-center justify-center transition-colors">
-                        <i class="fa-solid fa-xmark text-[9px]"></i>
-                    </button>
-                </div>
-            </div>
-
-            <!-- Product Grid (2 kolom mobile, 3 tablet, 4 desktop) -->
-            <div id="productGrid" class="product-grid-compact grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4"></div>
-
-            <div id="noProductFound" class="hidden text-center py-20 bg-slate-50 rounded-[2rem] border-2 border-dashed border-slate-200 mt-8">
-                <i class="fa-solid fa-box-open text-5xl text-slate-300 mb-4"></i>
-                <h3 class="text-xl font-bold text-slate-700">Merek tidak ditemukan</h3>
-                <p class="text-slate-500 mt-2">Coba kata kunci lain atau ubah filter.</p>
-            </div>
-
-            <div id="paginationContainer" class="flex justify-center items-center gap-2 mt-12 flex-wrap"></div>
-        </div>
-    </section>
-
-    <!-- ======== TESTIMONI ======== -->
-    <section id="testimoni" class="py-16 md:py-24 bg-[#f8f9fc] relative overflow-hidden">
-        <div class="absolute top-0 right-0 w-96 h-96 bg-brand-100/40 rounded-full blur-[120px] pointer-events-none"></div>
-        <div class="absolute bottom-0 left-0 w-96 h-96 bg-emerald-50 rounded-full blur-[120px] pointer-events-none"></div>
-
-        <div class="container mx-auto px-4 md:px-8 max-w-7xl relative z-10">
-            <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 md:mb-12 gap-6 fade-on-scroll">
-                <div>
-                    <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-100 text-brand-600 font-bold text-xs uppercase tracking-widest mb-4 border border-brand-200">
-                        <i class="fa-solid fa-quote-left"></i> Testimoni Mitra
-                    </span>
-                    <h2 class="text-3xl md:text-5xl font-extrabold text-brand-900 tracking-tight leading-tight">Dipercaya 500+ Toko di Indonesia.</h2>
-                    <p class="text-slate-500 mt-4 text-base md:text-lg max-w-2xl">Dengarkan langsung pengalaman mitra grosir kami dari berbagai kota.</p>
-                </div>
-                <div class="flex items-center gap-4">
-                    <div class="flex gap-2">
-                        <button id="sliderPrevBtn" aria-label="Previous Testimonial" class="slider-nav-btn"><i class="fa-solid fa-arrow-left"></i></button>
-                        <button id="sliderNextBtn" aria-label="Next Testimonial" class="slider-nav-btn"><i class="fa-solid fa-arrow-right"></i></button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="relative fade-on-scroll">
-                <div class="testimonial-slider-container" id="testimonialSlider">
-                    <div class="testimonial-card-slide bg-white rounded-3xl p-6 md:p-8 border border-slate-200 shadow-sm relative flex flex-col justify-between">
-                        <div>
-                            <div class="flex items-center gap-4 mb-5">
-                                <div class="w-12 h-12 md:w-14 md:h-14 rounded-full avatar-gradient-1 shrink-0"><span class="avatar-initial">A</span></div>
-                                <div>
-                                    <h4 class="font-extrabold text-brand-900 text-base">Agus Setiawan</h4>
-                                    <p class="text-xs text-slate-500 font-medium">Toko Sinar Jaya • Surabaya</p>
-                                </div>
-                            </div>
-                            <div class="flex gap-0.5 mb-4 text-amber-400 text-sm">
-                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                            </div>
-                            <p class="text-slate-600 text-sm leading-relaxed">"Sistem bayar setelah resi itu game changer. Selama 2 tahun jadi mitra, belum pernah kecewa. Packing rapi, resi cepat keluar. Sangat recommended!"</p>
-                        </div>
-                        <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-400">
-                            <span><i class="fa-solid fa-calendar-days mr-1"></i> 2 hari yang lalu</span>
-                            <span class="text-emerald-500 font-bold"><i class="fa-solid fa-circle-check"></i> Verified Buyer</span>
-                        </div>
-                    </div>
-                    <div class="testimonial-card-slide bg-white rounded-3xl p-6 md:p-8 border border-slate-200 shadow-sm relative flex flex-col justify-between">
-                        <div>
-                            <div class="flex items-center gap-4 mb-5">
-                                <div class="w-12 h-12 md:w-14 md:h-14 rounded-full avatar-gradient-2 shrink-0"><span class="avatar-initial">B</span></div>
-                                <div>
-                                    <h4 class="font-extrabold text-brand-900 text-base">Budi Hartono</h4>
-                                    <p class="text-xs text-slate-500 font-medium">CV Maju Bersama • Jakarta</p>
-                                </div>
-                            </div>
-                            <div class="flex gap-0.5 mb-4 text-amber-400 text-sm">
-                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                            </div>
-                            <p class="text-slate-600 text-sm leading-relaxed">"Harga paling bersaing di kelasnya. Admin responsif, stok selalu ready terutama rokok resmi. Sudah langganan 3 tahun lebih, sangat profesional."</p>
-                        </div>
-                        <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-400">
-                            <span><i class="fa-solid fa-calendar-days mr-1"></i> 1 minggu yang lalu</span>
-                            <span class="text-emerald-500 font-bold"><i class="fa-solid fa-circle-check"></i> Verified Buyer</span>
-                        </div>
-                    </div>
-                    <div class="testimonial-card-slide bg-white rounded-3xl p-6 md:p-8 border border-slate-200 shadow-sm relative flex flex-col justify-between">
-                        <div>
-                            <div class="flex items-center gap-4 mb-5">
-                                <div class="w-12 h-12 md:w-14 md:h-14 rounded-full avatar-gradient-3 shrink-0"><span class="avatar-initial">C</span></div>
-                                <div>
-                                    <h4 class="font-extrabold text-brand-900 text-base">Citra Dewi</h4>
-                                    <p class="text-xs text-slate-500 font-medium">Toko Makmur • Bandung</p>
-                                </div>
-                            </div>
-                            <div class="flex gap-0.5 mb-4 text-amber-400 text-sm">
-                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
-                            </div>
-                            <p class="text-slate-600 text-sm leading-relaxed">"Gratis ongkir beneran kalau ambil 1 bal, lumayan potong cost. Dokumentasi packing dikirim lengkap. Recommended banget buat toko grosir."</p>
-                        </div>
-                        <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-400">
-                            <span><i class="fa-solid fa-calendar-days mr-1"></i> 2 minggu yang lalu</span>
-                            <span class="text-emerald-500 font-bold"><i class="fa-solid fa-circle-check"></i> Verified Buyer</span>
-                        </div>
-                    </div>
-                    <div class="testimonial-card-slide bg-white rounded-3xl p-6 md:p-8 border border-slate-200 shadow-sm relative flex flex-col justify-between">
-                        <div>
-                            <div class="flex items-center gap-4 mb-5">
-                                <div class="w-12 h-12 md:w-14 md:h-14 rounded-full avatar-gradient-4 shrink-0"><span class="avatar-initial">D</span></div>
-                                <div>
-                                    <h4 class="font-extrabold text-brand-900 text-base">Dedi Kurniawan</h4>
-                                    <p class="text-xs text-slate-500 font-medium">Toko Berkah • Medan</p>
-                                </div>
-                            </div>
-                            <div class="flex gap-0.5 mb-4 text-amber-400 text-sm">
-                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                            </div>
-                            <p class="text-slate-600 text-sm leading-relaxed">"Pengiriman ke luar pulau lancar jaya, cargo aman pakai dakota. Tim R2 Nusantara sangat membantu, terutama untuk buyer baru kaya saya dulu."</p>
-                        </div>
-                        <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-400">
-                            <span><i class="fa-solid fa-calendar-days mr-1"></i> 3 minggu yang lalu</span>
-                            <span class="text-emerald-500 font-bold"><i class="fa-solid fa-circle-check"></i> Verified Buyer</span>
-                        </div>
-                    </div>
-                    <div class="testimonial-card-slide bg-white rounded-3xl p-6 md:p-8 border border-slate-200 shadow-sm relative flex flex-col justify-between">
-                        <div>
-                            <div class="flex items-center gap-4 mb-5">
-                                <div class="w-12 h-12 md:w-14 md:h-14 rounded-full avatar-gradient-5 shrink-0"><span class="avatar-initial">E</span></div>
-                                <div>
-                                    <h4 class="font-extrabold text-brand-900 text-base">Eko Prasetyo</h4>
-                                    <p class="text-xs text-slate-500 font-medium">Grosir Sejahtera • Semarang</p>
-                                </div>
-                            </div>
-                            <div class="flex gap-0.5 mb-4 text-amber-400 text-sm">
-                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                            </div>
-                            <p class="text-slate-600 text-sm leading-relaxed">"230+ merek r2 & resmi lengkap, jadi gampang order 1 pintu. Harga stabil. Sudah jadi mitra supply andalan toko kami."</p>
-                        </div>
-                        <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-400">
-                            <span><i class="fa-solid fa-calendar-days mr-1"></i> 1 bulan yang lalu</span>
-                            <span class="text-emerald-500 font-bold"><i class="fa-solid fa-circle-check"></i> Verified Buyer</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="absolute top-0 bottom-0 left-0 w-16 bg-gradient-to-r from-[#f8f9fc] to-transparent pointer-events-none hidden md:block"></div>
-                <div class="absolute top-0 bottom-0 right-0 w-16 bg-gradient-to-l from-[#f8f9fc] to-transparent pointer-events-none hidden md:block"></div>
-            </div>
-
-            <div class="mt-12 flex flex-col items-center text-center fade-on-scroll">
-                <div class="inline-flex items-center gap-3 px-6 py-3 bg-white rounded-full border border-slate-200 shadow-sm mb-6">
-                    <div class="flex gap-0.5 text-amber-400">
-                        <i class="fa-solid fa-star text-sm"></i><i class="fa-solid fa-star text-sm"></i><i class="fa-solid fa-star text-sm"></i><i class="fa-solid fa-star text-sm"></i><i class="fa-solid fa-star-half-stroke text-sm"></i>
-                    </div>
-                    <span class="text-sm font-bold text-brand-900">4.9/5</span>
-                    <span class="text-xs text-slate-500 border-l border-slate-200 pl-3">Berdasarkan 500+ ulasan</span>
-                </div>
-                <button onclick="openReviewModal()" class="px-6 py-3 bg-brand-900 text-white rounded-xl font-bold text-sm hover:bg-brand-700 transition-all shadow-lg flex items-center gap-2">
-                    <i class="fa-solid fa-pen-to-square"></i> Tulis Ulasan Anda
+            
+            <div class="flex items-center space-x-4">
+                <button onclick="toggleCart()" class="relative p-2 text-white hover:text-gold transition">
+                    <i class="fas fa-shopping-cart text-xl"></i>
+                    <span id="cartCount" class="absolute top-0 right-0 w-5 h-5 bg-red-500 text-white text-[0.7rem] font-bold flex items-center justify-center rounded-full shadow">0</span>
                 </button>
             </div>
         </div>
-    </section>
+        <!-- Mobile Search -->
+        <div class="md:hidden px-4 pb-3 relative">
+            <input type="text" id="searchInputMobile" placeholder="Cari produk..." class="w-full pl-10 pr-4 py-2 rounded-full bg-primaryDark/60 border border-white/20 text-white text-sm">
+            <i class="fas fa-search absolute left-7 top-2.5 text-gray-400"></i>
+        </div>
+    </header>
 
-    <!-- ======== FAQ ======== -->
-    <section id="faq" class="py-16 md:py-24 bg-white relative">
-        <div class="container mx-auto px-4 md:px-8 max-w-4xl">
-            <div class="text-center mb-12 md:mb-16 fade-on-scroll">
-                <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-100 text-brand-600 font-bold text-xs uppercase tracking-widest mb-4 border border-brand-200">
-                    <i class="fa-solid fa-circle-question"></i> FAQ
-                </span>
-                <h2 class="text-3xl md:text-5xl font-extrabold text-brand-900 tracking-tight leading-tight">Pertanyaan Umum.</h2>
-                <p class="text-slate-500 mt-4 text-base md:text-lg max-w-2xl mx-auto">Temukan jawaban cepat untuk pertanyaan seputar layanan kami.</p>
-            </div>
-
-            <div class="space-y-4 fade-on-scroll">
-                <details class="faq-item bg-white rounded-2xl border border-slate-200 p-4 md:p-6 shadow-sm hover:border-brand-300 transition-colors">
-                    <summary class="flex items-center justify-between cursor-pointer list-none">
-                        <h3 class="font-extrabold text-brand-900 text-base md:text-lg pr-4">Apa itu sistem "Bayar Setelah Resi Keluar"?</h3>
-                        <span class="faq-icon w-8 h-8 rounded-full bg-brand-50 text-brand-600 flex items-center justify-center shrink-0 text-sm"><i class="fa-solid fa-plus"></i></span>
-                    </summary>
-                    <div class="faq-content text-slate-600 text-sm leading-relaxed">Pembayaran baru dilakukan setelah barang sudah masuk ekspedisi dan nomor resi resmi diterbitkan. Anda bisa melacak paket sebelum membayar. Ini bukan COD, melainkan sistem kepercayaan B2B.</div>
-                </details>
-                <details class="faq-item bg-white rounded-2xl border border-slate-200 p-4 md:p-6 shadow-sm hover:border-brand-300 transition-colors">
-                    <summary class="flex items-center justify-between cursor-pointer list-none">
-                        <h3 class="font-extrabold text-brand-900 text-base md:text-lg pr-4">Berapa minimal order untuk gratis ongkir?</h3>
-                        <span class="faq-icon w-8 h-8 rounded-full bg-brand-50 text-brand-600 flex items-center justify-center shrink-0 text-sm"><i class="fa-solid fa-plus"></i></span>
-                    </summary>
-                    <div class="faq-content text-slate-600 text-sm leading-relaxed">Minimal order 1 bal (20 slop) sudah mendapatkan subsidi ongkir dari gudang kami. Berlaku untuk seluruh Indonesia melalui ekspedisi cargo. Bisa campur antara katalog R2 dan Resmi.</div>
-                </details>
-                <details class="faq-item bg-white rounded-2xl border border-slate-200 p-4 md:p-6 shadow-sm hover:border-brand-300 transition-colors">
-                    <summary class="flex items-center justify-between cursor-pointer list-none">
-                        <h3 class="font-extrabold text-brand-900 text-base md:text-lg pr-4">Apakah R2 Nusantara distributor resmi?</h3>
-                        <span class="faq-icon w-8 h-8 rounded-full bg-brand-50 text-brand-600 flex items-center justify-center shrink-0 text-sm"><i class="fa-solid fa-plus"></i></span>
-                    </summary>
-                    <div class="faq-content text-slate-600 text-sm leading-relaxed">Ya, R2 Nusantara adalah gudang distributor resmi yang dipercaya oleh 500+ toko. Semua produk dijamin asli dan fresh dari pabrik.</div>
-                </details>
+    <!-- ==========================================
+         3. KONTEN UTAMA (KATALOG)
+         ========================================== -->
+    <main class="container mx-auto px-4 py-8 min-h-screen">
+        
+        <!-- Hero Banner -->
+        <div class="hero-banner rounded-2xl p-6 md:p-10 shadow-xl mb-8 text-white relative overflow-hidden">
+            <div class="relative z-10">
+                <span class="px-3 py-1 bg-gold text-primaryDark rounded-full text-xs font-bold uppercase mb-4 inline-block">Gudang Resmi Terpercaya</span>
+                <h2 class="text-3xl md:text-4xl font-extrabold mb-2 text-white">Katalog Produk Resmi & R2</h2>
+                <p class="text-gray-300 text-sm max-w-lg mb-6 leading-relaxed">Pesan sekarang, bayar setelah resi keluar. Menyediakan 233+ merek dengan gratis ongkir minimal 1 bal.</p>
             </div>
         </div>
-    </section>
 
-    <!-- ======== FOOTER ======== -->
-    <footer class="footer-enterprise relative overflow-hidden" role="contentinfo">
-        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-500 via-emerald-400 to-blue-500"></div>
-        <div class="absolute top-40 right-40 w-[500px] h-[500px] bg-brand-500/10 rounded-full blur-[120px] pointer-events-none"></div>
-
-        <div class="container mx-auto px-4 md:px-8 max-w-7xl pt-12 md:pt-16 pb-8 relative z-10">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 md:gap-12">
-                <div class="lg:col-span-3 flex flex-col gap-6">
-                    <div class="flex items-center gap-3">
-                        <div class="relative">
-                            <img src="assets/images/logo/footer-logo.png" alt="Logo R2 Nusantara" loading="lazy" class="w-[52px] h-[52px] rounded-full border-2 border-white/10 bg-white">
-                            <div class="absolute bottom-0 right-0 w-3.5 h-3.5 bg-[#25D366] border-2 border-[#050a12] rounded-full"></div>
-                        </div>
-                        <div>
-                            <h3 class="font-extrabold text-white text-lg tracking-tight leading-tight">R2 NUSANTARA</h3>
-                            <p class="text-[9px] text-blue-400 font-bold uppercase tracking-[0.15em] mt-1">Cigarette Tobacco Shop</p>
-                        </div>
-                    </div>
-                    <p class="text-xs leading-relaxed text-slate-400">Gudang distributor rokok resmi dan B2B terpercaya. Ekosistem transaksi aman dengan transparansi total bagi mitra bisnis grosir seluruh Indonesia.</p>
-                    <div class="flex gap-2">
-                        <a href="#" aria-label="Instagram" class="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-white/10 transition-colors text-slate-300 hover:text-white"><i class="fa-brands fa-instagram text-sm"></i></a>
-                        <a href="#" aria-label="Facebook" class="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-white/10 transition-colors text-slate-300 hover:text-white"><i class="fa-brands fa-facebook-f text-sm"></i></a>
-                        <a href="https://wa.me/6285715905079" aria-label="WhatsApp" class="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-[#25D366]/20 hover:border-[#25D366]/50 hover:text-[#25D366] transition-colors text-slate-300"><i class="fa-brands fa-whatsapp text-sm"></i></a>
-                        <a href="#" aria-label="TikTok" class="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-white/10 transition-colors text-slate-300 hover:text-white"><i class="fa-brands fa-tiktok text-sm"></i></a>
-                    </div>
-                    <div class="flex flex-wrap gap-2 mt-2">
-                        <span class="badge-pill"><i class="fa-solid fa-shield-halved text-emerald-400"></i> Secure</span>
-                        <span class="badge-pill"><i class="fa-solid fa-circle-check text-blue-400"></i> Verified</span>
-                        <span class="badge-pill"><i class="fa-solid fa-star text-amber-400"></i> Trusted</span>
-                    </div>
-                </div>
-
-                <div class="lg:col-span-3 flex flex-col">
-                    <h4 class="footer-title">TIM SALES KAMI</h4>
-                    <div class="flex flex-col gap-3">
-                        <div class="sales-card">
-                            <div class="flex items-center gap-3">
-                                <div class="sales-avatar bg-blue-600">S1</div>
-                                <div>
-                                    <h5 class="text-white text-xs font-bold">Sales 1 — Admin Utama</h5>
-                                    <p class="text-[10px] text-slate-400 font-mono mt-0.5">+62 857-1590-5079</p>
-                                    <p class="text-[9px] text-[#25D366] font-bold mt-1 flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-[#25D366] animate-pulse"></span> Online • Fast Response</p>
-                                </div>
-                            </div>
-                            <a href="https://wa.me/6285715905079" target="_blank" class="wa-circle" aria-label="Chat Sales 1"><i class="fa-brands fa-whatsapp"></i></a>
-                        </div>
-                        <div class="sales-card">
-                            <div class="flex items-center gap-3">
-                                <div class="sales-avatar bg-purple-600">S2</div>
-                                <div>
-                                    <h5 class="text-white text-xs font-bold">Sales 2 — Marketing</h5>
-                                    <p class="text-[10px] text-slate-400 font-mono mt-0.5">+62 831-6938-6894</p>
-                                    <p class="text-[9px] text-[#25D366] font-bold mt-1 flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-[#25D366]"></span> Online</p>
-                                </div>
-                            </div>
-                            <a href="https://wa.me/6283169386894" target="_blank" class="wa-circle" aria-label="Chat Sales 2"><i class="fa-brands fa-whatsapp"></i></a>
-                        </div>
-                        <div class="sales-card">
-                            <div class="flex items-center gap-3">
-                                <div class="sales-avatar bg-cyan-600">S3</div>
-                                <div>
-                                    <h5 class="text-white text-xs font-bold">Sales 3 — Support</h5>
-                                    <p class="text-[10px] text-slate-400 font-mono mt-0.5">+62 881-0101-4981</p>
-                                    <p class="text-[9px] text-[#25D366] font-bold mt-1 flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-[#25D366]"></span> Online</p>
-                                </div>
-                            </div>
-                            <a href="https://wa.me/6288101014981" target="_blank" class="wa-circle" aria-label="Chat Sales 3"><i class="fa-brands fa-whatsapp"></i></a>
-                        </div>
-                    </div>
-                    <div class="mt-4 flex items-center gap-2 text-xs text-slate-400">
-                        <i class="fa-solid fa-clock text-blue-400"></i> Senin - Sabtu: 08.00 - 17.00 WIB
-                    </div>
-                </div>
-
-                <div class="lg:col-span-3 flex flex-col gap-8">
-                    <div>
-                        <h4 class="footer-title">INFORMASI BISNIS</h4>
-                        <ul class="space-y-3 text-xs">
-                            <li class="flex items-start gap-3">
-                                <i class="fa-solid fa-location-dot text-blue-500 mt-0.5 shrink-0"></i>
-                                <span>Desa Karangduren, Kec. Pakisaji, Kab. Malang, Jawa Timur 65162</span>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <i class="fa-solid fa-phone text-blue-500 mt-0.5 shrink-0"></i>
-                                <span class="font-mono">+62 857-1590-5079</span>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="grid grid-cols-2 gap-4">
-                        <div>
-                            <h4 class="footer-title">NAVIGASI</h4>
-                            <ul class="space-y-2.5 text-xs">
-                                <li><a href="#beranda" class="footer-link"><i class="fa-solid fa-chevron-right text-[8px] text-blue-500"></i> Beranda</a></li>
-                                <li><a href="#why" class="footer-link"><i class="fa-solid fa-chevron-right text-[8px] text-blue-500"></i> Keunggulan</a></li>
-                                <li><a href="#produk" class="footer-link"><i class="fa-solid fa-chevron-right text-[8px] text-blue-500"></i> Katalog</a></li>
-                                <li><a href="#testimoni" class="footer-link"><i class="fa-solid fa-chevron-right text-[8px] text-blue-500"></i> Testimoni</a></li>
-                                <li><a href="#faq" class="footer-link"><i class="fa-solid fa-chevron-right text-[8px] text-blue-500"></i> FAQ</a></li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h4 class="footer-title">SUPPORT</h4>
-                            <ul class="space-y-2.5 text-xs">
-                                <li><a href="#faq" class="footer-link"><i class="fa-solid fa-chevron-right text-[8px] text-blue-500"></i> Bantuan</a></li>
-                                <li><a href="#" class="footer-link"><i class="fa-solid fa-chevron-right text-[8px] text-blue-500"></i> Pemesanan</a></li>
-                                <li><a href="#" class="footer-link"><i class="fa-solid fa-chevron-right text-[8px] text-blue-500"></i> Kebijakan Privasi</a></li>
-                                <li><a href="#" class="footer-link"><i class="fa-solid fa-chevron-right text-[8px] text-blue-500"></i> S&K</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="lg:col-span-3 flex flex-col gap-6">
-                    <div>
-                        <h4 class="footer-title">JANGKAUAN PENGIRIMAN</h4>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="region-tag">Jawa</span>
-                            <span class="region-tag">Sumatera</span>
-                            <span class="region-tag">Kalimantan</span>
-                            <span class="region-tag">Sulawesi</span>
-                            <span class="region-tag">Bali</span>
-                            <span class="region-tag">NTT/NTB</span>
-                            <span class="region-tag">Papua</span>
-                            <span class="region-tag">Maluku</span>
-                        </div>
-                    </div>
-                    <div class="newsletter-box">
-                        <div class="flex items-center gap-3 mb-3">
-                            <div class="w-8 h-8 rounded-full bg-blue-500/20 text-blue-400 flex items-center justify-center shrink-0">
-                                <i class="fa-solid fa-envelope-open-text text-sm"></i>
-                            </div>
-                            <div>
-                                <h5 class="text-white text-sm font-bold">Info Harga Terbaru</h5>
-                                <p class="text-[9px] text-slate-400 mt-0.5">Promo eksklusif & update stok.</p>
-                            </div>
-                        </div>
-                        <form onsubmit="event.preventDefault(); window.handleNewsletterSubmit(this);" class="flex gap-2">
-                            <input type="email" placeholder="Email Anda" required class="w-full bg-[#050a12] border border-white/10 rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-blue-500 transition-colors">
-                            <button type="submit" class="bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold px-4 py-2 rounded-lg transition-colors shrink-0">Langganan</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-
-            <div class="footer-divider"></div>
-
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
-                <div class="bg-white/5 border border-white/10 rounded-2xl p-6 md:p-8 flex flex-col justify-center relative overflow-hidden group shadow-lg">
-                    <div class="absolute -right-10 -top-10 w-32 h-32 bg-emerald-500/10 rounded-full blur-2xl group-hover:bg-emerald-500/20 transition-all"></div>
-                    <h4 class="footer-title text-emerald-400 mb-4"><i class="fa-solid fa-file-contract"></i> LEGALITAS & IDENTITAS USAHA</h4>
-                    <h5 class="text-white text-xl font-black mb-3">CV. R2 NUSANTARA</h5>
-                    <p class="text-xs text-slate-400 mb-5 leading-relaxed pr-4">Gudang utama dan pusat distribusi resmi berbadan hukum. Kami menjamin <span class="text-white font-bold">100% Anti Penipuan</span> dengan sistem transparansi total, transaksi Escrow (bayar setelah resi), dan kejelasan alamat fisik operasional kami.</p>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-slate-300">
-                        <div class="flex items-start gap-2">
-                            <i class="fa-solid fa-building-circle-check text-blue-400 mt-0.5"></i>
-                            <span><b>Badan Usaha:</b><br>Commanditaire Vennootschap (CV)</span>
-                        </div>
-                        <div class="flex items-start gap-2">
-                            <i class="fa-solid fa-map-location-dot text-blue-400 mt-0.5"></i>
-                            <span><b>Titik Pengiriman Utama:</b><br>Karangduren, Pakisaji, Malang</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="relative h-[250px] lg:h-auto rounded-2xl overflow-hidden border border-white/10 group shadow-lg bg-slate-900">
-                    <iframe src="https://maps.google.com/maps?q=Desa%20Karangduren,%20Kec.%20Pakisaji,%20Kab.%20Malang&t=&z=14&ie=UTF8&iwloc=&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="absolute inset-0 w-full h-full filter grayscale-[30%] opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700 pointer-events-auto"></iframe>
-                    <div class="absolute top-4 left-4 right-4 bg-[#050a12]/85 backdrop-blur-md text-white px-4 py-3 rounded-xl border border-white/10 text-xs flex flex-col sm:flex-row gap-3 items-start sm:items-center justify-between z-10 shadow-xl pointer-events-none">
-                        <div>
-                            <div class="font-bold text-sm text-emerald-400 mb-0.5"><i class="fa-solid fa-location-dot"></i> Gudang Fisik R2 Nusantara</div>
-                            <div class="text-[10px] text-slate-300">Jl. Raya Karangduren, Pakisaji, Kab. Malang</div>
-                        </div>
-                        <a href="https://maps.app.goo.gl/5mSJ3xwNS54W9ht48?g_st=ac" target="_blank" class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-4 py-2 rounded-lg transition-colors shrink-0 flex items-center gap-2 pointer-events-auto shadow-lg shadow-blue-900/50">Buka di Maps <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-                <div class="flex items-start gap-4">
-                    <div class="w-10 h-10 rounded-full bg-red-500/10 border border-red-500/20 text-red-500 flex items-center justify-center font-black text-sm shrink-0">18+</div>
-                    <div>
-                        <h6 class="text-white text-xs font-bold mb-1">PERINGATAN USIA & TANGGUNG JAWAB</h6>
-                        <p class="text-[10px] text-slate-500 leading-relaxed">Produk ini hanya untuk konsumen berusia 18 tahun ke atas. R2 Nusantara tidak menjual produk tembakau kepada anak di bawah umur. Merokok dapat menyebabkan kanker, serangan jantung, impotensi, dan gangguan kehamilan. Dilarang merokok di tempat umum sesuai peraturan yang berlaku.</p>
-                    </div>
-                </div>
-                <div class="flex items-start gap-4">
-                    <div class="w-10 h-10 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-500 flex items-center justify-center text-sm shrink-0"><i class="fa-solid fa-circle-info"></i></div>
-                    <div>
-                        <h6 class="text-white text-xs font-bold mb-1">PENAFIAN / DISCLAIMER</h6>
-                        <p class="text-[10px] text-slate-500 leading-relaxed">Kami adalah distributor independen yang beroperasi di wilayah hukum Indonesia. Transaksi hanya untuk keperluan bisnis resmi (B2B), bukan untuk penjualan eceran langsung kepada konsumen akhir.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 text-[10px] text-slate-500 border-t border-white/5 pt-6">
-                <div class="flex flex-wrap items-center gap-x-4 gap-y-2">
-                    <span>© 2026 <span class="text-white font-bold">CV. R2 Nusantara</span>. All rights reserved.</span>
-                    <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
-                    <a href="#" class="hover:text-white transition-colors">Terms & Conditions</a>
-                    <a href="#" class="hover:text-white transition-colors">Sitemap</a>
-                </div>
-                <div class="flex items-center gap-2">
-                    <span class="text-slate-500 uppercase tracking-widest font-bold">Secure Transaction:</span>
-                    <i class="fa-solid fa-lock text-emerald-400 text-xs"></i>
-                    <i class="fa-solid fa-shield-check text-blue-400 text-xs"></i>
-                </div>
-            </div>
+        <!-- Kategori Filter -->
+        <div class="flex overflow-x-auto pb-4 mb-6 space-x-3 hide-scrollbar" id="categoryFilters">
+            <button onclick="filterData('Semua')" class="filter-btn px-6 py-2 bg-primary text-white rounded-full text-sm font-bold active-filter">Semua Produk</button>
+            <button onclick="filterData('Gudang Garam')" class="filter-btn px-6 py-2 bg-white text-gray-600 border border-gray-200 rounded-full text-sm font-semibold hover:border-gold">Gudang Garam</button>
+            <button onclick="filterData('Sampoerna')" class="filter-btn px-6 py-2 bg-white text-gray-600 border border-gray-200 rounded-full text-sm font-semibold hover:border-gold">Sampoerna</button>
+            <button onclick="filterData('Djarum')" class="filter-btn px-6 py-2 bg-white text-gray-600 border border-gray-200 rounded-full text-sm font-semibold hover:border-gold">Djarum</button>
+            <button onclick="filterData('R2')" class="filter-btn px-6 py-2 bg-white text-gray-600 border border-gray-200 rounded-full text-sm font-semibold hover:border-gold">Khusus R2</button>
         </div>
-    </footer>
-</main>
 
-<!-- ======== CART SIDEBAR ======== -->
-<div id="cartOverlay" class="fixed inset-0 bg-brand-900/60 backdrop-blur-sm z-[70] hidden opacity-0 transition-opacity duration-300 modal-hardware" onclick="toggleCart()" aria-hidden="true"></div>
-<div id="cartSidebar" class="fixed top-0 right-0 h-full w-full sm:w-[480px] bg-[#f8f9fc] z-[80] transform translate-x-full transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] shadow-2xl flex flex-col border-l border-white/20 modal-hardware" aria-hidden="true">
-    <div class="px-6 py-5 bg-white border-b border-slate-100 flex items-center justify-between z-10 shadow-sm">
-        <h3 class="text-lg font-extrabold text-brand-900 flex items-center gap-3">
-            <span class="w-8 h-8 rounded-full bg-brand-50 text-brand-600 flex items-center justify-center text-xs"><i class="fa-solid fa-bag-shopping"></i></span> Draft Pesanan
-        </h3>
-        <button onclick="toggleCart()" class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-500 hover:bg-slate-200 transition-colors" aria-label="Tutup Keranjang">
-            <i class="fa-solid fa-xmark text-sm"></i>
-        </button>
-    </div>
-    <div id="cartItemsContainer" class="flex-1 overflow-y-auto p-6 space-y-3 no-scrollbar"></div>
-    <div class="bg-white p-6 rounded-t-3xl shadow-[0_-10px_40px_rgba(0,0,0,0.06)] border-t border-slate-100 z-10">
-        <div id="cartSummary" class="hidden">
-            <div class="flex justify-between items-end mb-5">
-                <div>
-                    <span class="text-slate-500 text-[10px] font-bold uppercase tracking-widest block mb-1">Total ( <span id="totalItemsDisplay" class="text-brand-600">0</span> Slop )</span>
-                    <span id="totalPriceDisplay" class="text-3xl font-black text-brand-900 tracking-tight font-mono">Rp 0</span>
-                </div>
+        <!-- Grid Produk -->
+        <div id="productGrid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 md:gap-6">
+            <!-- Render Data by Javascript -->
+        </div>
+    </main>
+
+    <!-- ==========================================
+         4. KERANJANG BELANJA (SIDEBAR)
+         ========================================== -->
+    <div id="cartSidebar" class="fixed inset-y-0 right-0 w-full md:w-[400px] bg-white shadow-2xl z-50 transform translate-x-full flex flex-col">
+        <div class="p-5 border-b flex justify-between items-center bg-primary text-white">
+            <h3 class="font-bold text-lg"><i class="fas fa-shopping-cart mr-2 text-gold"></i> Keranjang Belanja</h3>
+            <button onclick="toggleCart()" class="text-white hover:text-red-400 transition"><i class="fas fa-times text-xl"></i></button>
+        </div>
+        <div id="cartItems" class="flex-1 overflow-y-auto p-4 space-y-4 bg-gray-50">
+            <!-- Item Keranjang Masuk Sini -->
+        </div>
+        <div class="p-5 border-t bg-white shadow-[0_-10px_15px_-3px_rgba(0,0,0,0.05)]">
+            <div class="flex justify-between mb-4">
+                <span class="font-bold text-gray-600">Total Tagihan:</span>
+                <span id="cartTotal" class="font-black text-xl text-primary">Rp 0</span>
             </div>
-            <button onclick="openCheckoutModal()" class="w-full py-4 bg-brand-900 text-white rounded-xl font-bold text-base hover:bg-brand-800 transition-all ripple flex items-center justify-center gap-2 shadow-lg modal-hardware">
-                <span>Lanjutkan ke Checkout</span>
-                <i class="fa-solid fa-arrow-right text-sm"></i>
+            <button onclick="checkoutWhatsApp()" class="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-3.5 rounded-xl shadow-lg flex justify-center items-center transition transform hover:-translate-y-1">
+                <i class="fab fa-whatsapp text-xl mr-2"></i> Buat Pesanan
             </button>
         </div>
     </div>
-</div>
+    <!-- Overlay Transparan untuk Keranjang -->
+    <div id="cartOverlay" class="fixed inset-0 bg-black/60 z-40 hidden backdrop-blur-sm transition-opacity" onclick="toggleCart()"></div>
 
-<!-- ======== CHECKOUT MODAL ======== -->
-<div id="checkoutModalOverlay" class="fixed inset-0 bg-brand-900/80 backdrop-blur-md z-[100] opacity-0 pointer-events-none transition-opacity duration-250 ease-out modal-hardware" aria-hidden="true" onclick="closeCheckoutModal()"></div>
-<div id="checkoutModal" class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[800px] bg-[#f8f9fc] rounded-3xl shadow-[0_32px_64px_rgba(0,0,0,0.3)] z-[101] opacity-0 scale-95 pointer-events-none transition-all duration-250 ease-out flex flex-col overflow-hidden max-h-[90vh] md:max-h-[85vh] border border-white/20 modal-hardware" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-    <div class="px-6 py-5 bg-white border-b border-slate-100 flex items-center justify-between sticky top-0 z-30">
-        <h2 id="modalTitle" class="text-xl font-extrabold text-brand-900 flex items-center gap-3">
-            <div class="w-8 h-8 bg-brand-100 text-brand-600 rounded-full flex items-center justify-center text-sm"><i class="fa-solid fa-clipboard-check"></i></div>
-            Informasi Pengiriman
-        </h2>
-        <button onclick="closeCheckoutModal()" class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-500 hover:bg-slate-200 transition-colors"><i class="fa-solid fa-xmark"></i></button>
-    </div>
-    <div class="bg-white border-b border-slate-100 px-6 py-4 sticky top-[73px] z-20">
-        <div class="flex items-center justify-between relative max-w-sm mx-auto">
-            <div class="absolute left-0 top-1/2 -translate-y-1/2 w-full h-1 bg-slate-100 rounded-full z-0">
-                <div id="stepProgressLine" class="h-full step-line active rounded-full transition-all duration-300" style="width: 0%;"></div>
-            </div>
-            <div class="relative z-10 flex flex-col items-center gap-1.5" id="step1Indicator">
-                <div class="w-7 h-7 rounded-full text-xs font-bold flex items-center justify-center step-indicator active transition-colors duration-300 border-2 border-white shadow-sm ring-2 ring-slate-100">1</div>
-                <span class="text-[9px] font-bold uppercase tracking-widest text-brand-900">Data</span>
-            </div>
-            <div class="relative z-10 flex flex-col items-center gap-1.5" id="step2Indicator">
-                <div class="w-7 h-7 rounded-full bg-slate-100 text-slate-400 text-xs font-bold flex items-center justify-center step-indicator transition-colors duration-300 border-2 border-white ring-2 ring-slate-100">2</div>
-                <span class="text-[9px] font-bold uppercase tracking-widest text-slate-400">Alamat</span>
-            </div>
-            <div class="relative z-10 flex flex-col items-center gap-1.5" id="step3Indicator">
-                <div class="w-7 h-7 rounded-full bg-slate-100 text-slate-400 text-xs font-bold flex items-center justify-center step-indicator transition-colors duration-300 border-2 border-white ring-2 ring-slate-100">3</div>
-                <span class="text-[9px] font-bold uppercase tracking-widest text-slate-400">Konfirmasi</span>
-            </div>
-        </div>
-    </div>
-    <div class="flex-1 overflow-y-auto p-6 scroll-smooth form-scroll-area" id="modalFormScroll">
-        <form id="checkoutFormFull" onsubmit="event.preventDefault(); submitOrder();">
-            <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm mb-6" data-step="1">
-                <h3 class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4 flex items-center gap-2"><i class="fa-solid fa-user text-brand-400"></i> Data Personal</h3>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div>
-                        <label for="newCustName" class="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-1.5 block">Nama Lengkap / Toko<span class="text-red-500">*</span></label>
-                        <input type="text" id="newCustName" placeholder="Contoh: Toko Sinar Jaya" required minlength="2" class="w-full px-4 py-3 bg-[#f8f9fc] border border-slate-200 rounded-xl focus:outline-none focus:border-brand-400 focus:ring-4 focus:ring-brand-500/10 text-sm font-medium transition-all">
-                        <div id="newErrName" class="error-message"><i class="fa-solid fa-circle-exclamation"></i><span>Wajib diisi (min. 2 karakter)</span></div>
-                    </div>
-                    <div>
-                        <label for="newCustPhone" class="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-1.5 block">Nomor HP / WhatsApp<span class="text-red-500">*</span></label>
-                        <div class="relative">
-                            <span class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 text-sm font-medium">+62</span>
-                            <input type="tel" id="newCustPhone" placeholder="812 3456 7890" required inputmode="tel" class="w-full pl-14 pr-4 py-3 bg-[#f8f9fc] border border-slate-200 rounded-xl focus:outline-none focus:border-brand-400 focus:ring-4 focus:ring-brand-500/10 text-sm font-medium transition-all">
-                        </div>
-                        <div id="newErrPhone" class="error-message"><i class="fa-solid fa-circle-exclamation"></i><span>Gunakan format angka valid</span></div>
-                    </div>
-                </div>
-            </div>
-            <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm mb-6" data-step="2">
-                <h3 class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4 flex items-center gap-2"><i class="fa-solid fa-map-location-dot text-brand-400"></i> Detail Alamat</h3>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-                    <div>
-                        <label for="newProvinsi" class="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-1.5 block">Provinsi<span class="text-red-500">*</span></label>
-                        <input type="text" id="newProvinsi" placeholder="Jawa Timur" required class="w-full px-4 py-3 bg-[#f8f9fc] border border-slate-200 rounded-xl focus:outline-none focus:border-brand-400 text-sm font-medium">
-                    </div>
-                    <div>
-                        <label for="newKota" class="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-1.5 block">Kabupaten / Kota<span class="text-red-500">*</span></label>
-                        <input type="text" id="newKota" placeholder="Kota Malang" required class="w-full px-4 py-3 bg-[#f8f9fc] border border-slate-200 rounded-xl focus:outline-none focus:border-brand-400 text-sm font-medium">
-                    </div>
-                    <div>
-                        <label for="newKecamatan" class="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-1.5 block">Kecamatan<span class="text-red-500">*</span></label>
-                        <input type="text" id="newKecamatan" placeholder="Pakisaji" required class="w-full px-4 py-3 bg-[#f8f9fc] border border-slate-200 rounded-xl focus:outline-none focus:border-brand-400 text-sm font-medium">
-                    </div>
-                    <div>
-                        <label for="newKelurahan" class="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-1.5 block">Kelurahan<span class="text-red-500">*</span></label>
-                        <input type="text" id="newKelurahan" placeholder="Karangduren" required class="w-full px-4 py-3 bg-[#f8f9fc] border border-slate-200 rounded-xl focus:outline-none focus:border-brand-400 text-sm font-medium">
-                    </div>
-                </div>
-                <div class="mb-4">
-                    <label for="newAlamat" class="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-1.5 block">Nama Jalan & No Rumah<span class="text-red-500">*</span></label>
-                    <textarea id="newAlamat" placeholder="Jl. Raya Karangduren No.12, RT 01/RW 02..." rows="2" required class="w-full px-4 py-3 bg-[#f8f9fc] border border-slate-200 rounded-xl focus:outline-none focus:border-brand-400 text-sm font-medium resize-none"></textarea>
-                    <div id="newErrAlamat" class="error-message"><i class="fa-solid fa-circle-exclamation"></i><span>Alamat minimal 20 karakter</span></div>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div>
-                        <label for="newKodePos" class="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-1.5 block">Kode Pos<span class="text-red-500">*</span></label>
-                        <input type="text" id="newKodePos" placeholder="65162" required inputmode="numeric" class="w-full px-4 py-3 bg-[#f8f9fc] border border-slate-200 rounded-xl focus:outline-none focus:border-brand-400 text-sm font-medium">
-                    </div>
-                    <div>
-                        <label for="newPatokan" class="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-1.5 block">Patokan Rumah / Catatan</label>
-                        <input type="text" id="newPatokan" placeholder="Cat hijau samping Indomaret" class="w-full px-4 py-3 bg-[#f8f9fc] border border-slate-200 rounded-xl focus:outline-none focus:border-brand-400 text-sm font-medium">
-                    </div>
-                </div>
-            </div>
-            <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm" data-step="3">
-                <h3 class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4 flex items-center gap-2"><i class="fa-solid fa-truck-fast text-brand-400"></i> Opsi Pengiriman & Pembayaran</h3>
-                <div class="space-y-4">
-                    <div>
-                        <label for="newEkspedisi" class="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-1.5 block">Ekspedisi Pilihan<span class="text-red-500">*</span></label>
-                        <div class="relative">
-                            <select id="newEkspedisi" required class="w-full appearance-none px-4 py-3 pr-10 bg-[#f8f9fc] border border-slate-200 rounded-xl focus:outline-none focus:border-brand-400 text-sm font-medium cursor-pointer">
-                                <option value="">— Pilih Ekspedisi —</option>
-                                <option value="JNE">JNE</option>
-                                <option value="J&T">J&T</option>
-                                <option value="SiCepat Express">SiCepat Express</option>
-                                <option value="Ninja Express">Ninja Express</option>
-                                <option value="AnterAja">AnterAja</option>
-                                <option value="POS Indonesia">POS Indonesia</option>
-                                <option value="Lion Parcel">Lion Parcel</option>
-                                <option value="TIKI">TIKI</option>
-                                <option value="Indah Cargo">Indah Cargo</option>
-                                <option value="Dakota Cargo">Dakota Cargo</option>
-                            </select>
-                            <i class="fa-solid fa-chevron-down absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none text-xs"></i>
-                        </div>
-                    </div>
-                    <div>
-                        <label for="newMetode" class="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-1.5 block">Metode Pembayaran<span class="text-red-500">*</span></label>
-                        <div class="relative">
-                            <select id="newMetode" required class="w-full appearance-none px-4 py-3 pr-10 bg-[#f8f9fc] border border-slate-200 rounded-xl focus:outline-none focus:border-brand-400 text-sm font-medium cursor-pointer">
-                                <option value="Escrow (Bayar Setelah Resi)">Escrow (Bayar Setelah Resi) — Recommended</option>
-                                <option value="Transfer Bank">Transfer Bank (BCA/Mandiri/BRI)</option>
-                                <option value="QRIS">Scan QRIS</option>
-                            </select>
-                            <i class="fa-solid fa-chevron-down absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none text-xs"></i>
-                        </div>
-                    </div>
-                    <div>
-                        <label for="newAdmin" class="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-1.5 block">Kirim Pesanan Ke<span class="text-red-500">*</span></label>
-                        <div class="relative">
-                            <select id="newAdmin" required class="w-full appearance-none px-4 py-3 pr-10 bg-brand-50 border border-brand-200 text-brand-900 rounded-xl focus:outline-none focus:border-brand-400 text-sm font-bold cursor-pointer">
-                                <option value="6285715905079">Admin 1 — (+62) 857-1590-5079</option>
-                                <option value="6283169386894">Admin 2 — (+62) 831-6938-6894</option>
-                            </select>
-                            <i class="fa-solid fa-user-tie absolute right-4 top-1/2 -translate-y-1/2 text-brand-500 pointer-events-none text-sm"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </form>
-    </div>
-    <div class="p-4 md:px-6 md:py-4 bg-white border-t border-slate-100 sticky bottom-0 z-30 flex flex-col sm:flex-row gap-3 items-center justify-between">
-        <div class="hidden sm:block text-brand-900 font-bold">
-            <span class="text-xs text-slate-500 font-medium block">Total Tagihan:</span>
-            <span class="text-lg font-mono font-black" id="modalTotalPrice">Rp 0</span>
-        </div>
-        <div class="flex w-full sm:w-auto gap-3">
-            <button type="button" onclick="closeCheckoutModal()" class="flex-1 sm:flex-none px-6 py-3.5 bg-slate-100 text-slate-600 rounded-xl font-bold text-sm hover:bg-slate-200 transition-colors focus:ring-4 ring-slate-200">Batal</button>
-            <button type="button" disabled onclick="submitOrder()" id="finalCheckoutBtn" class="flex-1 sm:flex-none px-8 py-3.5 bg-[#25D366] text-white rounded-xl font-bold text-sm hover:bg-[#20bd5a] transition-all shadow-lg shadow-[#25D366]/30 flex items-center justify-center gap-2 modal-hardware">
-                <span id="finalBtnText">Konfirmasi Pesanan</span>
-                <i id="finalBtnIcon" class="fa-brands fa-whatsapp text-lg"></i>
-            </button>
-        </div>
-    </div>
-</div>
-
-<!-- ======== REVIEW MODAL ======== -->
-<div id="reviewModalOverlay" class="fixed inset-0 bg-brand-900/80 backdrop-blur-md z-[100] opacity-0 pointer-events-none transition-opacity duration-250 ease-out modal-hardware" onclick="closeReviewModal()"></div>
-<div id="reviewModal" class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[500px] bg-white rounded-3xl shadow-[0_32px_64px_rgba(0,0,0,0.3)] z-[101] opacity-0 scale-95 pointer-events-none transition-all duration-250 ease-out flex flex-col modal-hardware p-6">
-    <div class="flex items-center justify-between mb-6">
-        <h3 class="text-lg font-extrabold text-brand-900">Tulis Ulasan</h3>
-        <button onclick="closeReviewModal()" class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-500 hover:bg-slate-200"><i class="fa-solid fa-xmark"></i></button>
-    </div>
-    <form id="reviewForm" onsubmit="event.preventDefault(); submitReview();">
-        <div class="mb-4 text-center">
-            <label class="text-[10px] font-bold text-slate-500 uppercase tracking-widest block mb-2">Penilaian Anda</label>
-            <div class="star-rating-input" id="starRatingSelector">
-                <i class="fa-solid fa-star" data-rating="5" onclick="setRating(5)"></i>
-                <i class="fa-solid fa-star" data-rating="4" onclick="setRating(4)"></i>
-                <i class="fa-solid fa-star" data-rating="3" onclick="setRating(3)"></i>
-                <i class="fa-solid fa-star" data-rating="2" onclick="setRating(2)"></i>
-                <i class="fa-solid fa-star" data-rating="1" onclick="setRating(1)"></i>
-            </div>
-            <input type="hidden" id="reviewRating" value="5">
-        </div>
-        <div class="space-y-4">
-            <div>
-                <input type="text" id="reviewName" placeholder="Nama Anda" required class="w-full px-4 py-3 bg-[#f8f9fc] border border-slate-200 rounded-xl focus:border-brand-400 focus:outline-none text-sm font-medium">
-            </div>
-            <div>
-                <input type="text" id="reviewStore" placeholder="Nama Toko / Kota" required class="w-full px-4 py-3 bg-[#f8f9fc] border border-slate-200 rounded-xl focus:border-brand-400 focus:outline-none text-sm font-medium">
-            </div>
-            <div>
-                <textarea id="reviewText" placeholder="Bagaimana pengalaman Anda berbelanja di R2 Nusantara?" rows="3" required class="w-full px-4 py-3 bg-[#f8f9fc] border border-slate-200 rounded-xl focus:border-brand-400 focus:outline-none text-sm font-medium resize-none"></textarea>
-            </div>
-            <button type="submit" id="submitReviewBtn" class="w-full py-3.5 bg-brand-900 text-white rounded-xl font-bold text-sm hover:bg-brand-700 transition-all ripple">Kirim Ulasan</button>
-        </div>
-    </form>
-</div>
-
-<!-- ======== BACK TO TOP & TOAST ======== -->
-<button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0, behavior:'smooth'})" aria-label="Kembali ke atas">
-    <i class="fa-solid fa-arrow-up text-sm"></i>
-</button>
-<div id="toast-container" class="fixed top-24 right-4 flex flex-col gap-2 pointer-events-none z-[110]"></div>
-
-<!-- ======== SCRIPTS ======== -->
-<script src="supabase-bootstrap.js"></script>
-
+    <!-- ==========================================
+         5. SCRIPTS
+         ========================================== -->
+    <!-- Muat Data Dulu, Baru Logika Aplikasi -->
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+    
+    <!-- SAFETY NET (ANTI-MENTOK MUTLAK) -->
+    <script>
+        // Apapun yang terjadi di file JS eksternal, baris kode ini menjamin loader hilang!
+        setTimeout(() => {
+            const loader = document.getElementById('global-loader');
+            if (loader) {
+                loader.style.opacity = '0';
+                setTimeout(() => {
+                    loader.style.display = 'none';
+                    document.body.classList.remove('overflow-hidden');
+                }, 500);
+            }
+        }, 3500); // Maksimal loading 3.5 detik
+    </script>
 </body>
 </html>

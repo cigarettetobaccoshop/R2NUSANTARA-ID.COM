@@ -1,0 +1,16 @@
+{
+    "name": "R2 Nusantara - Distributor Rokok Grosir Resmi",
+    "short_name": "R2 Nusantara",
+    "description": "Distributor Rokok Grosir Resmi Malang - 233 Merek Ready Stock. Gudang di Pakisaji.",
+    "start_url": "/id.com/",
+    "display": "standalone",
+    "background_color": "#0F3D6E",
+    "theme_color": "#0F3D6E",
+    "orientation": "portrait-primary",
+    "scope": "/id.com/",
+    "icons": [
+        { "src": "assets/logo/logo.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
+        { "src": "assets/logo/logo.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+    ],
+    "categories": ["shopping", "business"]
+}

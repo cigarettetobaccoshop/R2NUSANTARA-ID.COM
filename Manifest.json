@@ -1,0 +1,27 @@
+{
+  "name": "R2 Nusantara - Distributor Rokok Grosir Resmi Malang",
+  "short_name": "R2 Nusantara",
+  "description": "Gudang distributor rokok resmi Malang. 233+ merek ready stock (R2 & Resmi). Bayar setelah resi keluar, gratis ongkir min 1 bal.",
+  "start_url": "/index.html",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#0F3D6E",
+  "theme_color": "#0F3D6E",
+  "lang": "id-ID",
+  "categories": ["shopping", "business"],
+  "icons": [
+    {
+      "src": "logo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
